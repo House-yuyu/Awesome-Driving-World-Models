@@ -3,7 +3,8 @@ papers:
   # Surveys & Perspectives
   # ============================================================
 
-  - title: "World Models for Embodied Intelligence: From Plausible to Controllable to Actionable"
+  - model: "Embodied WM Survey"
+    title: "World Models for Embodied Intelligence: From Plausible to Controllable to Actionable"
     year: 2026
     venue: "arXiv"
     arxiv_id: "2609.16697"
@@ -13,6 +14,7 @@ papers:
     scope: "BACKGROUND"
     category: "Surveys & Perspectives"
     subcategory: ""
+    focus: "Embodied world model survey"
     tags:
       - "Survey"
       - "World Model"
@@ -26,7 +28,8 @@ papers:
   # Driving World Models > Generative World Models
   # ============================================================
 
-  - title: "HelloWorld: Towards Practical Applications of Generative Driving World Models"
+  - model: "HelloWorld"
+    title: "HelloWorld: Towards Practical Applications of Generative Driving World Models"
     year: 2026
     venue: "arXiv"
     arxiv_id: "2609.28931"
@@ -36,6 +39,7 @@ papers:
     scope: "CORE"
     category: "Driving World Models"
     subcategory: "Generative World Models"
+    focus: "Generative driving simulation"
     tags:
       - "Generative World Model"
       - "Simulation"
@@ -50,7 +54,8 @@ papers:
   # Driving World Models > Latent / Predictive World Models
   # ============================================================
 
-  - title: "Auto-JEPA: A Latent World Model of Continuous Intent for End-to-End Autonomous Driving"
+  - model: "Auto-JEPA"
+    title: "Auto-JEPA: A Latent World Model of Continuous Intent for End-to-End Autonomous Driving"
     year: 2026
     venue: "arXiv"
     arxiv_id: ""
@@ -60,6 +65,7 @@ papers:
     scope: "CORE"
     category: "Driving World Models"
     subcategory: "Latent / Predictive World Models"
+    focus: "Latent intent prediction"
     tags:
       - "JEPA"
       - "Latent World Model"
@@ -70,7 +76,8 @@ papers:
     local_pdf: "26-Auto-JEPA.pdf"
     added_date: "2026-09-29"
 
-  - title: "Drive-JEPA: Video JEPA Meets Multimodal Trajectory Distillation for End-to-End Driving"
+  - model: "Drive-JEPA"
+    title: "Drive-JEPA: Video JEPA Meets Multimodal Trajectory Distillation for End-to-End Driving"
     year: 2026
     venue: "arXiv"
     arxiv_id: "2601.22032"
@@ -80,17 +87,19 @@ papers:
     scope: "CORE"
     category: "Driving World Models"
     subcategory: "Latent / Predictive World Models"
+    focus: "Video JEPA + trajectory distillation"
     tags:
       - "V-JEPA"
       - "Video Prediction"
       - "Trajectory Distillation"
       - "Planning"
       - "End-to-End Driving"
-    summary: "Drive-JEPA integrates Video JEPA with multimodal trajectory distillation, pretraining a ViT encoder on driving videos and distilling diverse simulator-generated trajectories for end-to-end driving."
+    summary: "Drive-JEPA integrates Video JEPA with multimodal trajectory distillation, pretraining a ViT encoder on driving videos and distills diverse simulator-generated trajectories for end-to-end driving."
     local_pdf: "26-Drive-JEPA.pdf"
     added_date: "2026-09-29"
 
-  - title: "ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model"
+  - model: "ForeDrive"
+    title: "ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model"
     year: 2026
     venue: "arXiv"
     arxiv_id: ""
@@ -100,6 +109,7 @@ papers:
     scope: "CORE"
     category: "Driving World Models"
     subcategory: "Latent / Predictive World Models"
+    focus: "Planning-relevant latent prediction"
     tags:
       - "Latent World Model"
       - "Planning"
@@ -110,7 +120,8 @@ papers:
     local_pdf: "26-ForeDrive.pdf"
     added_date: "2026-09-29"
 
-  - title: "WALT: Learning World-Model-Aligned Latent Trajectories for Autonomous Driving"
+  - model: "WALT"
+    title: "WALT: Learning World-Model-Aligned Latent Trajectories for Autonomous Driving"
     year: 2026
     venue: "arXiv"
     arxiv_id: "2609.30436"
@@ -120,6 +131,7 @@ papers:
     scope: "CORE"
     category: "Driving World Models"
     subcategory: "Latent / Predictive World Models"
+    focus: "WM-aligned trajectory learning"
     tags:
       - "World Model Alignment"
       - "Latent Trajectory"
@@ -134,7 +146,8 @@ papers:
   # Driving World Models > World-Action Models
   # ============================================================
 
-  - title: "MM-Future: Multi-Mode Joint World-Action Modeling for Autonomous Driving"
+  - model: "MM-Future"
+    title: "MM-Future: Multi-Mode Joint World-Action Modeling for Autonomous Driving"
     year: 2026
     venue: "arXiv"
     arxiv_id: ""
@@ -144,6 +157,7 @@ papers:
     scope: "CORE"
     category: "Driving World Models"
     subcategory: "World-Action Models"
+    focus: "Multi-mode world-action modeling"
     tags:
       - "World-Action Model"
       - "Multi-mode"
@@ -155,7 +169,8 @@ papers:
     local_pdf: "26-MM-Future.pdf"
     added_date: "2026-09-29"
 
-  - title: "WA-JEPA: Rethinking the Video JEPA Paradigm for World-Action Modeling in Autonomous Driving"
+  - model: "WA-JEPA"
+    title: "WA-JEPA: Rethinking the Video JEPA Paradigm for World-Action Modeling in Autonomous Driving"
     year: 2026
     venue: "arXiv"
     arxiv_id: ""
@@ -165,6 +180,7 @@ papers:
     scope: "CORE"
     category: "Driving World Models"
     subcategory: "World-Action Models"
+    focus: "JEPA-based world-action modeling"
     tags:
       - "WA-JEPA"
       - "V-JEPA"
@@ -180,7 +196,8 @@ papers:
   # Representation Learning > JEPA-based Methods
   # ============================================================
 
-  - title: "Self-Supervised Representation Learning with Joint Embedding Predictive Architecture for Automotive LiDAR Object Detection (AD-L-JEPA)"
+  - model: "AD-L-JEPA"
+    title: "Self-Supervised Representation Learning with Joint Embedding Predictive Architecture for Automotive LiDAR Object Detection (AD-L-JEPA)"
     year: 2025
     venue: "arXiv"
     arxiv_id: "2501.4969"
@@ -190,6 +207,7 @@ papers:
     scope: "RELATED"
     category: "Representation Learning"
     subcategory: "JEPA-based Methods"
+    focus: "LiDAR representation pre-training"
     tags:
       - "JEPA"
       - "LiDAR"
@@ -205,7 +223,8 @@ papers:
   # Related Work > Embodied / Robotics World Models
   # ============================================================
 
-  - title: "XPACE: Joint World and Action Modeling from Heterogeneous Experience"
+  - model: "XPACE"
+    title: "XPACE: Joint World and Action Modeling from Heterogeneous Experience"
     year: 2026
     venue: "arXiv"
     arxiv_id: "2609.17372"
@@ -215,6 +234,7 @@ papers:
     scope: "BACKGROUND"
     category: "Related Work"
     subcategory: "Embodied / Robotics World Models"
+    focus: "Robotic world-action modeling"
     tags:
       - "World-Action Model"
       - "Robotics"
@@ -229,7 +249,8 @@ papers:
   # Related Work > General Video World Models
   # ============================================================
 
-  - title: "HOLO-WORLD: Unified Camera, Object and Weather Control for Video World Model"
+  - model: "HOLO-WORLD"
+    title: "HOLO-WORLD: Unified Camera, Object and Weather Control for Video World Model"
     year: 2026
     venue: "arXiv"
     arxiv_id: "2606.20083"
@@ -239,6 +260,7 @@ papers:
     scope: "BACKGROUND"
     category: "Related Work"
     subcategory: "General Video World Models"
+    focus: "Controllable video world model"
     tags:
       - "Video World Model"
       - "Controllable Generation"

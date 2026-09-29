@@ -1,8 +1,22 @@
 # Awesome Autonomous Driving World Models
 
-A curated list of research papers on world models for autonomous driving, including generative world models, latent predictive models, world-action models, and JEPA-based representation learning.
+A curated list of research papers on world models for autonomous driving, covering generative models, latent predictive models, world-action models, and JEPA-based representation learning.
 
-This list focuses on world-model-related research in the driving domain. Papers from related fields (robotics, video generation) are included as background reference where relevant.
+This repository focuses on world-model-related research rather than the full autonomous-driving stack. Related work from robotics and video generation is included as reference.
+
+> **11 papers** · Last updated: 2026-09-29 · PRs welcome
+
+## Scope
+
+- Generative driving world models
+- Latent and predictive world models
+- World-action models
+- JEPA-based driving representation learning
+- Related embodied and video world models
+
+## Recent Updates
+
+- **2026-09-29** — Initialized the curated paper list with structured metadata and categorized recent work on driving world models.
 
 <!-- PAPERS_START -->
 
@@ -21,100 +35,91 @@ This list focuses on world-model-related research in the driving domain. Papers 
 
 ## Surveys & Perspectives
 
-- **World Models for Embodied Intelligence: From Plausible to Controllable to Actionable** — *arXiv, 2026*
-  [Paper](https://arxiv.org/abs/2609.16697)
-  `Survey` `World Model` `Embodied Intelligence` `Review`
-  A comprehensive survey that introduces a three-level capability framework (Plausible, Controllable, Actionable) for world models in embodied intelligence, covering manipulation, navigation, locomotion, and autonomous driving.
+| Model | Title | Focus | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **Embodied WM Survey** | [World Models for Embodied Intelligence: From Plausible to Controllable to Actionable](https://arxiv.org/abs/2609.16697) | Embodied world model survey | arXiv '26 | — |
 
 ## Driving World Models
 
 ### Generative World Models
 
-- **HelloWorld: Towards Practical Applications of Generative Driving World Models** — *arXiv, 2026*
-  [Paper](https://arxiv.org/abs/2609.28931) [Project](https://helloworld-4d.github.io)
-  `Generative World Model` `Simulation` `Counterfactual` `Multi-sensor` `Diffusion`
-  HelloWorld is a 2B-parameter generative driving world model system that supports synchronized seven-camera RGB generation and conditional LiDAR synthesis for scalable data generation and interactive simulation.
+| Model | Title | Focus | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **HelloWorld** | [HelloWorld: Towards Practical Applications of Generative Driving World Models](https://arxiv.org/abs/2609.28931) | Generative driving simulation | arXiv '26 | [Project](https://helloworld-4d.github.io) |
 
 ### Latent / Predictive World Models
 
-- **Auto-JEPA: A Latent World Model of Continuous Intent for End-to-End Autonomous Driving** — *arXiv, 2026*
-  [Code](https://github.com/NoctYang/Auto-JEPA)
-  `JEPA` `Latent World Model` `Intent Prediction` `Planning` `Action-conditioned`
-  Auto-JEPA is an action-oriented latent world model that learns continuous future driving intent through joint-embedding prediction, retrieving executable trajectories from a fixed trajectory memory.
-
-- **Drive-JEPA: Video JEPA Meets Multimodal Trajectory Distillation for End-to-End Driving** — *arXiv, 2026*
-  [Paper](https://arxiv.org/abs/2601.22032) [Code](https://github.com/linhanwang/Drive-JEPA)
-  `V-JEPA` `Video Prediction` `Trajectory Distillation` `Planning` `End-to-End Driving`
-  Drive-JEPA integrates Video JEPA with multimodal trajectory distillation, pretraining a ViT encoder on driving videos and distilling diverse simulator-generated trajectories for end-to-end driving.
-
-- **ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model** — *arXiv, 2026*
-  `Latent World Model` `Planning` `Diffusion Transformer` `JEPA-style` `End-to-End Driving`
-  ForeDrive learns a planning-relevant latent representation and couples it asymmetrically to a DiT planner, using multi-horizon future latents as guidance for trajectory generation.
-
-- **WALT: Learning World-Model-Aligned Latent Trajectories for Autonomous Driving** — *arXiv, 2026*
-  [Paper](https://arxiv.org/abs/2609.30436)
-  `World Model Alignment` `Latent Trajectory` `REPA` `JEPA` `Planning`
-  WALT learns a compact generative trajectory latent space by transferring semantic knowledge from a frozen pretrained driving world model, addressing the mismatch between visual world states and geometric trajectories.
+| Model | Title | Focus | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **Auto-JEPA** | Auto-JEPA: A Latent World Model of Continuous Intent for End-to-End Autonomous Driving | Latent intent prediction | arXiv '26 | [Code](https://github.com/NoctYang/Auto-JEPA) |
+| **Drive-JEPA** | [Drive-JEPA: Video JEPA Meets Multimodal Trajectory Distillation for End-to-End Driving](https://arxiv.org/abs/2601.22032) | Video JEPA + trajectory distillation | arXiv '26 | [Code](https://github.com/linhanwang/Drive-JEPA) |
+| **ForeDrive** | ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model | Planning-relevant latent prediction | arXiv '26 | — |
+| **WALT** | [WALT: Learning World-Model-Aligned Latent Trajectories for Autonomous Driving](https://arxiv.org/abs/2609.30436) | WM-aligned trajectory learning | arXiv '26 | — |
 
 ### World-Action Models
 
-- **MM-Future: Multi-Mode Joint World-Action Modeling for Autonomous Driving** — *arXiv, 2026*
-  `World-Action Model` `Multi-mode` `Diffusion Transformer` `Planning` `BEV` `Action-conditioned`
-  MM-Future is a world-action model that generates multiple paired scene-action hypotheses and models bidirectional interaction within each pair for autonomous driving.
-
-- **WA-JEPA: Rethinking the Video JEPA Paradigm for World-Action Modeling in Autonomous Driving** — *arXiv, 2026*
-  [Code](https://github.com/AFARI-Research/WA-JEPA)
-  `WA-JEPA` `V-JEPA` `World-Action Model` `Flow Matching` `Planning` `Action-conditioned`
-  WA-JEPA rethinks the V-JEPA paradigm for world-action modeling in autonomous driving, using hybrid future-masked pre-training and conditional flow matching over latent futures.
+| Model | Title | Focus | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **MM-Future** | MM-Future: Multi-Mode Joint World-Action Modeling for Autonomous Driving | Multi-mode world-action modeling | arXiv '26 | — |
+| **WA-JEPA** | WA-JEPA: Rethinking the Video JEPA Paradigm for World-Action Modeling in Autonomous Driving | JEPA-based world-action modeling | arXiv '26 | [Code](https://github.com/AFARI-Research/WA-JEPA) |
 
 ## Representation Learning
 
 ### JEPA-based Methods
 
-- **Self-Supervised Representation Learning with Joint Embedding Predictive Architecture for Automotive LiDAR Object Detection (AD-L-JEPA)** — *arXiv, 2025*
-  [Paper](https://arxiv.org/abs/2501.4969)
-  `JEPA` `LiDAR` `Self-supervised Learning` `BEV` `Object Detection` `Pre-training`
-  AD-L-JEPA is the first JEPA-based self-supervised pre-training framework for automotive LiDAR object detection, predicting BEV embeddings instead of reconstructing masked point clouds.
+| Model | Title | Focus | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **AD-L-JEPA** | [Self-Supervised Representation Learning with Joint Embedding Predictive Architecture for Automotive LiDAR Object Detection (AD-L-JEPA)](https://arxiv.org/abs/2501.4969) | LiDAR representation pre-training | arXiv '25 | — |
 
 ## Related Work
 
 ### Embodied / Robotics World Models
 
-- **XPACE: Joint World and Action Modeling from Heterogeneous Experience** — *arXiv, 2026*
-  [Paper](https://arxiv.org/abs/2609.17372) [Project](https://xpeng-robotics.github.io/xpace/)
-  `World-Action Model` `Robotics` `Embodied AI` `Simulation` `Humanoid`
-  XPACE is a unified embodied world model for humanoid robots that serves as both a world action model (jointly predicting actions and future video) and a world simulator.
+| Model | Title | Focus | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **XPACE** | [XPACE: Joint World and Action Modeling from Heterogeneous Experience](https://arxiv.org/abs/2609.17372) | Robotic world-action modeling | arXiv '26 | [Project](https://xpeng-robotics.github.io/xpace/) |
 
 ### General Video World Models
 
-- **HOLO-WORLD: Unified Camera, Object and Weather Control for Video World Model** — *arXiv, 2026*
-  [Paper](https://arxiv.org/abs/2606.20083) [Project](https://xiangchenyin.github.io/Holo-World/)
-  `Video World Model` `Controllable Generation` `Weather` `Camera Control` `Diffusion`
-  Holo-World is a unified controllable video world model that jointly controls camera motion, object dynamics, and weather state from a single image.
+| Model | Title | Focus | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **HOLO-WORLD** | [HOLO-WORLD: Unified Camera, Object and Weather Control for Video World Model](https://arxiv.org/abs/2606.20083) | Controllable video world model | arXiv '26 | [Project](https://xiangchenyin.github.io/Holo-World/) |
 
 <!-- PAPERS_END -->
 
-## Contributing
+## Terminology
 
-Contributions are welcome! Please open a pull request to add new papers.
+| Abbreviation | Meaning |
+|---|---|
+| WM | World Model |
+| WAM | World-Action Model |
+| JEPA | Joint-Embedding Predictive Architecture |
+| E2E | End-to-End |
 
-When adding a paper, please include:
-- Title
-- Authors
-- Year
-- Venue (arXiv / conference / journal)
-- Paper link
-- Code link (if available)
-- Project page (if available)
-- A brief one-sentence summary
+## Repository Structure
 
-## Maintenance
+Paper metadata lives in `data/papers.yaml` and the README tables are auto-generated.
 
-The paper list is generated from `data/papers.yaml`. After editing the YAML, run:
-
-```bash
-pip install -r requirements.txt
-python scripts/generate_readme.py
+```text
+.
+├── README.md
+├── data/
+│   └── papers.yaml
+├── scripts/
+│   └── generate_readme.py
+└── requirements.txt
 ```
 
-The script only updates the content between the `<!-- PAPERS_START -->` and `<!-- PAPERS_END -->` markers; all other sections are preserved.
+## Contributing
+
+Contributions are welcome. To add or update a paper:
+
+1. Edit the entry in `data/papers.yaml`
+2. Regenerate the README:
+   ```bash
+   pip install -r requirements.txt
+   python scripts/generate_readme.py
+   ```
+3. Open a pull request
+
+The script only updates content between the `<!-- PAPERS_START -->` and `<!-- PAPERS_END -->` markers; everything else is edited manually.

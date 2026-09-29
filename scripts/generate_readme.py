@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate README.md paper list from data/papers.yaml.
+Generate README.md paper tables from data/papers.yaml.
 
 Usage:
     python scripts/generate_readme.py
@@ -55,6 +55,9 @@ SUBCATEGORY_ORDER = {
     ],
 }
 
+# Table column headers
+TABLE_HEADERS = ["Model", "Title", "Focus", "Venue", "Resources"]
+
 
 def load_papers(yaml_path):
     """Load and validate papers from YAML file."""
@@ -70,18 +73,18 @@ def load_papers(yaml_path):
         sys.exit(1)
 
     papers = data["papers"]
-    print(f"Loaded {len(papers)} papers from {yaml_path}")
+    print(f"Loaded {len(papers)} papers from {os.path.basename(yaml_path)}")
 
     # Basic validation
-    required_fields = ["title", "year", "venue", "category", "tags", "summary"]
+    required_fields = ["title", "year", "venue", "category", "focus"]
     for i, paper in enumerate(papers):
         for field in required_fields:
             if field not in paper or paper[field] is None:
                 print(f"Warning: Paper #{i+1} missing required field '{field}'")
-                if field == "tags":
-                    paper[field] = []
-                elif field == "summary":
+                if field == "focus":
                     paper[field] = ""
+                elif field == "tags":
+                    paper[field] = []
 
     return papers
 
@@ -119,51 +122,92 @@ def group_papers(papers):
     return grouped
 
 
-def format_paper_entry(paper):
-    """Format a single paper entry as markdown."""
-    title = paper.get("title", "Untitled")
-    year = paper.get("year", "?")
-    venue = paper.get("venue", "")
-    paper_url = paper.get("paper_url", "")
-    code_url = paper.get("code_url", "")
-    project_url = paper.get("project_url", "")
-    tags = paper.get("tags", [])
-    summary = paper.get("summary", "")
+def format_venue_short(venue, year):
+    """Format venue + year as short string like 'arXiv '26'."""
+    year_short = str(year)[-2:] if year else "??"
+    if venue and venue.lower() == "arxiv":
+        return f"arXiv '{year_short}"
+    elif venue:
+        return f"{venue} '{year_short}"
+    return f"'{year_short}"
 
-    lines = []
 
-    # Title line: **Title** — *Venue, Year*
-    title_line = f"- **{title}**"
-    if venue and year:
-        title_line += f" — *{venue}, {year}*"
-    elif year:
-        title_line += f" — *{year}*"
-    lines.append(title_line)
-
-    # Links line: [Paper] [Code] [Project]
+def format_resources(paper):
+    """Format resource links as a string."""
     links = []
-    if paper_url:
-        links.append(f"[Paper]({paper_url})")
-    else:
-        # If no paper URL, skip Paper link
-        pass
-    if code_url:
-        links.append(f"[Code]({code_url})")
-    if project_url:
-        links.append(f"[Project]({project_url})")
+    if paper.get("code_url"):
+        links.append(f"[Code]({paper['code_url']})")
+    if paper.get("project_url"):
+        links.append(f"[Project]({paper['project_url']})")
 
     if links:
-        lines.append("  " + " ".join(links))
+        return " ".join(links)
+    return "—"
 
-    # Tags line
-    if tags:
-        tag_str = " ".join(f"`{tag}`" for tag in tags)
-        lines.append("  " + tag_str)
 
-    # Summary line
-    if summary:
-        lines.append("  " + summary)
+def format_title_cell(paper):
+    """Format title cell: linked if paper_url exists, plain text otherwise."""
+    title = paper.get("title", "Untitled")
+    paper_url = paper.get("paper_url", "")
+    if paper_url:
+        return f"[{title}]({paper_url})"
+    return title
 
+
+def format_model_cell(paper):
+    """Format model name cell (bold)."""
+    model = paper.get("model", "")
+    if model:
+        return f"**{model}**"
+    return "—"
+
+
+def build_table(papers):
+    """Build a markdown table from a list of papers."""
+    lines = []
+
+    # Header
+    header = "| " + " | ".join(TABLE_HEADERS) + " |"
+    lines.append(header)
+
+    # Separator
+    sep = "| " + " | ".join(["---"] * len(TABLE_HEADERS)) + " |"
+    lines.append(sep)
+
+    # Rows
+    for paper in papers:
+        model = format_model_cell(paper)
+        title = format_title_cell(paper)
+        focus = paper.get("focus", "—")
+        venue = format_venue_short(paper.get("venue", ""), paper.get("year", ""))
+        resources = format_resources(paper)
+
+        row = f"| {model} | {title} | {focus} | {venue} | {resources} |"
+        lines.append(row)
+
+    return "\n".join(lines)
+
+
+def generate_contents(grouped):
+    """Generate the Contents section."""
+    lines = []
+    lines.append("## Contents")
+    lines.append("")
+
+    for cat in CATEGORY_ORDER:
+        if cat not in grouped:
+            continue
+        anchor = cat.lower().replace(" ", "-").replace("&", "").replace("/", "-").replace("--", "-")
+        lines.append(f"- [{cat}](#{anchor})")
+
+        subcats = grouped[cat]
+        subcat_order = SUBCATEGORY_ORDER.get(cat, [])
+        for subcat in subcat_order:
+            if subcat and subcat in subcats and subcats[subcat]:
+                sub_anchor = subcat.lower().replace(" ", "-").replace("/", "-").replace("&", "").replace("--", "-")
+                lines.append(f"  - [{subcat}](#{sub_anchor})")
+
+    lines.append("")
     return "\n".join(lines)
 
 
@@ -175,21 +219,8 @@ def generate_papers_section(papers):
     lines.append(START_MARKER)
     lines.append("")
 
-    # Generate Contents
-    lines.append("## Contents")
-    lines.append("")
-    for cat in CATEGORY_ORDER:
-        if cat not in grouped:
-            continue
-        anchor = cat.lower().replace(" ", "-").replace("&", "").replace("/", "-").replace("--", "-")
-        lines.append(f"- [{cat}](#{anchor})")
-        subcats = grouped[cat]
-        subcat_order = SUBCATEGORY_ORDER.get(cat, [])
-        for subcat in subcat_order:
-            if subcat and subcat in subcats and subcats[subcat]:
-                sub_anchor = subcat.lower().replace(" ", "-").replace("/", "-").replace("&", "").replace("--", "-")
-                lines.append(f"  - [{subcat}](#{sub_anchor})")
-    lines.append("")
+    # Contents
+    lines.append(generate_contents(grouped))
 
     # Generate each category
     for cat in CATEGORY_ORDER:
@@ -203,11 +234,10 @@ def generate_papers_section(papers):
         lines.append(f"## {cat}")
         lines.append("")
 
-        # Check if there are papers without subcategory
+        # Papers without subcategory
         if "" in subcats and subcats[""]:
-            for paper in subcats[""]:
-                lines.append(format_paper_entry(paper))
-                lines.append("")
+            lines.append(build_table(subcats[""]))
+            lines.append("")
 
         # Subcategories
         for subcat in subcat_order:
@@ -216,10 +246,8 @@ def generate_papers_section(papers):
 
             lines.append(f"### {subcat}")
             lines.append("")
-
-            for paper in subcats[subcat]:
-                lines.append(format_paper_entry(paper))
-                lines.append("")
+            lines.append(build_table(subcats[subcat]))
+            lines.append("")
 
     lines.append(END_MARKER)
     lines.append("")
@@ -268,12 +296,12 @@ def update_readme(readme_path, new_section):
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write(new_content)
 
-    print(f"README.md updated successfully.")
+    print("README.md updated successfully.")
 
 
 def main():
     print("=" * 60)
-    print("README Generator for Awesome Autonomous Driving World Models")
+    print("README Generator — Table Mode")
     print("=" * 60)
     print()
 
@@ -281,30 +309,22 @@ def main():
     papers = load_papers(PAPERS_YAML)
     print()
 
-    # Generate section
-    print("Generating papers section...")
-    papers_section = generate_papers_section(papers)
-
-    # Count papers per category
+    # Count by category
     grouped = group_papers(papers)
+    print("Generating paper tables...")
     for cat in CATEGORY_ORDER:
         if cat not in grouped:
             continue
-        total = sum(len(papers) for papers in grouped[cat].values())
+        total = sum(len(ps) for ps in grouped[cat].values())
         print(f"  {cat}: {total} papers")
-
-    subcat_counts = 0
-    for cat in grouped:
-        for subcat in grouped[cat]:
-            if subcat:
-                subcat_counts += len(grouped[cat][subcat])
     print()
+
+    # Generate section
+    papers_section = generate_papers_section(papers)
 
     # Update README
-    print("Updating README.md...")
     update_readme(README_MD, papers_section)
     print()
-
     print("Done!")
 
 
