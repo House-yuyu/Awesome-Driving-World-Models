@@ -1,0 +1,250 @@
+papers:
+  # ============================================================
+  # Surveys & Perspectives
+  # ============================================================
+
+  - title: "World Models for Embodied Intelligence: From Plausible to Controllable to Actionable"
+    year: 2026
+    venue: "arXiv"
+    arxiv_id: "2609.16697"
+    paper_url: "https://arxiv.org/abs/2609.16697"
+    code_url: ""
+    project_url: ""
+    scope: "BACKGROUND"
+    category: "Surveys & Perspectives"
+    subcategory: ""
+    tags:
+      - "Survey"
+      - "World Model"
+      - "Embodied Intelligence"
+      - "Review"
+    summary: "A comprehensive survey that introduces a three-level capability framework (Plausible, Controllable, Actionable) for world models in embodied intelligence, covering manipulation, navigation, locomotion, and autonomous driving."
+    local_pdf: "26-具身智能世界模型综述.pdf"
+    added_date: "2026-09-29"
+
+  # ============================================================
+  # Driving World Models > Generative World Models
+  # ============================================================
+
+  - title: "HelloWorld: Towards Practical Applications of Generative Driving World Models"
+    year: 2026
+    venue: "arXiv"
+    arxiv_id: "2609.28931"
+    paper_url: "https://arxiv.org/abs/2609.28931"
+    code_url: ""
+    project_url: "https://helloworld-4d.github.io"
+    scope: "CORE"
+    category: "Driving World Models"
+    subcategory: "Generative World Models"
+    tags:
+      - "Generative World Model"
+      - "Simulation"
+      - "Counterfactual"
+      - "Multi-sensor"
+      - "Diffusion"
+    summary: "HelloWorld is a 2B-parameter generative driving world model system that supports synchronized seven-camera RGB generation and conditional LiDAR synthesis for scalable data generation and interactive simulation."
+    local_pdf: "26-HelloWorld.pdf"
+    added_date: "2026-09-29"
+
+  # ============================================================
+  # Driving World Models > Latent / Predictive World Models
+  # ============================================================
+
+  - title: "Auto-JEPA: A Latent World Model of Continuous Intent for End-to-End Autonomous Driving"
+    year: 2026
+    venue: "arXiv"
+    arxiv_id: ""
+    paper_url: ""
+    code_url: "https://github.com/NoctYang/Auto-JEPA"
+    project_url: ""
+    scope: "CORE"
+    category: "Driving World Models"
+    subcategory: "Latent / Predictive World Models"
+    tags:
+      - "JEPA"
+      - "Latent World Model"
+      - "Intent Prediction"
+      - "Planning"
+      - "Action-conditioned"
+    summary: "Auto-JEPA is an action-oriented latent world model that learns continuous future driving intent through joint-embedding prediction, retrieving executable trajectories from a fixed trajectory memory."
+    local_pdf: "26-Auto-JEPA.pdf"
+    added_date: "2026-09-29"
+
+  - title: "Drive-JEPA: Video JEPA Meets Multimodal Trajectory Distillation for End-to-End Driving"
+    year: 2026
+    venue: "arXiv"
+    arxiv_id: "2601.22032"
+    paper_url: "https://arxiv.org/abs/2601.22032"
+    code_url: "https://github.com/linhanwang/Drive-JEPA"
+    project_url: ""
+    scope: "CORE"
+    category: "Driving World Models"
+    subcategory: "Latent / Predictive World Models"
+    tags:
+      - "V-JEPA"
+      - "Video Prediction"
+      - "Trajectory Distillation"
+      - "Planning"
+      - "End-to-End Driving"
+    summary: "Drive-JEPA integrates Video JEPA with multimodal trajectory distillation, pretraining a ViT encoder on driving videos and distilling diverse simulator-generated trajectories for end-to-end driving."
+    local_pdf: "26-Drive-JEPA.pdf"
+    added_date: "2026-09-29"
+
+  - title: "ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model"
+    year: 2026
+    venue: "arXiv"
+    arxiv_id: ""
+    paper_url: ""
+    code_url: ""
+    project_url: ""
+    scope: "CORE"
+    category: "Driving World Models"
+    subcategory: "Latent / Predictive World Models"
+    tags:
+      - "Latent World Model"
+      - "Planning"
+      - "Diffusion Transformer"
+      - "JEPA-style"
+      - "End-to-End Driving"
+    summary: "ForeDrive learns a planning-relevant latent representation and couples it asymmetrically to a DiT planner, using multi-horizon future latents as guidance for trajectory generation."
+    local_pdf: "26-ForeDrive.pdf"
+    added_date: "2026-09-29"
+
+  - title: "WALT: Learning World-Model-Aligned Latent Trajectories for Autonomous Driving"
+    year: 2026
+    venue: "arXiv"
+    arxiv_id: "2609.30436"
+    paper_url: "https://arxiv.org/abs/2609.30436"
+    code_url: ""
+    project_url: ""
+    scope: "CORE"
+    category: "Driving World Models"
+    subcategory: "Latent / Predictive World Models"
+    tags:
+      - "World Model Alignment"
+      - "Latent Trajectory"
+      - "REPA"
+      - "JEPA"
+      - "Planning"
+    summary: "WALT learns a compact generative trajectory latent space by transferring semantic knowledge from a frozen pretrained driving world model, addressing the mismatch between visual world states and geometric trajectories."
+    local_pdf: "2609.30436v1.pdf"
+    added_date: "2026-09-29"
+
+  # ============================================================
+  # Driving World Models > World-Action Models
+  # ============================================================
+
+  - title: "MM-Future: Multi-Mode Joint World-Action Modeling for Autonomous Driving"
+    year: 2026
+    venue: "arXiv"
+    arxiv_id: ""
+    paper_url: ""
+    code_url: ""
+    project_url: ""
+    scope: "CORE"
+    category: "Driving World Models"
+    subcategory: "World-Action Models"
+    tags:
+      - "World-Action Model"
+      - "Multi-mode"
+      - "Diffusion Transformer"
+      - "Planning"
+      - "BEV"
+      - "Action-conditioned"
+    summary: "MM-Future is a world-action model that generates multiple paired scene-action hypotheses and models bidirectional interaction within each pair for autonomous driving."
+    local_pdf: "26-MM-Future.pdf"
+    added_date: "2026-09-29"
+
+  - title: "WA-JEPA: Rethinking the Video JEPA Paradigm for World-Action Modeling in Autonomous Driving"
+    year: 2026
+    venue: "arXiv"
+    arxiv_id: ""
+    paper_url: ""
+    code_url: "https://github.com/AFARI-Research/WA-JEPA"
+    project_url: ""
+    scope: "CORE"
+    category: "Driving World Models"
+    subcategory: "World-Action Models"
+    tags:
+      - "WA-JEPA"
+      - "V-JEPA"
+      - "World-Action Model"
+      - "Flow Matching"
+      - "Planning"
+      - "Action-conditioned"
+    summary: "WA-JEPA rethinks the V-JEPA paradigm for world-action modeling in autonomous driving, using hybrid future-masked pre-training and conditional flow matching over latent futures."
+    local_pdf: "WA-JEPA.pdf"
+    added_date: "2026-09-29"
+
+  # ============================================================
+  # Representation Learning > JEPA-based Methods
+  # ============================================================
+
+  - title: "Self-Supervised Representation Learning with Joint Embedding Predictive Architecture for Automotive LiDAR Object Detection (AD-L-JEPA)"
+    year: 2025
+    venue: "arXiv"
+    arxiv_id: "2501.4969"
+    paper_url: "https://arxiv.org/abs/2501.4969"
+    code_url: ""
+    project_url: ""
+    scope: "RELATED"
+    category: "Representation Learning"
+    subcategory: "JEPA-based Methods"
+    tags:
+      - "JEPA"
+      - "LiDAR"
+      - "Self-supervised Learning"
+      - "BEV"
+      - "Object Detection"
+      - "Pre-training"
+    summary: "AD-L-JEPA is the first JEPA-based self-supervised pre-training framework for automotive LiDAR object detection, predicting BEV embeddings instead of reconstructing masked point clouds."
+    local_pdf: "25-AD-L-JEPA.pdf"
+    added_date: "2026-09-29"
+
+  # ============================================================
+  # Related Work > Embodied / Robotics World Models
+  # ============================================================
+
+  - title: "XPACE: Joint World and Action Modeling from Heterogeneous Experience"
+    year: 2026
+    venue: "arXiv"
+    arxiv_id: "2609.17372"
+    paper_url: "https://arxiv.org/abs/2609.17372"
+    code_url: ""
+    project_url: "https://xpeng-robotics.github.io/xpace/"
+    scope: "BACKGROUND"
+    category: "Related Work"
+    subcategory: "Embodied / Robotics World Models"
+    tags:
+      - "World-Action Model"
+      - "Robotics"
+      - "Embodied AI"
+      - "Simulation"
+      - "Humanoid"
+    summary: "XPACE is a unified embodied world model for humanoid robots that serves as both a world action model (jointly predicting actions and future video) and a world simulator."
+    local_pdf: "26-XPACE.pdf"
+    added_date: "2026-09-29"
+
+  # ============================================================
+  # Related Work > General Video World Models
+  # ============================================================
+
+  - title: "HOLO-WORLD: Unified Camera, Object and Weather Control for Video World Model"
+    year: 2026
+    venue: "arXiv"
+    arxiv_id: "2606.20083"
+    paper_url: "https://arxiv.org/abs/2606.20083"
+    code_url: ""
+    project_url: "https://xiangchenyin.github.io/Holo-World/"
+    scope: "BACKGROUND"
+    category: "Related Work"
+    subcategory: "General Video World Models"
+    tags:
+      - "Video World Model"
+      - "Controllable Generation"
+      - "Weather"
+      - "Camera Control"
+      - "Diffusion"
+    summary: "Holo-World is a unified controllable video world model that jointly controls camera motion, object dynamics, and weather state from a single image."
+    local_pdf: "2606.20083v4.pdf"
+    added_date: "2026-09-29"
