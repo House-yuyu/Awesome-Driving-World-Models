@@ -4,14 +4,13 @@
   <img src="https://img.shields.io/badge/papers-70-blue" alt="Papers">
   <img src="https://img.shields.io/badge/last%20updated-2026--09--30-brightgreen" alt="Last Updated">
   <img src="https://img.shields.io/badge/PRs-welcome-orange" alt="PRs Welcome">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=House-yuyu.Awesome-Driving-World-Models" alt="Visitors">
 </p>
 
 A curated collection of research on **world models for autonomous driving**, spanning **generative simulation**, **explicit-state prediction**, **latent future modeling**, **world-action modeling**, and two rapidly growing cross-cutting directions: **JEPA for driving** and **Vision-Language-Action (VLA) models with world modeling**.
 
 > **From predicting observations to learning decision-relevant futures, actions, and world-aware policies.**
 
-The repository remains **world-model-centered rather than a complete autonomous-driving paper list**.  
-Driving JEPA papers are grouped into one dedicated track, while VLA papers are split into **world-model-enhanced VLA** and a smaller set of **general driving VLA references** for context.
 
 ---
 
