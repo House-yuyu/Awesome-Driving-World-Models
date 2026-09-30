@@ -1,7 +1,7 @@
 # Awesome Driving World Models 🚗🌎
 
 <p align="center">
-  <img src="https://img.shields.io/badge/papers-70-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/papers-71-blue" alt="Papers">
   <img src="https://img.shields.io/badge/last%20updated-2026--09--30-brightgreen" alt="Last Updated">
   <img src="https://img.shields.io/badge/PRs-welcome-orange" alt="PRs Welcome">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=House-yuyu.Awesome-Driving-World-Models" alt="Visitors">
@@ -214,6 +214,7 @@ To keep the repository focused, the first subsection contains papers where world
 | **DynVLA** | [Learning World Dynamics for Action Reasoning in Autonomous Driving](https://arxiv.org/abs/2603.11041) | Dynamics CoT compresses ego- and environment-centric future evolution into compact dynamics tokens | ICML 2026 | [Project](https://yaoyao-jpg.github.io/dynvla/) · [Code](https://github.com/yaoyao-jpg/DynamicsVLA) |
 | **DriveWorld-VLA** | [Unified Latent-Space World Modeling with Vision-Language-Action for Autonomous Driving](https://arxiv.org/abs/2602.06521) | Shared latent world states support action-conditioned imagination and VLA planning | arXiv 2026 | [Code](https://github.com/liulin815/DriveWorld-VLA) |
 | **DriveVLA-W0** | [World Models Amplify Data Scaling Law in Autonomous Driving](https://arxiv.org/abs/2510.12796) | Future-image world modeling supplies dense self-supervision for VLA scaling | ICLR 2026 | [Code](https://github.com/BraveGroup/DriveVLA-W0) |
+| **DriveVLA-M0** | [Failure-Aware Memory Augmentation for Autonomous Driving](https://arxiv.org/abs/2608.10413) | Failure-aware latent memory with structurally grounded retrieval and lightweight test-time adaptation | ACM MM 2026 | [Code](https://github.com/ZebinX/DriveVLA-M0) |
 | **FutureSightDrive** | [Thinking Visually with Spatio-Temporal CoT for Autonomous Driving](https://arxiv.org/abs/2505.17685) | VLA first acts as a world model to generate a visual future CoT, then plans from it | NeurIPS 2025 | [Project](https://miv-xjtu.github.io/FSDrive.github.io/) · [Code](https://github.com/MIV-XJTU/FSDrive) |
 
 ---
