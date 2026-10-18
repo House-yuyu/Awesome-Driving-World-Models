@@ -1,272 +1,2146 @@
+schema_version: 2
+updated_date: '2026-10-19'
 papers:
-  # ============================================================
-  # Surveys & Perspectives
-  # ============================================================
-
-  - model: "Embodied WM Survey"
-    title: "World Models for Embodied Intelligence: From Plausible to Controllable to Actionable"
-    year: 2026
-    venue: "arXiv"
-    arxiv_id: "2609.16697"
-    paper_url: "https://arxiv.org/abs/2609.16697"
-    code_url: ""
-    project_url: ""
-    scope: "BACKGROUND"
-    category: "Surveys & Perspectives"
-    subcategory: ""
-    focus: "Embodied world model survey"
-    tags:
-      - "Survey"
-      - "World Model"
-      - "Embodied Intelligence"
-      - "Review"
-    summary: "A comprehensive survey that introduces a three-level capability framework (Plausible, Controllable, Actionable) for world models in embodied intelligence, covering manipulation, navigation, locomotion, and autonomous driving."
-    local_pdf: "26-具身智能世界模型综述.pdf"
-    added_date: "2026-09-29"
-
-  # ============================================================
-  # Driving World Models > Generative World Models
-  # ============================================================
-
-  - model: "HelloWorld"
-    title: "HelloWorld: Towards Practical Applications of Generative Driving World Models"
-    year: 2026
-    venue: "arXiv"
-    arxiv_id: "2609.28931"
-    paper_url: "https://arxiv.org/abs/2609.28931"
-    code_url: ""
-    project_url: "https://helloworld-4d.github.io"
-    scope: "CORE"
-    category: "Driving World Models"
-    subcategory: "Generative World Models"
-    focus: "Generative driving simulation"
-    tags:
-      - "Generative World Model"
-      - "Simulation"
-      - "Counterfactual"
-      - "Multi-sensor"
-      - "Diffusion"
-    summary: "HelloWorld is a 2B-parameter generative driving world model system that supports synchronized seven-camera RGB generation and conditional LiDAR synthesis for scalable data generation and interactive simulation."
-    local_pdf: "26-HelloWorld.pdf"
-    added_date: "2026-09-29"
-
-  # ============================================================
-  # Driving World Models > Latent / Predictive World Models
-  # ============================================================
-
-  - model: "Auto-JEPA"
-    title: "Auto-JEPA: A Latent World Model of Continuous Intent for End-to-End Autonomous Driving"
-    year: 2026
-    venue: "arXiv"
-    arxiv_id: ""
-    paper_url: ""
-    code_url: "https://github.com/NoctYang/Auto-JEPA"
-    project_url: ""
-    scope: "CORE"
-    category: "Driving World Models"
-    subcategory: "Latent / Predictive World Models"
-    focus: "Latent intent prediction"
-    tags:
-      - "JEPA"
-      - "Latent World Model"
-      - "Intent Prediction"
-      - "Planning"
-      - "Action-conditioned"
-    summary: "Auto-JEPA is an action-oriented latent world model that learns continuous future driving intent through joint-embedding prediction, retrieving executable trajectories from a fixed trajectory memory."
-    local_pdf: "26-Auto-JEPA.pdf"
-    added_date: "2026-09-29"
-
-  - model: "Drive-JEPA"
-    title: "Drive-JEPA: Video JEPA Meets Multimodal Trajectory Distillation for End-to-End Driving"
-    year: 2026
-    venue: "arXiv"
-    arxiv_id: "2601.22032"
-    paper_url: "https://arxiv.org/abs/2601.22032"
-    code_url: "https://github.com/linhanwang/Drive-JEPA"
-    project_url: ""
-    scope: "CORE"
-    category: "Driving World Models"
-    subcategory: "Latent / Predictive World Models"
-    focus: "Video JEPA + trajectory distillation"
-    tags:
-      - "V-JEPA"
-      - "Video Prediction"
-      - "Trajectory Distillation"
-      - "Planning"
-      - "End-to-End Driving"
-    summary: "Drive-JEPA integrates Video JEPA with multimodal trajectory distillation, pretraining a ViT encoder on driving videos and distills diverse simulator-generated trajectories for end-to-end driving."
-    local_pdf: "26-Drive-JEPA.pdf"
-    added_date: "2026-09-29"
-
-  - model: "ForeDrive"
-    title: "ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model"
-    year: 2026
-    venue: "arXiv"
-    arxiv_id: ""
-    paper_url: ""
-    code_url: ""
-    project_url: ""
-    scope: "CORE"
-    category: "Driving World Models"
-    subcategory: "Latent / Predictive World Models"
-    focus: "Planning-relevant latent prediction"
-    tags:
-      - "Latent World Model"
-      - "Planning"
-      - "Diffusion Transformer"
-      - "JEPA-style"
-      - "End-to-End Driving"
-    summary: "ForeDrive learns a planning-relevant latent representation and couples it asymmetrically to a DiT planner, using multi-horizon future latents as guidance for trajectory generation."
-    local_pdf: "26-ForeDrive.pdf"
-    added_date: "2026-09-29"
-
-  - model: "WALT"
-    title: "WALT: Learning World-Model-Aligned Latent Trajectories for Autonomous Driving"
-    year: 2026
-    venue: "arXiv"
-    arxiv_id: "2609.30436"
-    paper_url: "https://arxiv.org/abs/2609.30436"
-    code_url: ""
-    project_url: ""
-    scope: "CORE"
-    category: "Driving World Models"
-    subcategory: "Latent / Predictive World Models"
-    focus: "WM-aligned trajectory learning"
-    tags:
-      - "World Model Alignment"
-      - "Latent Trajectory"
-      - "REPA"
-      - "JEPA"
-      - "Planning"
-    summary: "WALT learns a compact generative trajectory latent space by transferring semantic knowledge from a frozen pretrained driving world model, addressing the mismatch between visual world states and geometric trajectories."
-    local_pdf: "2609.30436v1.pdf"
-    added_date: "2026-09-29"
-
-  # ============================================================
-  # Driving World Models > World-Action Models
-  # ============================================================
-
-  - model: "MM-Future"
-    title: "MM-Future: Multi-Mode Joint World-Action Modeling for Autonomous Driving"
-    year: 2026
-    venue: "arXiv"
-    arxiv_id: ""
-    paper_url: ""
-    code_url: ""
-    project_url: ""
-    scope: "CORE"
-    category: "Driving World Models"
-    subcategory: "World-Action Models"
-    focus: "Multi-mode world-action modeling"
-    tags:
-      - "World-Action Model"
-      - "Multi-mode"
-      - "Diffusion Transformer"
-      - "Planning"
-      - "BEV"
-      - "Action-conditioned"
-    summary: "MM-Future is a world-action model that generates multiple paired scene-action hypotheses and models bidirectional interaction within each pair for autonomous driving."
-    local_pdf: "26-MM-Future.pdf"
-    added_date: "2026-09-29"
-
-  - model: "WA-JEPA"
-    title: "WA-JEPA: Rethinking the Video JEPA Paradigm for World-Action Modeling in Autonomous Driving"
-    year: 2026
-    venue: "arXiv"
-    arxiv_id: ""
-    paper_url: ""
-    code_url: "https://github.com/AFARI-Research/WA-JEPA"
-    project_url: ""
-    scope: "CORE"
-    category: "Driving World Models"
-    subcategory: "World-Action Models"
-    focus: "JEPA-based world-action modeling"
-    tags:
-      - "WA-JEPA"
-      - "V-JEPA"
-      - "World-Action Model"
-      - "Flow Matching"
-      - "Planning"
-      - "Action-conditioned"
-    summary: "WA-JEPA rethinks the V-JEPA paradigm for world-action modeling in autonomous driving, using hybrid future-masked pre-training and conditional flow matching over latent futures."
-    local_pdf: "WA-JEPA.pdf"
-    added_date: "2026-09-29"
-
-  # ============================================================
-  # Representation Learning > JEPA-based Methods
-  # ============================================================
-
-  - model: "AD-L-JEPA"
-    title: "Self-Supervised Representation Learning with Joint Embedding Predictive Architecture for Automotive LiDAR Object Detection (AD-L-JEPA)"
-    year: 2025
-    venue: "arXiv"
-    arxiv_id: "2501.4969"
-    paper_url: "https://arxiv.org/abs/2501.4969"
-    code_url: ""
-    project_url: ""
-    scope: "RELATED"
-    category: "Representation Learning"
-    subcategory: "JEPA-based Methods"
-    focus: "LiDAR representation pre-training"
-    tags:
-      - "JEPA"
-      - "LiDAR"
-      - "Self-supervised Learning"
-      - "BEV"
-      - "Object Detection"
-      - "Pre-training"
-    summary: "AD-L-JEPA is the first JEPA-based self-supervised pre-training framework for automotive LiDAR object detection, predicting BEV embeddings instead of reconstructing masked point clouds."
-    local_pdf: "25-AD-L-JEPA.pdf"
-    added_date: "2026-09-29"
-
-  # ============================================================
-  # Related Work > Embodied / Robotics World Models
-  # ============================================================
-
-  - model: "XPACE"
-    title: "XPACE: Joint World and Action Modeling from Heterogeneous Experience"
-    year: 2026
-    venue: "arXiv"
-    arxiv_id: "2609.17372"
-    paper_url: "https://arxiv.org/abs/2609.17372"
-    code_url: ""
-    project_url: "https://xpeng-robotics.github.io/xpace/"
-    scope: "BACKGROUND"
-    category: "Related Work"
-    subcategory: "Embodied / Robotics World Models"
-    focus: "Robotic world-action modeling"
-    tags:
-      - "World-Action Model"
-      - "Robotics"
-      - "Embodied AI"
-      - "Simulation"
-      - "Humanoid"
-    summary: "XPACE is a unified embodied world model for humanoid robots that serves as both a world action model (jointly predicting actions and future video) and a world simulator."
-    local_pdf: "26-XPACE.pdf"
-    added_date: "2026-09-29"
-
-  # ============================================================
-  # Related Work > General Video World Models
-  # ============================================================
-
-  - model: "HOLO-WORLD"
-    title: "HOLO-WORLD: Unified Camera, Object and Weather Control for Video World Model"
-    year: 2026
-    venue: "arXiv"
-    arxiv_id: "2606.20083"
-    paper_url: "https://arxiv.org/abs/2606.20083"
-    code_url: ""
-    project_url: "https://xiangchenyin.github.io/Holo-World/"
-    scope: "BACKGROUND"
-    category: "Related Work"
-    subcategory: "General Video World Models"
-    focus: "Controllable video world model"
-    tags:
-      - "Video World Model"
-      - "Controllable Generation"
-      - "Weather"
-      - "Camera Control"
-      - "Diffusion"
-    summary: "Holo-World is a unified controllable video world model that jointly controls camera motion, object dynamics, and weather state from a single image."
-    local_pdf: "2606.20083v4.pdf"
-    added_date: "2026-09-29"
+- model: Latent WM Survey
+  title: 'Latent World Models for Automated Driving: A Unified Taxonomy, Evaluation Framework, and Open Challenges'
+  paper_url: https://arxiv.org/abs/2603.09086
+  year: 2026
+  venue: arXiv
+  category: survey
+  focus: Latent-state taxonomy, evaluation, and deployment challenges
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2603.09086'
+  published_date: '2026-03-10'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: BACKGROUND
+  sources:
+  - https://arxiv.org/abs/2603.09086
+- model: AV JEPA Survey
+  title: 'Joint Embedding Predictive Architecture for Autonomous Vehicle Safety and Security: A Comprehensive Survey'
+  paper_url: https://www.sciencedirect.com/science/article/pii/S1474034626002909
+  year: 2026
+  venue: Advanced Engineering Informatics
+  category: survey
+  focus: JEPA for autonomous-vehicle perception, safety, security, and deployment
+  code_url: ''
+  project_url: ''
+  arxiv_id: ''
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: BACKGROUND
+  sources:
+  - https://www.sciencedirect.com/science/article/pii/S1474034626002909
+- model: DWM Survey
+  title: 'The Role of World Models in Shaping Autonomous Driving: A Comprehensive Survey'
+  paper_url: https://arxiv.org/abs/2502.10498
+  year: 2026
+  venue: Frontiers of Computer Science
+  category: survey
+  focus: Driving world models by predicted scene modality
+  code_url: ''
+  project_url: ''
+  resources:
+  - label: Paper List
+    url: https://github.com/LMD0311/Awesome-World-Model
+  arxiv_id: '2502.10498'
+  publication_status: accepted
+  publication_url: https://journal.hep.com.cn/fcs/EN/10.1007/s11704-026-60102-1
+  published_date: '2025-02-14'
+  verified_date: '2026-10-19'
+  added_date: '2026-09-30'
+  scope: BACKGROUND
+  sources:
+  - https://arxiv.org/abs/2502.10498
+  - https://journal.hep.com.cn/fcs/EN/10.1007/s11704-026-60102-1
+- model: VLA4AD Survey
+  title: A Survey on Vision-Language-Action Models for Autonomous Driving
+  paper_url: https://arxiv.org/abs/2506.24044
+  year: 2025
+  venue: ICCV Workshops
+  category: survey
+  focus: Driving VLA architectures, datasets, evaluation, and research trends
+  code_url: ''
+  project_url: ''
+  resources:
+  - label: Paper List
+    url: https://github.com/JohnsonJiang1996/Awesome-VLA4AD
+  arxiv_id: '2506.24044'
+  published_date: '2025-06-30'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: BACKGROUND
+  sources:
+  - https://arxiv.org/abs/2506.24044
+- model: WMAD Survey
+  title: A Survey of World Models for Autonomous Driving
+  paper_url: https://arxiv.org/abs/2501.11260
+  year: 2025
+  venue: arXiv
+  category: survey
+  focus: Generation, planning, and prediction–planning interaction
+  code_url: ''
+  project_url: ''
+  resources:
+  - label: Paper List
+    url: https://github.com/FengZicai/AwesomeWMAD
+  arxiv_id: '2501.11260'
+  published_date: '2025-01-20'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: BACKGROUND
+  sources:
+  - https://arxiv.org/abs/2501.11260
+- model: HelloWorld
+  title: 'HelloWorld: Towards Practical Applications of Generative Driving World Models'
+  year: 2026
+  venue: arXiv
+  arxiv_id: '2609.28931'
+  paper_url: https://arxiv.org/abs/2609.28931
+  code_url: ''
+  project_url: https://helloworld-4d.github.io/
+  scope: CORE
+  category: generative
+  focus: Controllable multi-camera RGB + LiDAR generation for sequential simulation
+  tags:
+  - Generative World Model
+  - Simulation
+  - Counterfactual
+  - Multi-sensor
+  - Diffusion
+  summary: HelloWorld is a 2B-parameter generative driving world model system that supports synchronized seven-camera
+    RGB generation and conditional LiDAR synthesis for scalable data generation and interactive simulation.
+  local_pdf: 26-HelloWorld.pdf
+  added_date: '2026-09-29'
+  publication_status: preprint
+  sources:
+  - https://arxiv.org/abs/2609.28931
+  - https://helloworld-4d.github.io/
+  verified_date: '2026-10-19'
+- model: Epona
+  title: 'Epona: Autoregressive Diffusion World Model for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2506.24113
+  year: 2025
+  venue: ICCV
+  category: generative
+  focus: Autoregressive diffusion for long-horizon video generation and planning
+  code_url: https://github.com/Kevin-thu/Epona
+  project_url: ''
+  arxiv_id: '2506.24113'
+  published_date: '2025-06-30'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2506.24113
+  - https://github.com/Kevin-thu/Epona
+- model: HERMES
+  title: 'HERMES: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation'
+  paper_url: https://arxiv.org/abs/2501.14729
+  year: 2025
+  venue: ICCV
+  category: generative
+  focus: Unified BEV-based scene understanding and future generation
+  code_url: https://github.com/LMD0311/HERMES
+  project_url: ''
+  arxiv_id: '2501.14729'
+  published_date: '2025-01-24'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2501.14729
+  - https://github.com/LMD0311/HERMES
+- model: InfiniCube
+  title: 'InfiniCube: Unbounded and Controllable Dynamic 3D Driving Scene Generation with World-Guided Video Models'
+  paper_url: https://arxiv.org/abs/2412.03934
+  year: 2025
+  venue: ICCV
+  category: generative
+  focus: Large-scale controllable 3D world generation grounded by video models
+  code_url: https://github.com/nv-tlabs/InfiniCube
+  project_url: ''
+  arxiv_id: '2412.03934'
+  published_date: '2024-12-05'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2412.03934
+  - https://github.com/nv-tlabs/InfiniCube
+- model: DrivingWorld
+  title: 'DrivingWorld: Constructing World Model for Autonomous Driving via Video GPT'
+  paper_url: https://arxiv.org/abs/2412.19505
+  year: 2024
+  venue: arXiv
+  category: generative
+  focus: GPT-style autoregressive video and ego-state generation
+  code_url: https://github.com/YvanYin/DrivingWorld
+  project_url: ''
+  arxiv_id: '2412.19505'
+  code_status: partial
+  published_date: '2024-12-27'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2412.19505
+  - https://github.com/YvanYin/DrivingWorld
+- model: DriveDreamer-2
+  title: 'DriveDreamer-2: LLM-Enhanced World Models for Diverse Driving Video Generation'
+  paper_url: https://arxiv.org/abs/2403.06845
+  year: 2025
+  venue: AAAI
+  category: generative
+  focus: LLM-conditioned customized multi-view driving generation
+  code_url: https://github.com/f1yfisher/DriveDreamer2
+  project_url: https://drivedreamer2.github.io/
+  arxiv_id: '2403.06845'
+  published_date: '2024-03-11'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2403.06845
+  - https://github.com/f1yfisher/DriveDreamer2
+  - https://drivedreamer2.github.io/
+- model: LidarDM
+  title: 'LidarDM: Generative LiDAR Simulation in a Generated World'
+  paper_url: https://arxiv.org/abs/2404.02903
+  year: 2025
+  venue: ICRA
+  category: generative
+  focus: 4D LiDAR world generation and physically grounded sensor simulation
+  code_url: https://github.com/vzyrianov/LidarDM
+  project_url: https://zyrianov.org/lidardm/
+  arxiv_id: '2404.02903'
+  published_date: '2024-04-03'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2404.02903
+  - https://github.com/vzyrianov/LidarDM
+  - https://zyrianov.org/lidardm/
+- model: GenAD
+  title: 'GenAD: Generalized Predictive Model for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2403.09630
+  year: 2024
+  venue: CVPR
+  category: generative
+  focus: Large-scale driving video prediction with action-conditioned adaptation
+  code_url: https://github.com/OpenDriveLab/DriveAGI
+  project_url: ''
+  arxiv_id: '2403.09630'
+  code_status: data-only
+  published_date: '2024-03-14'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2403.09630
+  - https://github.com/OpenDriveLab/DriveAGI
+- model: Drive-WM
+  title: 'Driving into the Future: Multiview Visual Forecasting and Planning with World Model for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2311.17918
+  year: 2024
+  venue: CVPR
+  category: generative
+  focus: Multi-view visual forecasting connected to trajectory planning
+  code_url: https://github.com/BraveGroup/Drive-WM
+  project_url: ''
+  arxiv_id: '2311.17918'
+  published_date: '2023-11-29'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2311.17918
+  - https://github.com/BraveGroup/Drive-WM
+- model: WoVoGen
+  title: 'WoVoGen: World Volume-aware Diffusion for Controllable Multi-camera Driving Scene Generation'
+  paper_url: https://arxiv.org/abs/2312.02934
+  year: 2024
+  venue: ECCV
+  category: generative
+  focus: Future 4D world volume + multi-camera diffusion generation
+  code_url: https://github.com/fudan-zvg/WoVoGen
+  project_url: ''
+  arxiv_id: '2312.02934'
+  published_date: '2023-12-05'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2312.02934
+  - https://github.com/fudan-zvg/WoVoGen
+- model: OccWorld
+  title: 'OccWorld: Learning a 3D Occupancy World Model for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2311.16038
+  year: 2024
+  venue: ECCV
+  category: generative
+  focus: Joint future 3D occupancy and ego-motion prediction
+  code_url: https://github.com/wzzheng/OccWorld
+  project_url: ''
+  arxiv_id: '2311.16038'
+  published_date: '2023-11-27'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2311.16038
+  - https://github.com/wzzheng/OccWorld
+- model: MUVO
+  title: 'MUVO: A Multimodal Generative World Model for Autonomous Driving with Geometric Representations'
+  paper_url: https://arxiv.org/abs/2311.11762
+  year: 2025
+  venue: IEEE IV
+  category: generative
+  focus: Camera + LiDAR world modeling with geometric latent representations
+  code_url: https://github.com/daniel-bogdoll/MUVO
+  project_url: ''
+  arxiv_id: '2311.11762'
+  published_date: '2023-11-20'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2311.11762
+  - https://github.com/daniel-bogdoll/MUVO
+- model: Panacea
+  title: 'Panacea: Panoramic and Controllable Video Generation for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2311.16813
+  year: 2024
+  venue: CVPR
+  category: generative
+  focus: Controllable temporally and cross-view consistent panoramic generation
+  code_url: https://github.com/wenyuqing/panacea
+  project_url: https://panacea-ad.github.io/
+  arxiv_id: '2311.16813'
+  published_date: '2023-11-28'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2311.16813
+  - https://github.com/wenyuqing/panacea
+  - https://panacea-ad.github.io/
+- model: ADriver-I
+  title: 'ADriver-I: A General World Model for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2311.13549
+  year: 2023
+  venue: arXiv
+  category: generative
+  focus: Interleaved vision-action modeling with MLLM and diffusion
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2311.13549'
+  published_date: '2023-11-22'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2311.13549
+- model: Copilot4D
+  title: 'Copilot4D: Learning Unsupervised World Models for Autonomous Driving via Discrete Diffusion'
+  paper_url: https://arxiv.org/abs/2311.01017
+  year: 2024
+  venue: ICLR
+  category: generative
+  focus: Tokenized sensor world modeling with discrete diffusion
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2311.01017'
+  published_date: '2023-11-02'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2311.01017
+- model: DriveDreamer
+  title: 'DriveDreamer: Towards Real-world-driven World Models for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2309.09777
+  year: 2024
+  venue: ECCV
+  category: generative
+  focus: Real-world diffusion world model with structured traffic control
+  code_url: https://github.com/JeffWang987/DriveDreamer
+  project_url: https://drivedreamer.github.io/
+  arxiv_id: '2309.09777'
+  published_date: '2023-09-18'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2309.09777
+  - https://github.com/JeffWang987/DriveDreamer
+  - https://drivedreamer.github.io/
+- model: GAIA-1
+  title: 'GAIA-1: A Generative World Model for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2309.17080
+  year: 2023
+  venue: arXiv
+  category: generative
+  focus: Autoregressive video, text, and action token world modeling
+  code_url: ''
+  project_url: ''
+  resources:
+  - label: Blog
+    url: https://wayve.ai/thinking/scaling-gaia-1/
+  arxiv_id: '2309.17080'
+  published_date: '2023-09-29'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2309.17080
+- model: DriveLaW
+  title: 'DriveLaW: Unifying Planning and Video Generation in a Latent Driving World'
+  paper_url: https://arxiv.org/abs/2512.23421
+  year: 2026
+  venue: CVPR
+  category: latent
+  focus: Video-world latents are directly injected into a diffusion planner
+  code_url: https://github.com/xiaomi-research/drivelaw
+  project_url: ''
+  arxiv_id: '2512.23421'
+  published_date: '2025-12-29'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2512.23421
+  - https://github.com/xiaomi-research/drivelaw
+- model: GraphWorld
+  title: 'GraphWorld: Long-Horizon Planning with World Models for End-to-End Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2606.16274
+  year: 2026
+  venue: arXiv
+  category: latent
+  focus: Interaction-graph latent world states for long-horizon planning
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2606.16274'
+  published_date: '2026-06-15'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2606.16274
+- model: DeepSight
+  title: 'DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2605.10564
+  year: 2026
+  venue: ICML
+  category: latent
+  focus: Parallel long-horizon BEV latent-state prediction
+  code_url: https://github.com/hotdogcheesewhite/DeepSight
+  project_url: ''
+  arxiv_id: '2605.10564'
+  publication_url: https://proceedings.mlr.press/v306/zhang26gq.html
+  published_date: '2026-05-11'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2605.10564
+  - https://proceedings.mlr.press/v306/zhang26gq.html
+  - https://github.com/hotdogcheesewhite/DeepSight
+- model: DriveFuture
+  title: 'DriveFuture: Future-Aware Latent World Models for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2605.09701
+  year: 2026
+  venue: arXiv
+  category: latent
+  focus: Future-aware latent conditioning for diffusion trajectory planning
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2605.09701'
+  published_date: '2026-05-10'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2605.09701
+- model: World4Drive
+  title: 'World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model'
+  paper_url: https://arxiv.org/abs/2507.00603
+  year: 2025
+  venue: ICCV
+  category: latent
+  focus: Intention-aware latent futures for trajectory generation and selection
+  code_url: https://github.com/ucaszyp/World4Drive
+  project_url: ''
+  arxiv_id: '2507.00603'
+  published_date: '2025-07-01'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2507.00603
+  - https://github.com/ucaszyp/World4Drive
+- model: Raw2Drive
+  title: 'Raw2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving (in CARLA
+    v2)'
+  paper_url: https://arxiv.org/abs/2505.16394
+  year: 2025
+  venue: NeurIPS
+  category: latent
+  focus: Aligns privileged and raw-sensor world models for model-based RL
+  code_url: https://github.com/Thinklab-SJTU/Raw2Drive
+  project_url: ''
+  arxiv_id: '2505.16394'
+  code_status: repository-only
+  published_date: '2025-05-22'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2505.16394
+  - https://github.com/Thinklab-SJTU/Raw2Drive
+- model: DriveWorld
+  title: 'DriveWorld: 4D Pre-trained Scene Understanding via World Models for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2405.04390
+  year: 2024
+  venue: CVPR
+  category: latent
+  focus: Spatiotemporal latent dynamics for multi-task 4D pre-training
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2405.04390'
+  publication_url: https://openaccess.thecvf.com/content/CVPR2024/html/Min_DriveWorld_4D_Pre-trained_Scene_Understanding_via_World_Models_for_Autonomous_CVPR_2024_paper.html
+  published_date: '2024-05-07'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2405.04390
+  - https://openaccess.thecvf.com/content/CVPR2024/html/Min_DriveWorld_4D_Pre-trained_Scene_Understanding_via_World_Models_for_Autonomous_CVPR_2024_paper.html
+- model: ViDAR
+  title: Visual Point Cloud Forecasting enables Scalable Autonomous Driving
+  paper_url: https://arxiv.org/abs/2312.17655
+  year: 2024
+  venue: CVPR
+  category: latent
+  focus: Future point-cloud forecasting as self-supervised driving pre-training
+  code_url: https://github.com/OpenDriveLab/ViDAR
+  project_url: ''
+  arxiv_id: '2312.17655'
+  published_date: '2023-12-29'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2312.17655
+  - https://github.com/OpenDriveLab/ViDAR
+- model: Think2Drive
+  title: 'Think2Drive: Efficient Reinforcement Learning by Thinking in Latent World Model for Quasi-Realistic Autonomous
+    Driving (in CARLA-v2)'
+  paper_url: https://arxiv.org/abs/2402.16720
+  year: 2024
+  venue: ECCV
+  category: latent
+  focus: Latent imagination for model-based reinforcement learning
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2402.16720'
+  publication_url: https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/6129_ECCV_2024_paper.php
+  published_date: '2024-02-26'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2402.16720
+  - https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/6129_ECCV_2024_paper.php
+- model: UniWorld
+  title: 'UniWorld: Autonomous Driving Pre-training via World Models'
+  paper_url: https://arxiv.org/abs/2308.07234
+  year: 2023
+  venue: arXiv
+  category: latent
+  focus: Label-free 4D occupancy prediction for transferable driving pre-training
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2308.07234'
+  resource_note: The previously listed chaytonmin/UniWorld repository returned 404 on 2026-10-19; no replacement
+    was verified.
+  published_date: '2023-08-14'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2308.07234
+- model: TrafficBots
+  title: 'TrafficBots: Towards World Models for Autonomous Driving Simulation and Motion Prediction'
+  paper_url: https://arxiv.org/abs/2303.04116
+  year: 2023
+  venue: ICRA
+  category: latent
+  focus: Multi-agent world model for configurable traffic simulation and prediction
+  code_url: https://github.com/zhejz/TrafficBots
+  project_url: ''
+  arxiv_id: '2303.04116'
+  published_date: '2023-03-07'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2303.04116
+  - https://github.com/zhejz/TrafficBots
+- model: MILE
+  title: Model-Based Imitation Learning for Urban Driving
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2022/hash/827cb489449ea216e4a257c47e407d18-Abstract-Conference.html
+  year: 2022
+  venue: NeurIPS
+  category: latent
+  focus: Joint latent world model and policy learned from offline driving video
+  code_url: https://github.com/wayveai/mile
+  project_url: ''
+  arxiv_id: ''
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://proceedings.neurips.cc/paper_files/paper/2022/hash/827cb489449ea216e4a257c47e407d18-Abstract-Conference.html
+  - https://github.com/wayveai/mile
+- model: WALT
+  title: 'WALT: Learning World-Model-Aligned Latent Trajectories for Autonomous Driving'
+  year: 2026
+  venue: arXiv
+  arxiv_id: '2609.30436'
+  paper_url: https://arxiv.org/abs/2609.30436
+  code_url: ''
+  project_url: ''
+  scope: CORE
+  category: world-action
+  focus: Transfers world-model semantics into compact trajectory latents
+  tags:
+  - World Model Alignment
+  - Latent Trajectory
+  - REPA
+  - JEPA
+  - Planning
+  summary: WALT learns a compact generative trajectory latent space by transferring semantic knowledge from a frozen
+    pretrained driving world model, addressing the mismatch between visual world states and geometric trajectories.
+  local_pdf: 2609.30436v1.pdf
+  added_date: '2026-09-29'
+  published_date: '2026-09-24'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  sources:
+  - https://arxiv.org/abs/2609.30436
+- model: MM-Future
+  title: 'MM-Future: Multi-Mode Joint World-Action Modeling for Autonomous Driving'
+  year: 2026
+  venue: arXiv
+  arxiv_id: '2609.20377'
+  paper_url: https://arxiv.org/abs/2609.20377
+  code_url: ''
+  project_url: ''
+  scope: CORE
+  category: world-action
+  focus: Multiple paired scene-action futures with joint diffusion modeling
+  tags:
+  - World-Action Model
+  - Multi-mode
+  - Diffusion Transformer
+  - Planning
+  - BEV
+  - Action-conditioned
+  summary: MM-Future is a world-action model that generates multiple paired scene-action hypotheses and models bidirectional
+    interaction within each pair for autonomous driving.
+  local_pdf: 26-MM-Future.pdf
+  added_date: '2026-09-29'
+  published_date: '2026-09-17'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  sources:
+  - https://arxiv.org/abs/2609.20377
+- model: GeoWAM
+  title: 'GeoWAM: Visual Geometry World Action Models for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2608.23486
+  year: 2026
+  venue: arXiv
+  category: world-action
+  focus: Predicts future scene geometry and conditions ego actions on geometric dynamics
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2608.23486'
+  published_date: '2026-08-24'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2608.23486
+- model: DA-WAM
+  title: 'DA-WAM: Decision-Aligned Future Latents for Driving World Models'
+  paper_url: https://arxiv.org/abs/2608.19085
+  year: 2026
+  venue: arXiv
+  category: world-action
+  focus: Action-conditioned future latents optimized for trajectory scoring
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2608.19085'
+  published_date: '2026-08-19'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2608.19085
+- model: SimWAM
+  title: 'SimWAM: A Simple World Action Model for End-to-End Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2608.07468
+  year: 2026
+  venue: arXiv
+  category: world-action
+  focus: Uses future-video prediction as training-only supervision for an efficient action expert
+  code_url: https://github.com/H-EmbodVis/SimWAM
+  project_url: ''
+  arxiv_id: '2608.07468'
+  published_date: '2026-08-07'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2608.07468
+  - https://github.com/H-EmbodVis/SimWAM
+- model: DriveWAM
+  title: 'DriveWAM: Video Generative Priors Enable Scalable World-Action Modeling for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2605.28544
+  year: 2026
+  venue: arXiv
+  category: world-action
+  focus: Adapts a video diffusion transformer into an autoregressive video-action policy
+  code_url: https://github.com/chenshi3/DriveWAM
+  project_url: https://chenshi3.github.io/drivewam.github.io/
+  arxiv_id: '2605.28544'
+  published_date: '2026-05-27'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2605.28544
+  - https://github.com/chenshi3/DriveWAM
+  - https://chenshi3.github.io/drivewam.github.io/
+- model: Latent-WAM
+  title: 'Latent-WAM: Latent World Action Modeling for End-to-End Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2603.24581
+  year: 2026
+  venue: arXiv
+  category: world-action
+  focus: Compact spatial world tokens + causal latent dynamics for action planning
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2603.24581'
+  published_date: '2026-03-25'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2603.24581
+- model: AD-E2E-JEPA
+  title: 'AD-E2E-JEPA: A Joint-Embedding Predictive Architecture For End-to-End Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2609.34085
+  year: 2026
+  venue: arXiv
+  category: jepa
+  focus: Action-conditioned JEPA world model for efficient goal-conditioned zero-shot planning and downstream IL
+  code_url: https://github.com/HaoranZhuExplorer/AD-E2E-JEPA
+  project_url: ''
+  arxiv_id: '2609.34085'
+  code_status: unreleased
+  published_date: '2026-09-28'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2609.34085
+  - https://github.com/HaoranZhuExplorer/AD-E2E-JEPA
+- model: ForeDrive
+  title: 'ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model'
+  year: 2026
+  venue: arXiv
+  arxiv_id: '2609.26299'
+  paper_url: https://arxiv.org/abs/2609.26299
+  code_url: ''
+  project_url: ''
+  scope: CORE
+  category: jepa
+  focus: JEPA-style multi-horizon latent futures directly condition a DiT planner
+  tags:
+  - Latent World Model
+  - Planning
+  - Diffusion Transformer
+  - JEPA-style
+  - End-to-End Driving
+  summary: ForeDrive learns a planning-relevant latent representation and couples it asymmetrically to a DiT planner,
+    using multi-horizon future latents as guidance for trajectory generation.
+  local_pdf: 26-ForeDrive.pdf
+  added_date: '2026-09-29'
+  published_date: '2026-09-22'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  sources:
+  - https://arxiv.org/abs/2609.26299
+- model: WA-JEPA
+  title: 'WA-JEPA: Rethinking the Video JEPA Paradigm for World-Action Modeling in Autonomous Driving'
+  year: 2026
+  venue: arXiv
+  arxiv_id: '2608.20974'
+  paper_url: https://arxiv.org/abs/2608.20974
+  code_url: https://github.com/AFARI-Research/WA-JEPA
+  project_url: https://wa-jepa.github.io/
+  scope: CORE
+  category: jepa
+  focus: Future-masked V-JEPA + flow matching + joint future-scene / action prediction
+  tags:
+  - WA-JEPA
+  - V-JEPA
+  - World-Action Model
+  - Flow Matching
+  - Planning
+  - Action-conditioned
+  summary: WA-JEPA rethinks the V-JEPA paradigm for world-action modeling in autonomous driving, using hybrid future-masked
+    pre-training and conditional flow matching over latent futures.
+  local_pdf: WA-JEPA.pdf
+  added_date: '2026-09-29'
+  published_date: '2026-08-21'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  sources:
+  - https://arxiv.org/abs/2608.20974
+  - https://github.com/AFARI-Research/WA-JEPA
+  - https://wa-jepa.github.io/
+- model: Auto-JEPA
+  title: 'Auto-JEPA: A Latent World Model of Continuous Intent for End-to-End Autonomous Driving'
+  year: 2026
+  venue: arXiv
+  arxiv_id: '2607.29031'
+  paper_url: https://arxiv.org/abs/2607.29031
+  code_url: https://github.com/NoctYang/Auto-JEPA
+  project_url: ''
+  scope: CORE
+  category: jepa
+  focus: Predicts planning-relevant continuous future-intent embeddings instead of dense future scenes
+  tags:
+  - JEPA
+  - Latent World Model
+  - Intent Prediction
+  - Planning
+  - Action-conditioned
+  summary: Auto-JEPA is an action-oriented latent world model that learns continuous future driving intent through
+    joint-embedding prediction, retrieving executable trajectories from a fixed trajectory memory.
+  local_pdf: 26-Auto-JEPA.pdf
+  added_date: '2026-09-29'
+  published_date: '2026-07-31'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  sources:
+  - https://arxiv.org/abs/2607.29031
+  - https://github.com/NoctYang/Auto-JEPA
+- model: Drive-JEPA
+  title: 'Drive-JEPA: Video JEPA Meets Multimodal Trajectory Distillation for End-to-End Driving'
+  year: 2026
+  venue: arXiv
+  arxiv_id: '2601.22032'
+  paper_url: https://arxiv.org/abs/2601.22032
+  code_url: https://github.com/linhanwang/Drive-JEPA
+  project_url: ''
+  scope: CORE
+  category: jepa
+  focus: V-JEPA video pre-training aligned with proposal-based end-to-end planning
+  tags:
+  - V-JEPA
+  - Video Prediction
+  - Trajectory Distillation
+  - Planning
+  - End-to-End Driving
+  summary: Drive-JEPA integrates Video JEPA with multimodal trajectory distillation, pretraining a ViT encoder on
+    driving videos and distills diverse simulator-generated trajectories for end-to-end driving.
+  local_pdf: 26-Drive-JEPA.pdf
+  added_date: '2026-09-29'
+  published_date: '2026-01-29'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  sources:
+  - https://arxiv.org/abs/2601.22032
+  - https://github.com/linhanwang/Drive-JEPA
+- model: HanoiWorld
+  title: 'HanoiWorld: A Joint Embedding Predictive Architecture Based World Model for Autonomous Vehicle Controller'
+  paper_url: https://arxiv.org/abs/2601.01577
+  year: 2026
+  venue: arXiv
+  category: jepa
+  focus: JEPA-based recurrent world model for long-horizon autonomous-vehicle control
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2601.01577'
+  published_date: '2026-01-04'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2601.01577
+- model: LM-JEPA
+  title: Object Detection and Scene Perception for Connected and Autonomous Vehicles Using LM-JEPA
+  paper_url: https://www.mdpi.com/1424-8220/26/15/4894
+  year: 2026
+  venue: Sensors
+  category: jepa
+  focus: Latent predictive representation learning for resource-efficient connected-vehicle perception
+  code_url: ''
+  project_url: ''
+  arxiv_id: ''
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://www.mdpi.com/1424-8220/26/15/4894
+- model: AD-L-JEPA
+  title: Self-Supervised Representation Learning with Joint Embedding Predictive Architecture for Automotive LiDAR
+    Object Detection
+  year: 2026
+  venue: AAAI
+  arxiv_id: '2501.04969'
+  paper_url: https://arxiv.org/abs/2501.04969
+  code_url: https://github.com/HaoranZhuExplorer/adljepa
+  project_url: https://ad-l-jepa.github.io/
+  scope: RELATED
+  category: jepa
+  focus: BEV LiDAR representation pre-training for downstream 3D detection
+  tags:
+  - JEPA
+  - LiDAR
+  - Self-supervised Learning
+  - BEV
+  - Object Detection
+  - Pre-training
+  summary: AD-L-JEPA is the first JEPA-based self-supervised pre-training framework for automotive LiDAR object
+    detection, predicting BEV embeddings instead of reconstructing masked point clouds.
+  local_pdf: 25-AD-L-JEPA.pdf
+  added_date: '2026-09-29'
+  published_date: '2025-01-09'
+  verified_date: '2026-10-19'
+  publication_status: published
+  sources:
+  - https://arxiv.org/abs/2501.04969
+  - https://github.com/HaoranZhuExplorer/adljepa
+  - https://ad-l-jepa.github.io/
+- model: HyWorldVLA
+  title: 'HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2607.20988
+  year: 2026
+  venue: arXiv
+  category: vla-world
+  focus: Combines pixel-level grounding with latent future prediction before action generation
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2607.20988'
+  published_date: '2026-07-23'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2607.20988
+- model: WCog-VLA
+  title: 'WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2607.08375
+  year: 2026
+  venue: arXiv
+  category: vla-world
+  focus: Semantic world cognition + generative joint multi-agent future modeling + Game-CoT
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2607.08375'
+  published_date: '2026-07-09'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2607.08375
+- model: LWDrive
+  title: Layer-Wise World-Model-Guided Vision-Language Model Planning for Autonomous Driving
+  paper_url: https://arxiv.org/abs/2606.29879
+  year: 2026
+  venue: arXiv
+  category: vla-world
+  focus: Future-frame supervision shapes VLM hidden states for coarse-to-fine trajectory refinement
+  code_url: https://github.com/yachyc/LWDrive
+  project_url: ''
+  arxiv_id: '2606.29879'
+  code_status: repository-only
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2606.29879
+  - https://github.com/yachyc/LWDrive
+- model: CoWorld-VLA
+  title: 'CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2605.10426
+  year: 2026
+  venue: arXiv
+  category: vla-world
+  focus: Multi-expert world tokens for semantics, geometry, dynamics, and ego goals explicitly condition planning
+  code_url: https://github.com/AFARI-Research/CoWorld-VLA
+  project_url: ''
+  arxiv_id: '2605.10426'
+  published_date: '2026-05-11'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2605.10426
+  - https://github.com/AFARI-Research/CoWorld-VLA
+- model: VLA-World
+  title: Learning Vision-Language-Action World Models for Autonomous Driving
+  paper_url: https://arxiv.org/abs/2604.09059
+  year: 2026
+  venue: CVPR Findings
+  category: vla-world
+  focus: Generates an action-guided future image, then reasons over the imagined future to refine the trajectory
+  code_url: ''
+  project_url: https://vlaworld.github.io/
+  arxiv_id: '2604.09059'
+  publication_url: https://vlaworld.github.io/
+  published_date: '2026-04-10'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2604.09059
+  - https://vlaworld.github.io/
+- model: OneVL
+  title: 'Xiaomi OneVL: One-Step Latent Reasoning and Planning with Vision-Language Explanation'
+  paper_url: https://arxiv.org/abs/2604.18486
+  year: 2026
+  venue: arXiv
+  category: vla-world
+  focus: Compact latent CoT is jointly supervised by language reasoning and a visual future-world decoder
+  code_url: https://github.com/xiaomi-research/onevl
+  project_url: ''
+  arxiv_id: '2604.18486'
+  published_date: '2026-04-20'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2604.18486
+  - https://github.com/xiaomi-research/onevl
+- model: ExploreVLA
+  title: 'ExploreVLA: Dense World Modeling and Exploration for End-to-End Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2604.02714
+  year: 2026
+  venue: ECCV
+  category: vla-world
+  focus: Uses world-model uncertainty as an intrinsic reward for safe exploration
+  code_url: https://github.com/zihaosheng/ExploreVLA
+  project_url: ''
+  arxiv_id: '2604.02714'
+  published_date: '2026-04-03'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2604.02714
+  - https://github.com/zihaosheng/ExploreVLA
+- model: Uni-World VLA
+  title: 'Uni-World VLA: Interleaved World Modeling and Planning for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2603.27287
+  year: 2026
+  venue: arXiv
+  category: vla-world
+  focus: Alternates future-frame prediction and ego-action generation in one autoregressive sequence
+  code_url: https://github.com/LogosRoboticsGroup/UniWorldVLA
+  project_url: ''
+  arxiv_id: '2603.27287'
+  published_date: '2026-03-28'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2603.27287
+  - https://github.com/LogosRoboticsGroup/UniWorldVLA
+- model: DynVLA
+  title: 'DynVLA: Learning World Dynamics for Action Reasoning in Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2603.11041
+  year: 2026
+  venue: ICML
+  category: vla-world
+  focus: Dynamics CoT compresses ego- and environment-centric future evolution into compact dynamics tokens
+  code_url: https://github.com/yaoyao-jpg/DynamicsVLA
+  project_url: https://yaoyao-jpg.github.io/dynvla/
+  arxiv_id: '2603.11041'
+  published_date: '2026-03-11'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2603.11041
+  - https://github.com/yaoyao-jpg/DynamicsVLA
+  - https://yaoyao-jpg.github.io/dynvla/
+- model: DriveWorld-VLA
+  title: 'DriveWorld-VLA: Unified Latent-Space World Modeling with Vision-Language-Action for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2602.06521
+  year: 2026
+  venue: ICML
+  category: vla-world
+  focus: Shared latent world states support action-conditioned imagination and VLA planning
+  code_url: https://github.com/liulin815/DriveWorld-VLA
+  project_url: ''
+  arxiv_id: '2602.06521'
+  publication_url: https://proceedings.mlr.press/v306/jia26f.html
+  published_date: '2026-02-06'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2602.06521
+  - https://proceedings.mlr.press/v306/jia26f.html
+  - https://github.com/liulin815/DriveWorld-VLA
+- model: DriveVLA-W0
+  title: 'DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2510.12796
+  year: 2026
+  venue: ICLR
+  category: vla-world
+  focus: Future-image world modeling supplies dense self-supervision for VLA scaling
+  code_url: https://github.com/BraveGroup/DriveVLA-W0
+  project_url: ''
+  arxiv_id: '2510.12796'
+  published_date: '2025-10-14'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2510.12796
+  - https://github.com/BraveGroup/DriveVLA-W0
+- model: DriveVLA-M0
+  title: Failure-Aware Memory Augmentation for Autonomous Driving
+  paper_url: https://arxiv.org/abs/2608.10413
+  year: 2026
+  venue: ACM MM
+  category: vla-world
+  focus: Failure-aware latent memory with structurally grounded retrieval and lightweight test-time adaptation
+  code_url: https://github.com/ZebinX/DriveVLA-M0
+  project_url: ''
+  arxiv_id: '2608.10413'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2608.10413
+  - https://github.com/ZebinX/DriveVLA-M0
+- model: FutureSightDrive
+  title: 'FutureSightDrive: Thinking Visually with Spatio-Temporal CoT for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2505.17685
+  year: 2025
+  venue: NeurIPS
+  category: vla-world
+  focus: VLA first acts as a world model to generate a visual future CoT, then plans from it
+  code_url: https://github.com/MIV-XJTU/FSDrive
+  project_url: https://miv-xjtu.github.io/FSDrive.github.io/
+  arxiv_id: '2505.17685'
+  published_date: '2025-05-23'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2505.17685
+  - https://github.com/MIV-XJTU/FSDrive
+  - https://miv-xjtu.github.io/FSDrive.github.io/
+- model: MindVLA-U1
+  title: 'MindVLA-U1: VLA Beats VA with Unified Streaming Architecture for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2605.12624
+  year: 2026
+  venue: arXiv
+  category: vla-general
+  focus: Unified streaming language + continuous-action generation with memory
+  code_url: ''
+  project_url: https://mind-omni.github.io/projects/u1/index.html
+  arxiv_id: '2605.12624'
+  published_date: '2026-05-12'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: RELATED
+  sources:
+  - https://arxiv.org/abs/2605.12624
+  - https://mind-omni.github.io/projects/u1/index.html
+- model: OneDrive
+  title: 'OneDrive: Unified Multi-Paradigm Driving with Vision-Language-Action Models'
+  paper_url: https://arxiv.org/abs/2604.17915
+  year: 2026
+  venue: arXiv
+  category: vla-general
+  focus: One causal VLM decoder for language, perception queries, and trajectory queries
+  code_url: https://github.com/Z1zyw/OneDrive
+  project_url: ''
+  arxiv_id: '2604.17915'
+  published_date: '2026-04-20'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: RELATED
+  sources:
+  - https://arxiv.org/abs/2604.17915
+  - https://github.com/Z1zyw/OneDrive
+- model: UniDriveVLA
+  title: 'UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2604.02190
+  year: 2026
+  venue: arXiv
+  category: vla-general
+  focus: Mixture-of-Transformers experts for semantic reasoning, spatial perception, and planning
+  code_url: https://github.com/xiaomi-research/unidrivevla
+  project_url: ''
+  arxiv_id: '2604.02190'
+  published_date: '2026-04-02'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: RELATED
+  sources:
+  - https://arxiv.org/abs/2604.02190
+  - https://github.com/xiaomi-research/unidrivevla
+- model: OpenDriveVLA
+  title: 'OpenDriveVLA: Towards End-to-end Autonomous Driving with Large Vision Language Action Model'
+  paper_url: https://arxiv.org/abs/2503.23463
+  year: 2026
+  venue: AAAI
+  category: vla-general
+  focus: 2D/3D vision-language alignment with agent–environment–ego interaction modeling
+  code_url: https://github.com/DriveVLA/OpenDriveVLA
+  project_url: https://drivevla.github.io/
+  arxiv_id: '2503.23463'
+  published_date: '2025-03-30'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: RELATED
+  sources:
+  - https://arxiv.org/abs/2503.23463
+  - https://github.com/DriveVLA/OpenDriveVLA
+  - https://drivevla.github.io/
+- model: Reasoning-VLA
+  title: 'Reasoning-VLA: A Fast and General Vision-Language-Action Reasoning Model for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2511.19912
+  year: 2025
+  venue: arXiv
+  category: vla-general
+  focus: Parallel continuous action generation from reasoning-enhanced VLM features
+  code_url: ''
+  project_url: ''
+  arxiv_id: '2511.19912'
+  published_date: '2025-11-25'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  added_date: '2026-09-30'
+  scope: RELATED
+  sources:
+  - https://arxiv.org/abs/2511.19912
+- model: AutoVLA
+  title: 'AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and
+    Reinforcement Fine-Tuning'
+  paper_url: https://arxiv.org/abs/2506.13757
+  year: 2025
+  venue: NeurIPS
+  category: vla-general
+  focus: Adaptive fast/slow CoT reasoning with physical action tokens and GRPO fine-tuning
+  code_url: https://github.com/ucla-mobility/AutoVLA
+  project_url: https://autovla.github.io/
+  arxiv_id: '2506.13757'
+  published_date: '2025-06-16'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: RELATED
+  sources:
+  - https://arxiv.org/abs/2506.13757
+  - https://github.com/ucla-mobility/AutoVLA
+  - https://autovla.github.io/
+- model: Impromptu VLA
+  title: 'Impromptu VLA: Open Weights and Open Data for Driving Vision-Language-Action Models'
+  paper_url: https://arxiv.org/abs/2505.23757
+  year: 2025
+  venue: NeurIPS
+  category: vla-general
+  focus: Large open corner-case VLA dataset, benchmark, weights, and planning-oriented QA
+  code_url: https://github.com/ahydchh/Impromptu-VLA
+  project_url: https://ziming-liu.github.io/projects/impromptu-vla/index.html
+  arxiv_id: '2505.23757'
+  published_date: '2025-05-29'
+  verified_date: '2026-10-19'
+  publication_status: published
+  added_date: '2026-09-30'
+  scope: RELATED
+  sources:
+  - https://arxiv.org/abs/2505.23757
+  - https://github.com/ahydchh/Impromptu-VLA
+  - https://ziming-liu.github.io/projects/impromptu-vla/index.html
+- model: XPACE
+  title: 'XPACE: Joint World and Action Modeling from Heterogeneous Experience'
+  year: 2026
+  venue: arXiv
+  arxiv_id: '2609.17372'
+  paper_url: https://arxiv.org/abs/2609.17372
+  code_url: ''
+  project_url: https://xpeng-robotics.github.io/xpace/
+  scope: BACKGROUND
+  category: related-embodied
+  focus: Shared video backbone jointly predicts robot actions and future video
+  tags:
+  - World-Action Model
+  - Robotics
+  - Embodied AI
+  - Simulation
+  - Humanoid
+  summary: XPACE is a unified embodied world model for humanoid robots that serves as both a world action model
+    (jointly predicting actions and future video) and a world simulator.
+  local_pdf: 26-XPACE.pdf
+  added_date: '2026-09-29'
+  published_date: '2026-09-15'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  sources:
+  - https://arxiv.org/abs/2609.17372
+  - https://xpeng-robotics.github.io/xpace/
+- model: Holo-World
+  title: 'Holo-World: Unified Camera, Object and Weather Control for Video World Model'
+  year: 2026
+  venue: arXiv
+  arxiv_id: '2606.20083'
+  paper_url: https://arxiv.org/abs/2606.20083
+  code_url: https://github.com/XiangchenYin/Holo-World
+  project_url: https://xiangchenyin.github.io/Holo-World/
+  scope: BACKGROUND
+  category: related-video
+  focus: Unified camera, object, and weather control from a single source image
+  tags:
+  - Video World Model
+  - Controllable Generation
+  - Weather
+  - Camera Control
+  - Diffusion
+  summary: Holo-World is a unified controllable video world model that jointly controls camera motion, object dynamics,
+    and weather state from a single image.
+  local_pdf: 2606.20083v4.pdf
+  added_date: '2026-09-29'
+  code_status: repository-only
+  published_date: '2026-06-18'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  sources:
+  - https://arxiv.org/abs/2606.20083
+  - https://github.com/XiangchenYin/Holo-World
+  - https://xiangchenyin.github.io/Holo-World/
+- model: Embodied WM Survey
+  title: 'World Models for Embodied Intelligence: From Plausible to Controllable to Actionable'
+  year: 2026
+  venue: arXiv
+  arxiv_id: '2609.16697'
+  paper_url: https://arxiv.org/abs/2609.16697
+  code_url: ''
+  project_url: ''
+  scope: BACKGROUND
+  category: survey
+  focus: Capability hierarchy from plausible prediction to controllable and actionable embodied models
+  tags:
+  - Survey
+  - World Model
+  - Embodied Intelligence
+  - Review
+  summary: A comprehensive survey that introduces a three-level capability framework (Plausible, Controllable, Actionable)
+    for world models in embodied intelligence, covering manipulation, navigation, locomotion, and autonomous driving.
+  local_pdf: 26-具身智能世界模型综述.pdf
+  added_date: '2026-09-29'
+  published_date: '2026-09-15'
+  verified_date: '2026-10-19'
+  publication_status: preprint
+  sources:
+  - https://arxiv.org/abs/2609.16697
+- arxiv_id: '2610.20609'
+  model: SafeDriveVLA
+  category: vla-world
+  focus: Navigation-conditioned latent dreaming identifies unsafe instruction following
+  venue: CoRL
+  year: 2026
+  code_url: https://github.com/ASGuard-UCI/safedrive-vla
+  project_url: https://safedrive-vla.github.io/SafeDriveVLA/
+  publication_status: accepted
+  title: 'SafeDriveVLA: Navigation-Conditioned World Model Dreaming for Conflict-Aware End-to-End Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2610.20609
+  published_date: '2026-10-14'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2610.20609
+  - https://github.com/ASGuard-UCI/safedrive-vla
+  - https://safedrive-vla.github.io/SafeDriveVLA/
+- arxiv_id: '2610.17903'
+  model: DriveWLA
+  category: vla-world
+  focus: World, language, and action experts share dynamics and semantic context; Flow-GRPO refines planning
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'DriveWLA: Unifying Future Dynamics and Scene Semantics through World-Language-Action Modeling for Autonomous
+    Driving'
+  paper_url: https://arxiv.org/abs/2610.17903
+  published_date: '2026-10-13'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2610.17903
+- arxiv_id: '2610.17688'
+  model: OccWAM
+  category: world-action
+  focus: Joint occupancy and ego-trajectory flow matching refines scene-centric and ego-centric futures
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'OccWAM: Occupancy World-Action Models with Joint Scene-to-Ego Flow Matching'
+  paper_url: https://arxiv.org/abs/2610.17688
+  published_date: '2026-10-13'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2610.17688
+- arxiv_id: '2610.16139'
+  model: DPR
+  category: latent
+  focus: Kinematics-aware latent regularization improves physical consistency of long-horizon rollouts
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: Directional Pullback Regularization for Long-Horizon Rollout of Latent World Models in Autonomous Driving
+  paper_url: https://arxiv.org/abs/2610.16139
+  published_date: '2026-10-12'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2610.16139
+- arxiv_id: '2610.14871'
+  model: MORE
+  category: jepa
+  focus: Motion-conditioned V-JEPA registers form a compact shared interface for future prediction and planning
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'MORE: Learning Motion-Oriented Registers for Driving World Models and Planning'
+  paper_url: https://arxiv.org/abs/2610.14871
+  published_date: '2026-10-10'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2610.14871
+- arxiv_id: '2610.14544'
+  model: InfraWorld
+  category: generative
+  focus: Dense BEV states and persistent motion queries forecast roadside 4D occupancy
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'InfraWorld: Motion-Aware World Modeling for Roadside 4D Occupancy Forecasting'
+  paper_url: https://arxiv.org/abs/2610.14544
+  published_date: '2026-10-10'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2610.14544
+- arxiv_id: '2610.13781'
+  model: SimVTA
+  category: world-action
+  focus: Simulator-rendered candidate futures align video supervision with reward-optimized trajectories
+  venue: arXiv
+  year: 2026
+  code_url: https://github.com/OpenDriveLab/SimVTA
+  project_url: https://opendrivelab.com/SimVTA/
+  publication_status: preprint
+  code_status: unreleased
+  title: 'SimVTA: Simulation-Grounded Video-Trajectory Alignment for Driving World Action Models'
+  paper_url: https://arxiv.org/abs/2610.13781
+  published_date: '2026-10-09'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2610.13781
+  - https://github.com/OpenDriveLab/SimVTA
+  - https://opendrivelab.com/SimVTA/
+- arxiv_id: '2610.11382'
+  model: PlanWAM
+  category: world-action
+  focus: A privileged future posterior teaches a history-only prior to predict planning-shaped futures
+  venue: arXiv
+  year: 2026
+  code_url: https://github.com/jinchan9/PlanWAM
+  project_url: ''
+  publication_status: preprint
+  code_status: unreleased
+  title: 'PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2610.11382
+  published_date: '2026-10-08'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2610.11382
+  - https://github.com/jinchan9/PlanWAM
+- arxiv_id: '2610.11161'
+  model: VGGTWorld-VLA
+  category: vla-world
+  focus: Driving semantics and ego actions condition future 3D geometry in a VGGT-based world model
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'VGGTWorld-VLA: Intent-Conditioned 3D World Evolution for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2610.11161
+  published_date: '2026-10-08'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2610.11161
+- arxiv_id: '2610.11060'
+  model: AffordDrive3D
+  category: world-action
+  focus: Joint future geometry and drivable or collision-critical affordances guide action planning
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: https://afforddrive3d.github.io/
+  publication_status: preprint
+  title: 'AffordDrive3D: Affordance-Aware World-Action Modeling with Spatial Understanding'
+  paper_url: https://arxiv.org/abs/2610.11060
+  published_date: '2026-10-08'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2610.11060
+  - https://afforddrive3d.github.io/
+- arxiv_id: '2610.07381'
+  model: GeoWM
+  category: generative
+  focus: Flow matching directly forecasts explicit future geometry at requested horizons
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'GeoWM: Efficient Direct World Modeling in Explicit Geometry'
+  paper_url: https://arxiv.org/abs/2610.07381
+  published_date: '2026-10-05'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2610.07381
+- arxiv_id: '2609.39245'
+  model: ReWAM
+  category: world-action
+  focus: Level-k reciprocal-response modeling couples ego and other-agent decisions
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'ReWAM: Reciprocal World Action Models for Interactive Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2609.39245
+  published_date: '2026-09-30'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2609.39245
+- arxiv_id: '2609.37098'
+  model: V2X-WAM
+  category: world-action
+  focus: Vehicle-infrastructure observations support action-conditioned occupancy and flow feedback
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'V2X-WAM: A Cooperative World Action Model for End-to-End Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2609.37098
+  published_date: '2026-09-29'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2609.37098
+- arxiv_id: '2609.36851'
+  model: RoXDrive
+  category: latent
+  focus: Closed-loop RL retains world-model rollouts that faithfully follow conditioning actions
+  venue: arXiv
+  year: 2026
+  code_url: https://github.com/Hongbin98/RoXDrive
+  project_url: https://hongbin98.github.io/RoXDrive/
+  publication_status: preprint
+  code_status: repository-only
+  title: 'RoXDrive: Closed-Loop Reinforcement Learning for End-to-End Autonomous Driving via Action-Faithful Rollouts'
+  paper_url: https://arxiv.org/abs/2609.36851
+  published_date: '2026-09-29'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2609.36851
+  - https://github.com/Hongbin98/RoXDrive
+  - https://hongbin98.github.io/RoXDrive/
+- arxiv_id: '2609.33737'
+  model: MomWorld
+  category: latent
+  focus: Latent momentum propagation and adaptive resets stabilize long-horizon planning
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'MomWorld: Momentum-Aware Latent World Model for Long-Horizon Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2609.33737
+  published_date: '2026-09-27'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2609.33737
+- arxiv_id: '2609.37970'
+  model: PhysWAM
+  category: world-action
+  focus: Co-generates multiview video, metric depth, and ego motion under a shared 3D projection constraint
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'PhysWAM: Physically Consistent World Action Model for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2609.37970
+  published_date: '2026-09-29'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2609.37970
+- arxiv_id: '2609.36438'
+  model: World4Scorer
+  category: jepa
+  focus: Trajectory-conditioned JEPA states learn candidate scores from simulator outcomes and logged futures
+  venue: arXiv
+  year: 2026
+  code_url: https://github.com/World4Scorer/World4Scorer
+  project_url: https://world4scorer.github.io/
+  publication_status: preprint
+  title: 'World4Scorer: Outcome-Grounded World Modeling for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2609.36438
+  published_date: '2026-09-29'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2609.36438
+  - https://github.com/World4Scorer/World4Scorer
+  - https://world4scorer.github.io/
+- arxiv_id: '2609.34749'
+  model: CoDrive
+  category: generative
+  focus: Shared world coordinates and cross-vehicle attention maintain multi-agent video consistency
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'CoDrive: Cross-Vehicle World-Consistent Video Generation with Precise Trajectory Control for Cooperative
+    Driving'
+  paper_url: https://arxiv.org/abs/2609.34749
+  published_date: '2026-09-28'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2609.34749
+- arxiv_id: '2609.33854'
+  model: ReDrive
+  category: latent
+  focus: Future representation prediction strengthens planning features without inference-time world rollout
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'ReDrive: Shaping Representations with World Modeling for End-to-End Driving'
+  paper_url: https://arxiv.org/abs/2609.33854
+  published_date: '2026-09-27'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2609.33854
+- arxiv_id: '2609.33264'
+  model: VehDyn
+  category: benchmark
+  focus: Controlled CARLA-CarSim scenarios separate visual quality from kinematic and dynamic fidelity
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'VehDyn: A Driving World Model Benchmark for Vehicle Dynamics'
+  paper_url: https://arxiv.org/abs/2609.33264
+  published_date: '2026-09-27'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: RELATED
+  sources:
+  - https://arxiv.org/abs/2609.33264
+- arxiv_id: '2609.24626'
+  model: Relationally Grounded LWM
+  category: latent
+  focus: Privileged traffic-graph semantics supervise latent states without extra inference branches
+  venue: IROS RoBoWoMo Workshop
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: published
+  title: Relationally Grounded Latent World Models for Autonomous Driving
+  paper_url: https://arxiv.org/abs/2609.24626
+  published_date: '2026-09-21'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2609.24626
+- arxiv_id: '2609.22762'
+  model: DriveReferee
+  category: world-action
+  focus: A learned geometry readout supports analytic collision and drivable-area checks
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'DriveReferee: Geometric Safety Verdicts Need Not Be Learned for Driving World-Action Models'
+  paper_url: https://arxiv.org/abs/2609.22762
+  published_date: '2026-09-19'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2609.22762
+- arxiv_id: '2609.21712'
+  model: ZYT-World
+  category: generative
+  focus: Streaming mixed fisheye-pinhole video generation supports action control and revisitation memory
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: https://zyt-aim.github.io/ZYT-World/
+  publication_status: preprint
+  title: 'ZYT-World: A Real-Time Controllable World Model for Closed-Loop Autonomous-Driving Simulation'
+  paper_url: https://arxiv.org/abs/2609.21712
+  published_date: '2026-09-18'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2609.21712
+  - https://zyt-aim.github.io/ZYT-World/
+- arxiv_id: '2405.17398'
+  model: Vista
+  category: generative
+  focus: Controllable driving-video rollouts generalize across scenes and provide visual reward signals
+  venue: NeurIPS
+  year: 2024
+  code_url: https://github.com/OpenDriveLab/Vista
+  project_url: https://vista-demo.github.io/
+  publication_status: published
+  title: 'Vista: A Generalizable Driving World Model with High Fidelity and Versatile Controllability'
+  paper_url: https://arxiv.org/abs/2405.17398
+  published_date: '2024-05-27'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2405.17398
+  - https://github.com/OpenDriveLab/Vista
+  - https://vista-demo.github.io/
+- arxiv_id: '2406.08481'
+  model: LAW
+  category: latent
+  focus: Ego-trajectory-conditioned future features provide self-supervised planning representations
+  venue: ICLR
+  year: 2025
+  code_url: https://github.com/BraveGroup/LAW
+  project_url: ''
+  publication_status: published
+  publication_url: https://proceedings.iclr.cc/paper_files/paper/2025/hash/6aa4967920e495e90aeeaa3acf18d019-Abstract-Conference.html
+  title: Enhancing End-to-End Autonomous Driving with Latent World Model
+  paper_url: https://arxiv.org/abs/2406.08481
+  published_date: '2024-06-12'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2406.08481
+  - https://proceedings.iclr.cc/paper_files/paper/2025/hash/6aa4967920e495e90aeeaa3acf18d019-Abstract-Conference.html
+  - https://github.com/BraveGroup/LAW
+- arxiv_id: '2504.01941'
+  model: WoTE
+  category: latent
+  focus: BEV future states support online evaluation and selection of candidate trajectories
+  venue: ICCV
+  year: 2025
+  code_url: https://github.com/liyingyanUCAS/WoTE
+  project_url: ''
+  publication_status: published
+  publication_url: https://openaccess.thecvf.com/content/ICCV2025/html/Li_End-to-End_Driving_with_Online_Trajectory_Evaluation_via_BEV_World_Model_ICCV_2025_paper.html
+  title: End-to-End Driving with Online Trajectory Evaluation via BEV World Model
+  paper_url: https://arxiv.org/abs/2504.01941
+  published_date: '2025-04-02'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2504.01941
+  - https://openaccess.thecvf.com/content/ICCV2025/html/Li_End-to-End_Driving_with_Online_Trajectory_Evaluation_via_BEV_World_Model_ICCV_2025_paper.html
+  - https://github.com/liyingyanUCAS/WoTE
+- arxiv_id: '2412.18607'
+  model: DrivingGPT
+  category: world-action
+  focus: Interleaved image and action tokens unify world simulation and planning by next-token prediction
+  venue: ICCV
+  year: 2025
+  code_url: ''
+  project_url: ''
+  publication_status: published
+  publication_url: https://openaccess.thecvf.com/content/ICCV2025/html/Chen_DrivingGPT_Unifying_Driving_World_Modeling_and_Planning_with_Multi-modal_Autoregressive_ICCV_2025_paper.html
+  title: 'DrivingGPT: Unifying Driving World Modeling and Planning with Multi-modal Autoregressive Transformers'
+  paper_url: https://arxiv.org/abs/2412.18607
+  published_date: '2024-12-24'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2412.18607
+  - https://openaccess.thecvf.com/content/ICCV2025/html/Chen_DrivingGPT_Unifying_Driving_World_Modeling_and_Planning_with_Multi-modal_Autoregressive_ICCV_2025_paper.html
+- arxiv_id: '2503.20523'
+  model: GAIA-2
+  category: generative
+  focus: Latent diffusion jointly controls ego motion, agents, environment, and consistent camera views
+  venue: arXiv
+  year: 2025
+  code_url: ''
+  project_url: https://wayve.ai/thinking/gaia-2/
+  publication_status: preprint
+  title: 'GAIA-2: A Controllable Multi-View Generative World Model for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2503.20523
+  published_date: '2025-03-26'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2503.20523
+  - https://wayve.ai/thinking/gaia-2/
+- arxiv_id: '2502.11663'
+  model: MaskGWM
+  category: generative
+  focus: Spatial-temporal masked reconstruction improves diffusion-transformer driving video prediction
+  venue: CVPR
+  year: 2025
+  code_url: https://github.com/SenseTime-FVG/OpenDWM
+  project_url: ''
+  publication_status: published
+  publication_url: https://openaccess.thecvf.com/content/CVPR2025/html/Ni_MaskGWM_A_Generalizable_Driving_World_Model_with_Video_Mask_Reconstruction_CVPR_2025_paper.html
+  title: 'MaskGWM: A Generalizable Driving World Model with Video Mask Reconstruction'
+  paper_url: https://arxiv.org/abs/2502.11663
+  published_date: '2025-02-17'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2502.11663
+  - https://openaccess.thecvf.com/content/CVPR2025/html/Ni_MaskGWM_A_Generalizable_Driving_World_Model_with_Video_Mask_Reconstruction_CVPR_2025_paper.html
+  - https://github.com/SenseTime-FVG/OpenDWM
+- arxiv_id: '2410.10429'
+  model: DOME
+  category: generative
+  focus: Trajectory-conditioned diffusion forecasts detailed long-horizon 3D occupancy
+  venue: arXiv
+  year: 2024
+  code_url: https://github.com/gusongen/DOME
+  project_url: https://gusongen.github.io/DOME/
+  publication_status: preprint
+  title: 'DOME: Taming Diffusion Model into High-Fidelity Controllable Occupancy World Model'
+  paper_url: https://arxiv.org/abs/2410.10429
+  published_date: '2024-10-14'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2410.10429
+  - https://github.com/gusongen/DOME
+  - https://gusongen.github.io/DOME/
+- arxiv_id: '2409.03272'
+  model: OccLLaMA
+  category: vla-world
+  focus: A shared occupancy-language-action vocabulary enables multimodal future prediction and planning
+  venue: arXiv
+  year: 2024
+  code_url: ''
+  project_url: https://vilonge.github.io/OccLLaMA_Page/
+  publication_status: preprint
+  title: 'OccLLaMA: An Occupancy-Language-Action Generative World Model for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2409.03272
+  published_date: '2024-09-05'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2409.03272
+  - https://vilonge.github.io/OccLLaMA_Page/
+- arxiv_id: '2506.09981'
+  model: ReSim
+  category: generative
+  focus: Expert and non-expert data improve action-faithful driving simulation and video-based rewards
+  venue: NeurIPS
+  year: 2025
+  code_url: https://github.com/OpenDriveLab/ReSim
+  project_url: https://opendrivelab.com/ReSim
+  publication_status: published
+  publication_url: https://proceedings.neurips.cc/paper_files/paper/2025/hash/f502981cbe221d857ad409450a7917c3-Abstract-Conference.html
+  title: 'ReSim: Reliable World Simulation for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2506.09981
+  published_date: '2025-06-11'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2506.09981
+  - https://proceedings.neurips.cc/paper_files/paper/2025/hash/f502981cbe221d857ad409450a7917c3-Abstract-Conference.html
+  - https://github.com/OpenDriveLab/ReSim
+  - https://opendrivelab.com/ReSim
+- arxiv_id: '2606.15341'
+  model: CausalDrive
+  category: generative
+  focus: Text and ego actions drive reactive future generation without oracle background trajectories
+  venue: arXiv
+  year: 2026
+  code_url: ''
+  project_url: ''
+  publication_status: preprint
+  title: 'CausalDrive: Real-time Causal World Models for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2606.15341
+  published_date: '2026-06-13'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2606.15341
+- arxiv_id: '2603.14948'
+  model: WorldDrive
+  category: latent
+  focus: A shared vision-motion representation transfers trajectory-conditioned world learning to planning
+  venue: NeurIPS
+  year: 2026
+  code_url: https://github.com/TabGuigui/WorldDrive
+  project_url: ''
+  publication_status: accepted
+  publication_url: https://github.com/TabGuigui/WorldDrive
+  title: 'Bridging Scene Generation and Planning: Driving with World Model via Unifying Vision and Motion Representation'
+  paper_url: https://arxiv.org/abs/2603.14948
+  published_date: '2026-03-16'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: CORE
+  sources:
+  - https://arxiv.org/abs/2603.14948
+  - https://github.com/TabGuigui/WorldDrive
+- arxiv_id: '2610.12412'
+  model: WorldCast
+  category: related-video
+  focus: Distributed clients exchange player and scene states for consistent multiplayer worlds; evaluated in Counter-Strike
+    2
+  venue: arXiv
+  year: 2026
+  code_url: https://github.com/Ziyang-Ye/WorldCast
+  project_url: https://ziyang-ye.github.io/WorldCast-Page/
+  publication_status: preprint
+  title: 'WorldCast: Distributed Multiplayer World Models'
+  paper_url: https://arxiv.org/abs/2610.12412
+  published_date: '2026-10-08'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: BACKGROUND
+  sources:
+  - https://arxiv.org/abs/2610.12412
+  - https://github.com/Ziyang-Ye/WorldCast
+  - https://ziyang-ye.github.io/WorldCast-Page/
+- arxiv_id: '2512.10958'
+  model: WorldLens
+  category: benchmark
+  focus: Evaluates generated worlds across visual, geometric, action, downstream-task, and human-preference criteria
+  venue: CVPR
+  year: 2026
+  code_url: https://github.com/worldbench/WorldLens
+  project_url: https://worldbench.github.io/worldlens
+  publication_status: published
+  publication_url: https://openaccess.thecvf.com/content/CVPR2026/papers/Liang_WorldLens_Full-Spectrum_Evaluations_of_Driving_World_Models_in_Real_World_CVPR_2026_paper.pdf
+  title: 'WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World'
+  paper_url: https://arxiv.org/abs/2512.10958
+  published_date: '2025-12-11'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: RELATED
+  sources:
+  - https://arxiv.org/abs/2512.10958
+  - https://openaccess.thecvf.com/content/CVPR2026/papers/Liang_WorldLens_Full-Spectrum_Evaluations_of_Driving_World_Models_in_Real_World_CVPR_2026_paper.pdf
+  - https://github.com/worldbench/WorldLens
+  - https://worldbench.github.io/worldlens
+- arxiv_id: '2406.15349'
+  model: NAVSIM v1
+  category: benchmark
+  focus: Non-reactive simulation-based metrics benchmark planning on real driving logs
+  venue: NeurIPS Datasets and Benchmarks
+  year: 2024
+  code_url: https://github.com/autonomousvision/navsim/tree/v1.1
+  project_url: ''
+  publication_status: published
+  title: 'NAVSIM: Data-Driven Non-Reactive Autonomous Vehicle Simulation and Benchmarking'
+  paper_url: https://arxiv.org/abs/2406.15349
+  published_date: '2024-06-21'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: RELATED
+  sources:
+  - https://arxiv.org/abs/2406.15349
+  - https://github.com/autonomousvision/navsim/tree/v1.1
+- arxiv_id: '2506.04218'
+  model: NAVSIM v2
+  category: benchmark
+  focus: Pseudo-simulation uses perturbed future observations to evaluate recovery and planning robustness
+  venue: CoRL
+  year: 2025
+  code_url: https://github.com/autonomousvision/navsim
+  project_url: ''
+  publication_status: published
+  title: Pseudo-Simulation for Autonomous Driving
+  paper_url: https://arxiv.org/abs/2506.04218
+  published_date: '2025-06-04'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: RELATED
+  sources:
+  - https://arxiv.org/abs/2506.04218
+  - https://github.com/autonomousvision/navsim
+- arxiv_id: '2406.03877'
+  model: Bench2Drive
+  category: benchmark
+  focus: CARLA short-route closed-loop benchmark measures multiple driving abilities and failure modes
+  venue: NeurIPS Datasets and Benchmarks
+  year: 2024
+  code_url: https://github.com/Thinklab-SJTU/Bench2Drive
+  project_url: https://thinklab-sjtu.github.io/Bench2Drive/
+  publication_status: published
+  title: 'Bench2Drive: Towards Multi-Ability Benchmarking of Closed-Loop End-To-End Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2406.03877
+  published_date: '2024-06-06'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: RELATED
+  sources:
+  - https://arxiv.org/abs/2406.03877
+  - https://github.com/Thinklab-SJTU/Bench2Drive
+  - https://thinklab-sjtu.github.io/Bench2Drive/
+- arxiv_id: '2412.01718'
+  model: HUGSIM
+  category: benchmark
+  focus: 3D Gaussian reconstruction enables real-time photorealistic closed-loop policy evaluation
+  venue: IEEE TPAMI
+  year: 2025
+  code_url: https://github.com/hyzhou404/HUGSIM
+  project_url: https://xdimlab.github.io/HUGSIM/
+  publication_status: published
+  publication_url: https://yiyiliao.github.io/
+  title: 'HUGSIM: A Real-Time, Photo-Realistic and Closed-Loop Simulator for Autonomous Driving'
+  paper_url: https://arxiv.org/abs/2412.01718
+  published_date: '2024-12-02'
+  verified_date: '2026-10-19'
+  added_date: '2026-10-19'
+  scope: RELATED
+  sources:
+  - https://arxiv.org/abs/2412.01718
+  - https://yiyiliao.github.io/
+  - https://github.com/hyzhou404/HUGSIM
+  - https://xdimlab.github.io/HUGSIM/
