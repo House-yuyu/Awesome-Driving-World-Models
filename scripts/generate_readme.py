@@ -1,332 +1,225 @@
 #!/usr/bin/env python3
+"""Generate paper tables and badges from data/papers.yaml; use --check to verify.
+
+Only the PAPERS_START/PAPERS_END block and the two metadata badges are generated.
+Unknown categories and duplicate papers fail validation instead of being omitted.
 """
-Generate README.md paper tables from data/papers.yaml.
-
-Usage:
-    python scripts/generate_readme.py
-
-The script only updates the content between the markers:
-    <!-- PAPERS_START -->
-    <!-- PAPERS_END -->
-
-All other content in README.md is preserved.
-"""
-
-import os
+import argparse
+import re
 import sys
+from datetime import date
+from pathlib import Path
+from urllib.parse import urlsplit
 
 try:
     import yaml
 except ImportError:
-    print("Error: PyYAML is required. Install with: pip install pyyaml")
-    sys.exit(1)
+    sys.exit("PyYAML is required. Install with: pip install -r requirements.txt")
 
-# Paths
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-REPO_ROOT = os.path.dirname(SCRIPT_DIR)
-PAPERS_YAML = os.path.join(REPO_ROOT, "data", "papers.yaml")
-README_MD = os.path.join(REPO_ROOT, "README.md")
-
-# Markers
+ROOT = Path(__file__).resolve().parent.parent
 START_MARKER = "<!-- PAPERS_START -->"
 END_MARKER = "<!-- PAPERS_END -->"
-
-# Category order (top-level)
-CATEGORY_ORDER = [
-    "Surveys & Perspectives",
-    "Driving World Models",
-    "Representation Learning",
-    "Related Work",
+CODE_STATUSES = {"released", "partial", "unreleased", "repository-only", "data-only"}
+PUBLICATION_STATUSES = {"published", "accepted", "preprint"}
+SECTIONS = [
+    ("survey", "Surveys & Perspectives", 1,
+     "Driving-focused reviews and selected broader perspectives on predictive, controllable, and actionable world models.",
+     ["Work", "Paper", "Focus", "Venue", "Resources"]),
+    ("generative", "Generative & Explicit-State World Models", 2,
+     "Models that predict or generate explicit future observations or scene states: RGB video, LiDAR, occupancy, BEV, and 3D geometry.",
+     ["Model", "Paper", "Key Idea", "Venue", "Resources"]),
+    ("latent", "Latent & Planning-Oriented World Models", 2,
+     "Models that learn future representations or use predicted consequences for planning, trajectory evaluation, policy learning, or reinforcement learning. JEPA methods appear in the dedicated section below.",
+     ["Model", "Paper", "Key Idea", "Venue", "Resources"]),
+    ("world-action", "World-Action & Action-Aligned Models", 2,
+     "Models that couple future-world prediction with actions through joint generation, action-conditioned feedback, alignment, or verification. JEPA-based world-action models appear in the JEPA section.",
+     ["Model", "Paper", "Key Idea", "Venue", "Resources"]),
+    ("jepa", "JEPA for Autonomous Driving", 1,
+     "Driving-related joint-embedding predictive methods are collected in one place, spanning representation pre-training, compact predictive states, planning, candidate scoring, and world-action modeling.",
+     ["Model", "Paper", "Driving Role", "Venue", "Resources"]),
+    ("vla-world", "World-Model-Enhanced VLA", 2,
+     "VLA/VLM methods where future prediction or learned world representations directly contribute to reasoning or action generation.",
+     ["Model", "Paper", "World-Model / Reasoning Mechanism", "Venue", "Resources"]),
+    ("vla-general", "Selected General Driving VLA", 2,
+     "Selected architectural and data references for driving VLA. These papers are not necessarily world models themselves.",
+     ["Model", "Paper", "Main Focus", "Venue", "Resources"]),
+    ("benchmark", "Benchmarks & Simulation", 1,
+     "World-model fidelity benchmarks and planning evaluation platforms. Non-reactive evaluation and pseudo-simulation are distinguished from interactive closed-loop simulation; scores across these protocols are not interchangeable.",
+     ["Benchmark", "Paper", "Evaluation Focus", "Venue", "Resources"]),
+    ("related-embodied", "Embodied / Robotics World Models", 2,
+     "Selected embodied methods with direct relevance to joint world-action modeling.",
+     ["Model", "Paper", "Key Idea", "Venue", "Resources"]),
+    ("related-video", "General Video World Models", 2,
+     "Selected non-driving references for controllable generation and shared-world consistency. Their evaluation domains are stated explicitly.",
+     ["Model", "Paper", "Key Idea", "Venue", "Resources"]),
 ]
-
-# Subcategory order per category
-SUBCATEGORY_ORDER = {
-    "Driving World Models": [
-        "Generative World Models",
-        "Latent / Predictive World Models",
-        "World-Action Models",
-    ],
-    "Representation Learning": [
-        "JEPA-based Methods",
-    ],
-    "Related Work": [
-        "Embodied / Robotics World Models",
-        "General Video World Models",
-    ],
+CATEGORIES = {section[0] for section in SECTIONS}
+PARENTS = {
+    "generative": ("Driving World Models", "Generative, latent, and world-action approaches for autonomous driving."),
+    "vla-world": ("Vision-Language-Action for Driving", "The intersection of language-based reasoning, predictive world representations, and driving actions."),
+    "related-embodied": ("Related Work", "Selected references outside the core driving taxonomy."),
 }
 
-# Table column headers
-TABLE_HEADERS = ["Model", "Title", "Focus", "Venue", "Resources"]
+
+def valid_url(value):
+    parsed = urlsplit(value)
+    return parsed.scheme in {"http", "https"} and bool(parsed.netloc)
 
 
-def load_papers(yaml_path):
-    """Load and validate papers from YAML file."""
-    if not os.path.exists(yaml_path):
-        print(f"Error: {yaml_path} not found")
-        sys.exit(1)
+def load_catalog(path):
+    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    if not isinstance(data, dict) or not isinstance(data.get("papers"), list) or not data["papers"]:
+        raise ValueError("Catalog must contain a non-empty papers list")
+    if data.get("schema_version") != 2:
+        raise ValueError("Expected schema_version: 2")
+    date.fromisoformat(str(data["updated_date"]))
+    seen_models, seen_titles, seen_links, seen_ids = set(), set(), set(), set()
+    for paper in data["papers"]:
+        for key in ("model", "title", "paper_url", "year", "venue", "category", "focus"):
+            if not paper.get(key):
+                raise ValueError(f"Missing {key}: {paper.get('model', '<unnamed>')}")
+        if paper["category"] not in CATEGORIES:
+            raise ValueError(f"Unknown category {paper['category']}: {paper['model']}")
+        if type(paper["year"]) is not int or not 1900 <= paper["year"] <= 2100:
+            raise ValueError(f"Invalid year: {paper['model']}")
+        if paper.get("publication_status", "published") not in PUBLICATION_STATUSES:
+            raise ValueError(f"Invalid publication_status: {paper['model']}")
+        if paper.get("code_status", "released") not in CODE_STATUSES:
+            raise ValueError(f"Invalid code_status: {paper['model']}")
+        for key in ("published_date", "verified_date", "added_date"):
+            if paper.get(key):
+                date.fromisoformat(str(paper[key]))
+        for key in ("paper_url", "code_url", "project_url", "publication_url"):
+            if paper.get(key) and not valid_url(paper[key]):
+                raise ValueError(f"Invalid {key}: {paper['model']}")
+        for resource in paper.get("resources", []):
+            if not resource.get("label") or not valid_url(resource.get("url", "")):
+                raise ValueError(f"Invalid resource: {paper['model']}")
+        for source in paper.get("sources", []):
+            if not valid_url(source):
+                raise ValueError(f"Invalid source: {paper['model']}")
+        model = paper["model"].casefold()
+        title = re.sub(r"\W+", "", paper["title"].casefold())
+        link = paper["paper_url"].rstrip("/")
+        arxiv_id = paper.get("arxiv_id", "")
+        if arxiv_id and not re.fullmatch(r"\d{4}\.\d{4,5}", arxiv_id):
+            raise ValueError(f"Invalid arxiv_id: {paper['model']}")
+        if (model in seen_models or title in seen_titles or link in seen_links
+                or (arxiv_id and arxiv_id in seen_ids)):
+            raise ValueError(f"Duplicate paper: {paper['model']}")
+        if "arxiv.org/abs/" in link and arxiv_id and not re.search(rf"/{re.escape(arxiv_id)}(?:v\d+)?$", link):
+            raise ValueError(f"arxiv_id does not match paper_url: {paper['model']}")
+        seen_models.add(model)
+        seen_titles.add(title)
+        seen_links.add(link)
+        if arxiv_id:
+            seen_ids.add(arxiv_id)
+    return data
 
-    with open(yaml_path, "r", encoding="utf-8") as f:
-        data = yaml.safe_load(f)
 
-    if not data or "papers" not in data:
-        print("Error: YAML file does not contain a 'papers' key")
-        sys.exit(1)
-
-    papers = data["papers"]
-    print(f"Loaded {len(papers)} papers from {os.path.basename(yaml_path)}")
-
-    # Basic validation
-    required_fields = ["title", "year", "venue", "category", "focus"]
-    for i, paper in enumerate(papers):
-        for field in required_fields:
-            if field not in paper or paper[field] is None:
-                print(f"Warning: Paper #{i+1} missing required field '{field}'")
-                if field == "focus":
-                    paper[field] = ""
-                elif field == "tags":
-                    paper[field] = []
-
-    return papers
+def cell(value):
+    return str(value).replace("|", "\\|").replace("\n", " ")
 
 
-def group_papers(papers):
-    """Group papers by category and subcategory.
+def venue_cell(paper):
+    text = f"{paper['venue']} {paper['year']}"
+    if paper.get("publication_status") == "accepted":
+        text += " (accepted)"
+    if paper.get("publication_url"):
+        return f"[{cell(text)}]({paper['publication_url']})"
+    return cell(text)
 
-    Returns a dict like:
-    {
-        "Category 1": {
-            "": [paper1, paper2],  # no subcategory
-            "Subcategory A": [paper3],
-        },
-        ...
-    }
-    """
-    grouped = {}
 
+def resource_cell(paper):
+    links, seen_urls = [], set()
+
+    def add(label, url, note=""):
+        if url and url not in seen_urls:
+            links.append(f"[{cell(label)}]({url}){note}")
+            seen_urls.add(url)
+
+    status = paper.get("code_status", "released")
+    label = ("Data" if status == "data-only" else
+             "Repository" if status in {"unreleased", "repository-only"} else "Code")
+    note = " (code pending)" if status == "unreleased" else " (partial)" if status == "partial" else ""
+    add(label, paper.get("code_url"), note)
+    add("Project", paper.get("project_url"))
+    for resource in paper.get("resources", []):
+        add(resource["label"], resource["url"])
+    return " · ".join(links) or "—"
+
+
+def build_table(papers, headers):
+    lines = ["| " + " | ".join(headers) + " |", "| " + " | ".join(["---"] * len(headers)) + " |"]
     for paper in papers:
-        cat = paper.get("category", "Uncategorized")
-        subcat = paper.get("subcategory", "") or ""
-
-        if cat not in grouped:
-            grouped[cat] = {}
-        if subcat not in grouped[cat]:
-            grouped[cat][subcat] = []
-
-        grouped[cat][subcat].append(paper)
-
-    # Sort each group by year descending, then preserve YAML order within same year
-    for cat in grouped:
-        for subcat in grouped[cat]:
-            grouped[cat][subcat].sort(key=lambda p: -p.get("year", 0))
-
-    return grouped
-
-
-def format_venue_short(venue, year):
-    """Format venue + year as short string like 'arXiv '26'."""
-    year_short = str(year)[-2:] if year else "??"
-    if venue and venue.lower() == "arxiv":
-        return f"arXiv '{year_short}"
-    elif venue:
-        return f"{venue} '{year_short}"
-    return f"'{year_short}"
-
-
-def format_resources(paper):
-    """Format resource links as a string."""
-    links = []
-    if paper.get("code_url"):
-        links.append(f"[Code]({paper['code_url']})")
-    if paper.get("project_url"):
-        links.append(f"[Project]({paper['project_url']})")
-
-    if links:
-        return " ".join(links)
-    return "—"
-
-
-def format_title_cell(paper):
-    """Format title cell: linked if paper_url exists, plain text otherwise."""
-    title = paper.get("title", "Untitled")
-    paper_url = paper.get("paper_url", "")
-    if paper_url:
-        return f"[{title}]({paper_url})"
-    return title
-
-
-def format_model_cell(paper):
-    """Format model name cell (bold)."""
-    model = paper.get("model", "")
-    if model:
-        return f"**{model}**"
-    return "—"
-
-
-def build_table(papers):
-    """Build a markdown table from a list of papers."""
-    lines = []
-
-    # Header
-    header = "| " + " | ".join(TABLE_HEADERS) + " |"
-    lines.append(header)
-
-    # Separator
-    sep = "| " + " | ".join(["---"] * len(TABLE_HEADERS)) + " |"
-    lines.append(sep)
-
-    # Rows
-    for paper in papers:
-        model = format_model_cell(paper)
-        title = format_title_cell(paper)
-        focus = paper.get("focus", "—")
-        venue = format_venue_short(paper.get("venue", ""), paper.get("year", ""))
-        resources = format_resources(paper)
-
-        row = f"| {model} | {title} | {focus} | {venue} | {resources} |"
-        lines.append(row)
-
-    return "\n".join(lines)
-
-
-def generate_contents(grouped):
-    """Generate the Contents section."""
-    lines = []
-    lines.append("## Contents")
-    lines.append("")
-
-    for cat in CATEGORY_ORDER:
-        if cat not in grouped:
-            continue
-        anchor = cat.lower().replace(" ", "-").replace("&", "").replace("/", "-").replace("--", "-")
-        lines.append(f"- [{cat}](#{anchor})")
-
-        subcats = grouped[cat]
-        subcat_order = SUBCATEGORY_ORDER.get(cat, [])
-        for subcat in subcat_order:
-            if subcat and subcat in subcats and subcats[subcat]:
-                sub_anchor = subcat.lower().replace(" ", "-").replace("/", "-").replace("&", "").replace("--", "-")
-                lines.append(f"  - [{subcat}](#{sub_anchor})")
-
-    lines.append("")
+        row = [f"**{cell(paper['model'])}**", f"[{cell(paper['title'])}]({paper['paper_url']})",
+               cell(paper["focus"]), venue_cell(paper), resource_cell(paper)]
+        lines.append("| " + " | ".join(row) + " |")
     return "\n".join(lines)
 
 
 def generate_papers_section(papers):
-    """Generate the full papers section markdown."""
-    grouped = group_papers(papers)
-
-    lines = []
-    lines.append(START_MARKER)
-    lines.append("")
-
-    # Contents
-    lines.append(generate_contents(grouped))
-
-    # Generate each category
-    for cat in CATEGORY_ORDER:
-        if cat not in grouped:
+    lines = [START_MARKER, ""]
+    emitted = 0
+    for category, heading, level, description, headers in SECTIONS:
+        group = [p for p in papers if p["category"] == category]
+        if not group:
             continue
-
-        subcats = grouped[cat]
-        subcat_order = SUBCATEGORY_ORDER.get(cat, [])
-
-        # Category heading
-        lines.append(f"## {cat}")
-        lines.append("")
-
-        # Papers without subcategory
-        if "" in subcats and subcats[""]:
-            lines.append(build_table(subcats[""]))
-            lines.append("")
-
-        # Subcategories
-        for subcat in subcat_order:
-            if subcat not in subcats or not subcats[subcat]:
-                continue
-
-            lines.append(f"### {subcat}")
-            lines.append("")
-            lines.append(build_table(subcats[subcat]))
-            lines.append("")
-
-    lines.append(END_MARKER)
-    lines.append("")
-
+        # Stable sorting retains YAML order when year and first-posted date tie.
+        group.sort(key=lambda p: (p["year"], str(p.get("published_date", ""))), reverse=True)
+        if category in PARENTS:
+            parent, intro = PARENTS[category]
+            lines.extend([f"# {parent}", "", intro, ""])
+        lines.extend([f"{'#' * level} {heading}", "", description, "",
+                      build_table(group, headers), "", "---", ""])
+        emitted += len(group)
+    if emitted != len(papers):
+        raise ValueError("Not all catalog papers were rendered")
+    lines = lines[:-2]
+    lines.extend([END_MARKER, ""])
     return "\n".join(lines)
 
 
-def update_readme(readme_path, new_section):
-    """Replace the content between markers in README.md.
-
-    The function matches from START_MARKER through END_MARKER plus any
-    following blank lines, ensuring idempotent output across multiple runs.
-    """
-    if not os.path.exists(readme_path):
-        print(f"Error: {readme_path} not found")
-        sys.exit(1)
-
-    with open(readme_path, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    if START_MARKER not in content:
-        print(f"Error: START_MARKER '{START_MARKER}' not found in README.md")
-        sys.exit(1)
-    if END_MARKER not in content:
-        print(f"Error: END_MARKER '{END_MARKER}' not found in README.md")
-        sys.exit(1)
-
-    # Find start position (beginning of START_MARKER line)
-    start_idx = content.index(START_MARKER)
-
-    # Find end position: end of END_MARKER line, plus any trailing blank lines
-    end_marker_start = content.index(END_MARKER)
-    end_idx = end_marker_start + len(END_MARKER)
-
-    # Consume trailing newlines after END_MARKER up to the next non-empty line
-    # so repeated runs don't accumulate extra blank lines
-    while end_idx < len(content) and content[end_idx] in ('\n', '\r'):
-        end_idx += 1
-    # Put back exactly one newline so the next section starts after a blank line
-    if end_idx < len(content):
-        end_idx -= 1  # leave one newline before next content
-
-    # Replace section
-    new_content = content[:start_idx] + new_section + content[end_idx:]
-
-    with open(readme_path, "w", encoding="utf-8") as f:
-        f.write(new_content)
-
-    print("README.md updated successfully.")
+def render_readme(content, catalog):
+    starts = list(re.finditer(rf"(?m)^{re.escape(START_MARKER)}$", content))
+    ends = list(re.finditer(rf"(?m)^{re.escape(END_MARKER)}$", content))
+    if len(starts) != 1 or len(ends) != 1 or starts[0].end() >= ends[0].start():
+        raise ValueError("README must contain exactly one pair of paper markers")
+    prefix = content[:starts[0].start()]
+    suffix = content[ends[0].end():]
+    result = prefix + generate_papers_section(catalog["papers"]) + "\n" + suffix.lstrip("\n")
+    result, count = re.subn(r"https://img\.shields\.io/badge/papers-\d+-blue",
+                           f"https://img.shields.io/badge/papers-{len(catalog['papers'])}-blue", result)
+    if count != 1:
+        raise ValueError("README must contain exactly one papers badge")
+    updated = str(catalog["updated_date"]).replace("-", "--")
+    result, count = re.subn(r"https://img\.shields\.io/badge/last%20updated-[\d-]+-brightgreen",
+                           f"https://img.shields.io/badge/last%20updated-{updated}-brightgreen", result)
+    if count != 1:
+        raise ValueError("README must contain exactly one last-updated badge")
+    return result
 
 
-def main():
-    print("=" * 60)
-    print("README Generator — Table Mode")
-    print("=" * 60)
-    print()
-
-    # Load papers
-    papers = load_papers(PAPERS_YAML)
-    print()
-
-    # Count by category
-    grouped = group_papers(papers)
-    print("Generating paper tables...")
-    for cat in CATEGORY_ORDER:
-        if cat not in grouped:
-            continue
-        total = sum(len(ps) for ps in grouped[cat].values())
-        print(f"  {cat}: {total} papers")
-    print()
-
-    # Generate section
-    papers_section = generate_papers_section(papers)
-
-    # Update README
-    update_readme(README_MD, papers_section)
-    print()
-    print("Done!")
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--check", action="store_true", help="Validate metadata and fail if README needs regeneration")
+    args = parser.parse_args(argv)
+    try:
+        catalog = load_catalog(ROOT / "data/papers.yaml")
+        path = ROOT / "README.md"
+        current = path.read_text(encoding="utf-8")
+        expected = render_readme(current, catalog)
+        if args.check:
+            if current != expected:
+                sys.exit("README.md is out of date. Run python scripts/generate_readme.py")
+            print(f"Validated {len(catalog['papers'])} unique papers; README.md is up to date.")
+        else:
+            path.write_text(expected, encoding="utf-8")
+            print(f"Generated {len(catalog['papers'])} papers across {len(CATEGORIES)} categories.")
+    except (KeyError, TypeError, ValueError, OSError, yaml.YAMLError) as error:
+        sys.exit(f"Error: {error}")
 
 
 if __name__ == "__main__":
     main()
+
