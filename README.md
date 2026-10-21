@@ -1,97 +1,49 @@
-# Awesome Driving World Models 🚗🌎
+# Awesome World Models 🌍
 
 <p align="center">
-  <img src="https://img.shields.io/badge/papers-112-blue" alt="Papers">
-  <img src="https://img.shields.io/badge/last%20updated-2026--10--19-brightgreen" alt="Last Updated">
+  <img src="https://img.shields.io/badge/papers-161-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/last%20updated-2026--10--21-brightgreen" alt="Last Updated">
   <img src="https://img.shields.io/badge/PRs-welcome-orange" alt="PRs Welcome">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=House-yuyu.Awesome-Driving-World-Models" alt="Visitors">
 </p>
 
-A curated collection of research on **world models for autonomous driving**, spanning **generative simulation**, **explicit-state prediction**, **latent future modeling**, **world-action modeling**, and two rapidly growing cross-cutting directions: **JEPA for driving** and **Vision-Language-Action (VLA) models with world modeling**.
+A curated **cross-domain bibliography of world models** across **interactive environments and games, robotics and embodied AI, healthcare and biology, social/multi-agent systems, physics and weather, general video/spatial worlds, and autonomous driving**.
 
-> **From predicting observations to learning decision-relevant futures, actions, and world-aware policies.**
-
-Paper tables are sorted by publication year, then by first-posted date when available. **arXiv** denotes the indexed preprint version; **accepted** marks a confirmed acceptance before final publication. **Code** links to an available implementation, **Repository** to an informational or unreleased repository, and **Data** to dataset tools. Resource availability was checked on **October 19, 2026**.
-
----
+> **What happens next, and what changes after an action or intervention?**
 
 ## Scope
 
-The collection is organized primarily by **what the model predicts and how that prediction is used**.
+| Model type | Included role |
+| --- | --- |
+| **Predictive / actionable world models** | Predict future dynamics or the consequences of actions, decisions and interventions |
+| **World foundation / predictive representation models** | Learn latent future representations for perception or planning |
+| **Related simulators / evaluation tools** | Simulated interactions and benchmarks; not necessarily learned causal world models |
 
-```text
-Core Driving World Models
-├── Generative & Explicit-State World Models
-│   ├── RGB / multi-view video
-│   ├── LiDAR / point clouds
-│   ├── BEV / occupancy / 3D worlds
-│   └── multimodal scene generation
-│
-├── Latent & Planning-Oriented World Models
-│   ├── latent future prediction
-│   ├── planning-relevant representations
-│   ├── model-based imitation / reinforcement learning
-│   └── future-conditioned planning
-│
-└── World-Action & Action-Aligned Models
-    ├── joint future-world / action prediction
-    ├── video-action policies
-    └── world-model-aligned action representations
-
-Cross-Cutting Directions
-├── JEPA for Autonomous Driving
-│   ├── representation pre-training
-│   ├── latent world modeling
-│   ├── planning
-│   └── world-action modeling
-│
-└── Vision-Language-Action (VLA) for Driving
-    ├── world-model-enhanced VLA
-    └── selected general driving VLA
-
-Related Work
-├── Embodied / Robotics World Models
-└── General Video World Models
-```
-
-### What is included?
-
-A paper is generally included when at least one of the following is central to the method:
-
-- future-world prediction,
-- learned environment dynamics,
-- latent future modeling,
-- action-conditioned world prediction,
-- world-action coupling,
-- predictive representation learning for driving,
-- or world modeling used to improve VLA/VLM planning.
-
-General perception, planning, VLM/VLA, or video-generation papers are not included in the core tables unless they have a clear connection to world modeling. A small **Selected General Driving VLA** section is retained as context for the VLA direction.
-
----
+Papers have one primary category. Preprints are labeled arXiv; **Code**, **Repository**, **Project** and **Data** denote different resource status. Agent simulators and representation learning papers are not automatically considered validated causal world models.
 
 ## Contents
 
 - [Surveys & Perspectives](#surveys--perspectives)
-- [Driving World Models](#driving-world-models)
-  - [Generative & Explicit-State World Models](#generative--explicit-state-world-models)
-  - [Latent & Planning-Oriented World Models](#latent--planning-oriented-world-models)
-  - [World-Action & Action-Aligned Models](#world-action--action-aligned-models)
-- [JEPA for Autonomous Driving](#jepa-for-autonomous-driving)
-- [Vision-Language-Action for Driving](#vision-language-action-for-driving)
-  - [World-Model-Enhanced VLA](#world-model-enhanced-vla)
-  - [Selected General Driving VLA](#selected-general-driving-vla)
-- [Benchmarks & Simulation](#benchmarks--simulation)
-- [Related Work](#related-work)
-  - [Embodied / Robotics World Models](#embodied--robotics-world-models)
-  - [General Video World Models](#general-video-world-models)
+- [Foundations & General World Models](#foundations--general-world-models)
+- [Interactive Worlds & Games](#interactive-worlds--games)
+- [Robotics & Embodied World Models](#robotics--embodied-world-models)
+- [Medical & Biological World Models](#medical--biological-world-models)
+- [Social & Multi-Agent World Models](#social--multi-agent-world-models)
+- [Physics, Weather & Scientific World Models](#physics-weather--scientific-world-models)
+- [Video & Spatial World Models](#video--spatial-world-models)
+- [General World-Model Benchmarks](#general-world-model-benchmarks)
+- [Autonomous Driving World Models](#autonomous-driving-world-models)
+  - [Generative driving worlds](#driving-generative--explicit-state-models)
+  - [Latent driving prediction and planning](#driving-latent--planning-oriented-models)
+  - [World-action driving models](#driving-world-action--action-aligned-models)
+  - [Driving JEPA](#driving-jepa--predictive-representations)
+  - [Driving world-aware VLA](#driving-world-model-enhanced-vla)
+  - [Related driving VLA](#driving-selected-general-vla-context)
+  - [Driving benchmarks](#driving-benchmarks--simulation)
 - [Datasets & Toolkits](#datasets--toolkits)
-- [Industrial World Models](#industrial-world-models)
+- [Industrial & Research Systems](#industrial--research-systems)
 - [Recent Updates](#recent-updates)
-- [Concepts](#concepts)
+- [Definitions & Evaluation](#definitions--evaluation)
 - [Contributing](#contributing)
-- [Repository Structure](#repository-structure)
-- [Inclusion Criteria](#inclusion-criteria)
 
 ---
 
@@ -99,7 +51,7 @@ General perception, planning, VLM/VLA, or video-generation papers are not includ
 
 # Surveys & Perspectives
 
-Driving-focused reviews and selected broader perspectives on predictive, controllable, and actionable world models.
+Cross-domain world-model reviews.
 
 | Work | Paper | Focus | Venue | Resources |
 | --- | --- | --- | --- | --- |
@@ -107,18 +59,142 @@ Driving-focused reviews and selected broader perspectives on predictive, control
 | **Latent WM Survey** | [Latent World Models for Automated Driving: A Unified Taxonomy, Evaluation Framework, and Open Challenges](https://arxiv.org/abs/2603.09086) | Latent-state taxonomy, evaluation, and deployment challenges | arXiv 2026 | — |
 | **DWM Survey** | [The Role of World Models in Shaping Autonomous Driving: A Comprehensive Survey](https://arxiv.org/abs/2502.10498) | Driving world models by predicted scene modality | [Frontiers of Computer Science 2026 (accepted)](https://journal.hep.com.cn/fcs/EN/10.1007/s11704-026-60102-1) | [Paper List](https://github.com/LMD0311/Awesome-World-Model) |
 | **AV JEPA Survey** | [Joint Embedding Predictive Architecture for Autonomous Vehicle Safety and Security: A Comprehensive Survey](https://www.sciencedirect.com/science/article/pii/S1474034626002909) | JEPA for autonomous-vehicle perception, safety, security, and deployment | Advanced Engineering Informatics 2026 | — |
+| **Medical World Models Survey** | [Medical world models: representing medical states, modelling clinical dynamics and guiding intervention policies](https://arxiv.org/abs/2606.16721) | Patient dynamics and intervention planning | arXiv 2026 | [Repository](https://github.com/1999kevin/awesome_medical_world_models) |
+| **Robotics World Model Survey** | [World Model for Robot Learning: A Comprehensive Survey](https://arxiv.org/abs/2605.00080) | Robot dynamics and policy learning | arXiv 2026 | — |
 | **VLA4AD Survey** | [A Survey on Vision-Language-Action Models for Autonomous Driving](https://arxiv.org/abs/2506.24044) | Driving VLA architectures, datasets, evaluation, and research trends | ICCV Workshops 2025 | [Paper List](https://github.com/JohnsonJiang1996/Awesome-VLA4AD) |
 | **WMAD Survey** | [A Survey of World Models for Autonomous Driving](https://arxiv.org/abs/2501.11260) | Generation, planning, and prediction–planning interaction | arXiv 2025 | [Paper List](https://github.com/FengZicai/AwesomeWMAD) |
+| **Embodied World Model Survey** | [A Comprehensive Survey on World Models for Embodied AI](https://arxiv.org/abs/2510.16732) | World-model taxonomy across embodied applications | arXiv 2025 | [Repository](https://github.com/Li-Zn-H/AwesomeWorldModels) |
 
 ---
 
-# Driving World Models
+# Foundations & General World Models
 
-Generative, latent, and world-action approaches for autonomous driving.
+Latent dynamics and general predictive world representation learning.
 
-## Generative & Explicit-State World Models
+| Model | Paper | Key Idea | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **DreamerV3** | [Mastering Diverse Control Tasks Through World Models](https://www.nature.com/articles/s41586-025-08744-2) | General imagination-based model-based reinforcement learning | Nature 2025 | [Code](https://github.com/danijar/dreamerv3) |
+| **V-JEPA 2** | [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://arxiv.org/abs/2506.09985) | Predictive video features and action-conditioned robot planning | arXiv 2025 | [Code](https://github.com/facebookresearch/vjepa2) |
+| **TD-MPC2** | [TD-MPC2: Scalable, Robust World Models for Continuous Control](https://arxiv.org/abs/2310.16828) | Latent dynamics and trajectory optimization | ICLR 2024 | [Code](https://github.com/nicklashansen/tdmpc2) |
+| **DreamerV2** | [Mastering Atari with Discrete World Models](https://arxiv.org/abs/2010.02193) | Discrete learned dynamics for Atari control | ICLR 2021 | [Code](https://github.com/danijar/dreamerv2) |
+| **Dreamer** | [Dream to Control: Learning Behaviors by Latent Imagination](https://arxiv.org/abs/1912.01603) | Imagined latent trajectories train control policies | ICLR 2020 | [Code](https://github.com/danijar/dreamer) |
+| **PlaNet** | [Learning Latent Dynamics for Planning from Pixels](https://arxiv.org/abs/1811.04551) | Pixel-to-latent dynamics for model-based planning | ICML 2019 | [Code](https://github.com/google-research/planet) |
+| **World Models (Ha and Schmidhuber)** | [World Models](https://arxiv.org/abs/1803.10122) | Latent world dynamics for imagined agent policies | arXiv 2018 | — |
 
-Models that predict or generate explicit future observations or scene states: RGB video, LiDAR, occupancy, BEV, and 3D geometry.
+---
+
+# Interactive Worlds & Games
+
+Controllable generated interactive environments and playable simulations.
+
+| Model | Paper | Key Idea | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **GameNGen** | [Diffusion Models Are Real-Time Game Engines](https://arxiv.org/abs/2408.14837) | Action-conditioned diffusion game engine | ICLR 2025 | — |
+| **GameFactory** | [GameFactory: Creating New Games with Generative Interactive Videos](https://arxiv.org/abs/2501.08325) | Action-controlled video games with scene generalization | ICCV 2025 | [Code](https://github.com/KlingAIResearch/GameFactory) (partial) |
+| **Matrix-Game 2.0** | [Matrix-Game 2.0: An Open-Source, Real-Time, and Streaming Interactive World Model](https://arxiv.org/abs/2508.13009) | Real-time neural games steered by player actions | arXiv 2025 | [Code](https://github.com/SkyworkAI/Matrix-Game) |
+| **Genie** | [Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391) | Learned latent actions for playable generated worlds | arXiv 2024 | — |
+| **DIAMOND** | [Diffusion for World Modeling: Visual Details Matter in Atari](https://arxiv.org/abs/2405.12399) | Diffusion dynamics for Atari control and game rollouts | NeurIPS 2024 | [Code](https://github.com/eloialonso/diamond) |
+
+---
+
+# Robotics & Embodied World Models
+
+Robot-action-conditioned video, imagined state and model-based policies.
+
+| Model | Paper | Key Idea | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **XPACE** | [XPACE: Joint World and Action Modeling from Heterogeneous Experience](https://arxiv.org/abs/2609.17372) | Shared video backbone jointly predicts robot actions and future video | arXiv 2026 | [Project](https://xpeng-robotics.github.io/xpace/) |
+| **DreamDojo** | [DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos](https://proceedings.mlr.press/v306/gao26q.html) | Action-conditioned robot dynamics learned from human video | ICML 2026 | [Code](https://github.com/NVIDIA/DreamDojo) |
+| **DreamGen** | [DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories](https://arxiv.org/abs/2505.12705) | Synthetic world trajectories for robot policies | arXiv 2025 | — |
+| **WorldVLA** | [WorldVLA: Towards Autoregressive Action World Model](https://arxiv.org/abs/2506.21539) | Shared autoregressive world and action model | arXiv 2025 | — |
+| **SurgWorld** | [SurgWorld: Learning Surgical Robot Policies from Videos via World Modeling](https://arxiv.org/abs/2512.23162) | Surgical world dynamics for robot imitation | arXiv 2025 | — |
+| **RoboDreamer** | [RoboDreamer: Learning Compositional World Models for Robot Imagination](https://arxiv.org/abs/2404.12377) | Compositional robot world prediction | ICML 2024 | [Code](https://github.com/UMass-Embodied-AGI/robodreamer) |
+| **IRASim** | [IRASim: Learning Interactive Real-Robot Action Simulators](https://arxiv.org/abs/2406.14540) | Action-conditioned robot video simulation | arXiv 2024 | [Code](https://github.com/bytedance/IRASim) |
+| **GR-2** | [GR-2: A Generative Video-Language-Action Model with Web-Scale Knowledge for Robot Manipulation](https://arxiv.org/abs/2410.06158) | Joint robot action and future video modeling | arXiv 2024 | — |
+| **UniPi** | [Learning Universal Policies via Text-Guided Video Generation](https://arxiv.org/abs/2302.00111) | Text-guided imagined plans translated into actions | NeurIPS 2023 | — |
+
+---
+
+# Medical & Biological World Models
+
+Patient, disease, imaging and cell-state forecasting or simulation.
+
+| Model | Paper | Key Idea | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **MedDreamer** | [MedDreamer: Model-Based Reinforcement Learning with Latent Imagination on Complex EHRs for Clinical Decision Support](https://arxiv.org/abs/2505.19785) | Clinical decisions from imagined patient trajectories | KDD 2026 | [Code](https://github.com/xuqianyi/medDreamer) |
+| **EHRWorld** | [EHRWorld: A Patient-Centric Medical World Model for Long-Horizon Clinical Trajectories](https://arxiv.org/abs/2602.03569) | Predicts longitudinal patient states and outcomes | arXiv 2026 | — |
+| **Brain-WM** | [Brain-WM: Brain Glioblastoma World Model](https://arxiv.org/abs/2603.07562) | Brain tumor evolution and disease progression | arXiv 2026 | — |
+| **EchoJEPA** | [EchoJEPA: A Latent Predictive Foundation Model for Echocardiography](https://arxiv.org/abs/2602.02603) | Ultrasound predictive features, not clinical intervention simulator | arXiv 2026 | [Code](https://github.com/bowang-lab/EchoJEPA) |
+| **X-WIN** | [X-WIN: Building Chest Radiograph World Model via Predictive Sensing](https://arxiv.org/abs/2511.14918) | Predictive chest X-ray volumetric representations | CVPR 2026 | — |
+| **HounsWorld** | [HounsWorld: A Multimodal World Model for Hidden Patient-State Readout, Reconstruction, and Simulation](https://arxiv.org/abs/2608.12904) | CT and clinical text hidden patient-state simulation | arXiv 2026 | — |
+| **UltraWorld** | [UltraWorld: Learning Interactive Ultrasound World Models from Untracked Clinical Videos with Acoustic Sampling Map](https://arxiv.org/abs/2610.09785) | Interactive ultrasound image dynamics under probe actions | arXiv 2026 | — |
+| **Lingshu-Cell** | [Lingshu-Cell: A Generative Cellular World Model for Transcriptome Modeling toward Virtual Cells](https://arxiv.org/abs/2603.25240) | Cellular transcriptome responses to interventions | arXiv 2026 | — |
+| **MeWM** | [Medical World Model: Generative Simulation of Tumor Evolution for Treatment Planning](https://arxiv.org/abs/2506.02327) | Treatment-conditioned tumor simulation and clinical planning | ICCV 2025 | [Code](https://github.com/scott-yjyang/MeWM) |
+| **CheXWorld** | [CheXWorld: Exploring Image World Modeling for Radiograph Representation Learning](https://arxiv.org/abs/2504.13820) | Predictive radiograph representations; related foundation model | CVPR 2025 | [Code](https://github.com/LeapLabTHU/CheXWorld) |
+| **Brain-JEPA** | [Brain-JEPA: Brain Dynamics Foundation Model with Gradient Positioning and Spatiotemporal Masking](https://arxiv.org/abs/2409.19407) | Spatiotemporal fMRI predictive representation model | NeurIPS 2024 | [Code](https://github.com/Eric-LRL/Brain-JEPA) |
+
+---
+
+# Social & Multi-Agent World Models
+
+Social-state transitions and related agent simulation systems.
+
+| Model | Paper | Key Idea | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **Social World Models** | [Social World Models](https://arxiv.org/abs/2509.00559) | Predicts interpersonal actions and hidden social states | arXiv 2025 | — |
+| **SOTOPIA** | [SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents](https://proceedings.iclr.cc/paper_files/paper/2024/hash/b3075b88e583a0e98d8b24338a613060-Abstract-Conference.html) | Interactive agent social evaluation environment | ICLR 2024 | [Code](https://github.com/sotopia-lab/sotopia) |
+| **OASIS** | [OASIS: Open Agent Social Interaction Simulations with One Million Agents](https://arxiv.org/abs/2411.11581) | Evolving social-network multi-agent simulations | arXiv 2024 | — |
+| **Generative Agents** | [Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) | Memory-based multi-agent social simulator | UIST 2023 | [Code](https://github.com/joonspk-research/generative_agents) |
+| **Concordia** | [Generative agent-based modeling with actions grounded in physical, social, or digital space using Concordia](https://arxiv.org/abs/2312.03664) | Environment-grounded generative social agents | arXiv 2023 | [Code](https://github.com/google-deepmind/concordia) |
+
+---
+
+# Physics, Weather & Scientific World Models
+
+Learned physical and geophysical dynamical systems.
+
+| Model | Paper | Key Idea | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **NeuralGCM** | [Neural general circulation models for weather and climate](https://www.nature.com/articles/s41586-024-07744-y) | Differentiable climate and atmosphere dynamic simulation | Nature 2024 | [Code](https://github.com/google-research/neuralgcm) |
+| **GenCast** | [Probabilistic weather forecasting with machine learning](https://www.nature.com/articles/s41586-024-08252-9) | Probabilistic atmospheric forecasts | Nature 2024 | — |
+| **GraphCast** | [Learning skillful medium-range global weather forecasting](https://www.science.org/doi/10.1126/science.adi2336) | Graph neural forecasting of weather dynamics | Science 2023 | [Code](https://github.com/google-deepmind/graphcast) |
+| **FourCastNet** | [FourCastNet: A Global Data-driven High-resolution Weather Model using Adaptive Fourier Neural Operators](https://arxiv.org/abs/2202.11214) | Global atmospheric forecasting with Fourier operators | arXiv 2022 | [Code](https://github.com/NVlabs/FourCastNet) |
+| **MeshGraphNets** | [Learning Mesh-Based Simulation with Graph Networks](https://arxiv.org/abs/2010.03409) | Fluid and mesh state transitions | ICLR 2021 | — |
+| **Graph Physics Simulator** | [Learning to Simulate Complex Physics with Graph Networks](https://arxiv.org/abs/2002.09405) | Graph-based dynamics for interacting particles | ICML 2020 | — |
+
+---
+
+# Video & Spatial World Models
+
+Predictive and controllable representations of visual worlds.
+
+| Model | Paper | Key Idea | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **WorldCast** | [WorldCast: Distributed Multiplayer World Models](https://arxiv.org/abs/2610.12412) | Distributed clients exchange player and scene states for consistent multiplayer worlds; evaluated in Counter-Strike 2 | arXiv 2026 | [Code](https://github.com/Ziyang-Ye/WorldCast) · [Project](https://ziyang-ye.github.io/WorldCast-Page/) |
+| **Holo-World** | [Holo-World: Unified Camera, Object and Weather Control for Video World Model](https://arxiv.org/abs/2606.20083) | Unified camera, object, and weather control from a single source image | arXiv 2026 | [Repository](https://github.com/XiangchenYin/Holo-World) · [Project](https://xiangchenyin.github.io/Holo-World/) |
+| **V-JEPA** | [Revisiting Feature Prediction for Learning Visual Representations from Video](https://arxiv.org/abs/2404.08471) | Predictive visual representations related to world modeling | arXiv 2024 | — |
+
+---
+
+# General World-Model Benchmarks
+
+Evaluation across action fidelity, physical consistency and geometry.
+
+| Benchmark | Paper | Evaluation Focus | Venue | Resources |
+| --- | --- | --- | --- | --- |
+| **4DWorldBench** | [4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models](https://openaccess.thecvf.com/content/CVPR2026/html/Lu_4DWorldBench_A_Comprehensive_Evaluation_Framework_for_3D4D_World_Generation_Models_CVPR_2026_paper.html) | Evaluates geometric and temporal world generation | CVPR 2026 | — |
+| **WorldSimBench** | [WorldSimBench: Towards Video Generation Models as World Simulators](https://proceedings.mlr.press/v267/qin25f.html) | Evaluates interactive fidelity of generative world simulators | ICML 2025 | — |
+| **PhysBench** | [PhysBench: Benchmarking and Enhancing Vision-Language Models for Physical World Understanding](https://arxiv.org/abs/2501.16411) | Tests physical understanding, related benchmark | ICLR 2025 | — |
+
+---
+
+# Autonomous Driving World Models
+
+Autonomous driving is one application of world models, including generation, latent prediction, world-action, JEPA, VLA and benchmarks.
+
+## Driving: Generative & Explicit-State Models
+
+RGB, LiDAR, occupancy and future-geometry driving worlds.
 
 | Model | Paper | Key Idea | Venue | Resources |
 | --- | --- | --- | --- | --- |
@@ -152,9 +228,9 @@ Models that predict or generate explicit future observations or scene states: RG
 
 ---
 
-## Latent & Planning-Oriented World Models
+## Driving: Latent & Planning-Oriented Models
 
-Models that learn future representations or use predicted consequences for planning, trajectory evaluation, policy learning, or reinforcement learning. JEPA methods appear in the dedicated section below.
+Future latent states and world-model-based driving plans.
 
 | Model | Paper | Key Idea | Venue | Resources |
 | --- | --- | --- | --- | --- |
@@ -181,9 +257,9 @@ Models that learn future representations or use predicted consequences for plann
 
 ---
 
-## World-Action & Action-Aligned Models
+## Driving: World-Action & Action-Aligned Models
 
-Models that couple future-world prediction with actions through joint generation, action-conditioned feedback, alignment, or verification. JEPA-based world-action models appear in the JEPA section.
+Driving models that couple predictive states to actions.
 
 | Model | Paper | Key Idea | Venue | Resources |
 | --- | --- | --- | --- | --- |
@@ -206,11 +282,11 @@ Models that couple future-world prediction with actions through joint generation
 
 ---
 
-# JEPA for Autonomous Driving
+## Driving: JEPA & Predictive Representations
 
-Driving-related joint-embedding predictive methods are collected in one place, spanning representation pre-training, compact predictive states, planning, candidate scoring, and world-action modeling.
+Driving predictive representation and joint-embedding methods.
 
-| Model | Paper | Driving Role | Venue | Resources |
+| Model | Paper | Key Idea | Venue | Resources |
 | --- | --- | --- | --- | --- |
 | **MORE** | [MORE: Learning Motion-Oriented Registers for Driving World Models and Planning](https://arxiv.org/abs/2610.14871) | Motion-conditioned V-JEPA registers form a compact shared interface for future prediction and planning | arXiv 2026 | — |
 | **World4Scorer** | [World4Scorer: Outcome-Grounded World Modeling for Autonomous Driving](https://arxiv.org/abs/2609.36438) | Trajectory-conditioned JEPA states learn candidate scores from simulator outcomes and logged futures | arXiv 2026 | [Code](https://github.com/World4Scorer/World4Scorer) · [Project](https://world4scorer.github.io/) |
@@ -225,15 +301,11 @@ Driving-related joint-embedding predictive methods are collected in one place, s
 
 ---
 
-# Vision-Language-Action for Driving
+## Driving: World-Model-Enhanced VLA
 
-The intersection of language-based reasoning, predictive world representations, and driving actions.
+Driving VLA using future world states or features.
 
-## World-Model-Enhanced VLA
-
-VLA/VLM methods where future prediction or learned world representations directly contribute to reasoning or action generation.
-
-| Model | Paper | World-Model / Reasoning Mechanism | Venue | Resources |
+| Model | Paper | Key Idea | Venue | Resources |
 | --- | --- | --- | --- | --- |
 | **SafeDriveVLA** | [SafeDriveVLA: Navigation-Conditioned World Model Dreaming for Conflict-Aware End-to-End Autonomous Driving](https://arxiv.org/abs/2610.20609) | Navigation-conditioned latent dreaming identifies unsafe instruction following | CoRL 2026 (accepted) | [Code](https://github.com/ASGuard-UCI/safedrive-vla) · [Project](https://safedrive-vla.github.io/SafeDriveVLA/) |
 | **DriveWLA** | [DriveWLA: Unifying Future Dynamics and Scene Semantics through World-Language-Action Modeling for Autonomous Driving](https://arxiv.org/abs/2610.17903) | World, language, and action experts share dynamics and semantic context; Flow-GRPO refines planning | arXiv 2026 | — |
@@ -255,11 +327,11 @@ VLA/VLM methods where future prediction or learned world representations directl
 
 ---
 
-## Selected General Driving VLA
+## Driving: Selected General VLA (Context)
 
-Selected architectural and data references for driving VLA. These papers are not necessarily world models themselves.
+Related driving VLA references, not necessarily world models.
 
-| Model | Paper | Main Focus | Venue | Resources |
+| Model | Paper | Key Idea | Venue | Resources |
 | --- | --- | --- | --- | --- |
 | **MindVLA-U1** | [MindVLA-U1: VLA Beats VA with Unified Streaming Architecture for Autonomous Driving](https://arxiv.org/abs/2605.12624) | Unified streaming language + continuous-action generation with memory | arXiv 2026 | [Project](https://mind-omni.github.io/projects/u1/index.html) |
 | **OneDrive** | [OneDrive: Unified Multi-Paradigm Driving with Vision-Language-Action Models](https://arxiv.org/abs/2604.17915) | One causal VLM decoder for language, perception queries, and trajectory queries | arXiv 2026 | [Code](https://github.com/Z1zyw/OneDrive) |
@@ -271,9 +343,9 @@ Selected architectural and data references for driving VLA. These papers are not
 
 ---
 
-# Benchmarks & Simulation
+## Driving: Benchmarks & Simulation
 
-World-model fidelity benchmarks and planning evaluation platforms. Non-reactive evaluation and pseudo-simulation are distinguished from interactive closed-loop simulation; scores across these protocols are not interchangeable.
+Driving simulation and evaluation protocols.
 
 | Benchmark | Paper | Evaluation Focus | Venue | Resources |
 | --- | --- | --- | --- | --- |
@@ -284,141 +356,52 @@ World-model fidelity benchmarks and planning evaluation platforms. Non-reactive 
 | **NAVSIM v1** | [NAVSIM: Data-Driven Non-Reactive Autonomous Vehicle Simulation and Benchmarking](https://arxiv.org/abs/2406.15349) | Non-reactive simulation-based metrics benchmark planning on real driving logs | NeurIPS Datasets and Benchmarks 2024 | [Code](https://github.com/autonomousvision/navsim/tree/v1.1) |
 | **Bench2Drive** | [Bench2Drive: Towards Multi-Ability Benchmarking of Closed-Loop End-To-End Autonomous Driving](https://arxiv.org/abs/2406.03877) | CARLA short-route closed-loop benchmark measures multiple driving abilities and failure modes | NeurIPS Datasets and Benchmarks 2024 | [Code](https://github.com/Thinklab-SJTU/Bench2Drive) · [Project](https://thinklab-sjtu.github.io/Bench2Drive/) |
 
----
-
-# Related Work
-
-Selected references outside the core driving taxonomy.
-
-## Embodied / Robotics World Models
-
-Selected embodied methods with direct relevance to joint world-action modeling.
-
-| Model | Paper | Key Idea | Venue | Resources |
-| --- | --- | --- | --- | --- |
-| **XPACE** | [XPACE: Joint World and Action Modeling from Heterogeneous Experience](https://arxiv.org/abs/2609.17372) | Shared video backbone jointly predicts robot actions and future video | arXiv 2026 | [Project](https://xpeng-robotics.github.io/xpace/) |
-
----
-
-## General Video World Models
-
-Selected non-driving references for controllable generation and shared-world consistency. Their evaluation domains are stated explicitly.
-
-| Model | Paper | Key Idea | Venue | Resources |
-| --- | --- | --- | --- | --- |
-| **WorldCast** | [WorldCast: Distributed Multiplayer World Models](https://arxiv.org/abs/2610.12412) | Distributed clients exchange player and scene states for consistent multiplayer worlds; evaluated in Counter-Strike 2 | arXiv 2026 | [Code](https://github.com/Ziyang-Ye/WorldCast) · [Project](https://ziyang-ye.github.io/WorldCast-Page/) |
-| **Holo-World** | [Holo-World: Unified Camera, Object and Weather Control for Video World Model](https://arxiv.org/abs/2606.20083) | Unified camera, object, and weather control from a single source image | arXiv 2026 | [Repository](https://github.com/XiangchenYin/Holo-World) · [Project](https://xiangchenyin.github.io/Holo-World/) |
-
 <!-- PAPERS_END -->
-
----
 
 # Datasets & Toolkits
 
-| Resource | Use in Driving World Models | Official Resources |
-| --- | --- | --- |
-| **nuScenes** | Multi-camera and LiDAR logs with scene annotations for forecasting, occupancy, and planning studies | [Dataset](https://www.nuscenes.org/nuscenes) · [Devkit](https://github.com/nutonomy/nuscenes-devkit) |
-| **nuPlan** | Real driving logs, maps, and a closed-loop planning devkit; a data source for NAVSIM | [Dataset](https://www.nuscenes.org/nuplan) · [Devkit](https://github.com/motional/nuplan-devkit) |
-| **OpenDV / OpenDV-YouTube** | Driving-video pre-training data and language annotations, with a smaller starter subset | [Data and Tools](https://github.com/OpenDriveLab/DriveAGI#opendv) |
-| **OpenDWM** | Reusable training, inference, and evaluation implementation for driving-video world models | [Code and Checkpoints](https://github.com/SenseTime-FVG/OpenDWM) |
-
-For planning evaluation, see [NAVSIM v1/v2, Bench2Drive, and HUGSIM](#benchmarks--simulation) above. Specify the dataset split, evaluator version, camera configuration, and scoring protocol when comparing results.
-
----
-
-# Industrial World Models
-
-Official research posts are listed separately from paper entries and are excluded from the paper-count badge.
-
-| System | Official Technical Post | Focus | Year |
+| Domain | Resource | Purpose | Link |
 | --- | --- | --- | --- |
-| **GAIA-3** | [Scaling World Models to Power Safety and Evaluation](https://wayve.ai/thinking/gaia-3/) | Generative simulation for repeatable driving-policy evaluation | 2025 |
-| **Waymo World Model** | [A New Frontier for Autonomous Driving Simulation](https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation) | Camera/LiDAR simulation and controllable scenario generation | 2026 |
+| General control | DeepMind Control Suite | Model-based reinforcement learning | [Code](https://github.com/google-deepmind/dm_control) |
+| Robotics | Open X-Embodiment | Multi-robot action demonstrations | [Data](https://github.com/google-deepmind/open_x_embodiment) |
+| Robotics | DROID | Robot manipulation trajectories | [Data](https://github.com/droid-dataset/droid) |
+| Games | Arcade Learning Environment | Atari rollout and planning | [Code](https://github.com/Farama-Foundation/Arcade-Learning-Environment) |
+| Medicine | MIMIC-IV | Patient trajectories (credentialed access) | [PhysioNet](https://physionet.org/content/mimiciv/) |
+| Medicine | HCC-TACE-Seg | Tumor progression and treatment context | [TCIA](https://www.cancerimagingarchive.net/collection/hcc-tace-seg/) |
+| Weather | ERA5 | Climate/weather trajectories | [Copernicus](https://cds.climate.copernicus.eu/) |
+| Weather | WeatherBench 2 | Forecast evaluation | [Code](https://github.com/google-research/weatherbench2) |
+| Driving | nuScenes / nuPlan | Multimodal trajectories and planning | [nuScenes](https://www.nuscenes.org/nuscenes) · [nuPlan](https://www.nuscenes.org/nuplan) |
+| Driving | NAVSIM / Bench2Drive | Planning evaluation and closed-loop tests | [NAVSIM](https://github.com/autonomousvision/navsim) · [Bench2Drive](https://github.com/Thinklab-SJTU/Bench2Drive) |
 
----
+# Industrial & Research Systems
+
+Official project/industry releases here are not counted as scholarly publications.
+
+| System | Domain | Link |
+| --- | --- | --- |
+| Genie 2 | Interactive environments | [DeepMind](https://deepmind.google/blog/genie-2-a-large-scale-foundation-world-model/) |
+| Genie 3 | Interactive environments | [DeepMind](https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/) |
+| Marble | Spatial worlds | [World Labs](https://www.worldlabs.ai/blog/marble-world-model) |
+| Matrix-Game 4 | Interactive games | [Repository](https://github.com/SkyworkAI/Matrix-Game/tree/main/Matrix-Game-4) |
+| NVIDIA Cosmos | Physical AI | [Repository](https://github.com/NVIDIA/cosmos) |
+| GAIA-3 | Driving | [Wayve](https://wayve.ai/thinking/gaia-3/) |
+| Waymo World Model | Driving | [Waymo](https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation) |
 
 # Recent Updates
 
-- **2026-10-19** — Expanded the public catalog from **71 to 112 papers**: added 40 verified references and restored one survey that previously existed only in YAML. Recent additions include **DriveWLA, OccWAM, MORE, SimVTA, PlanWAM, SafeDriveVLA, World4Scorer, CoDrive, PhysWAM**, and **RoXDrive**.
-- **2026-10-19** — Added missing reference methods **Vista, LAW, WoTE, DrivingGPT, GAIA-2, MaskGWM, DOME, ReSim**, and **WorldDrive**, plus a dedicated benchmark section covering **WorldLens, VehDyn, NAVSIM v1/v2, Bench2Drive**, and **HUGSIM**.
-- **2026-10-19** — Updated publication metadata and resource labels; removed the unavailable UniWorld repository link. Synchronized all paper entries with YAML and rebuilt the generator around the current JEPA/VLA taxonomy, with duplicate validation and a `--check` mode.
-- **2026-09-30** — Reorganized all driving-related JEPA work into one dedicated section; added **AD-E2E-JEPA** and additional JEPA-for-driving papers.
-- **2026-09-30** — Added a dedicated **Vision-Language-Action for Driving** track, including **CoWorld-VLA**, DriveWorld-VLA, DynVLA, Uni-World VLA, VLA-World, OneVL, HyWorldVLA, WCog-VLA, and related VLA references.
-- **2026-09-30** — Expanded the World-Action section with DriveWAM, Latent-WAM, SimWAM, and GeoWAM.
-- **2026-09-30** — Expanded the repository from an initial recent-paper list into a broader research map covering foundational, generative, latent, planning-oriented, world-action, JEPA, and VLA directions.
-- **2026-09-29** — Initialized the curated paper list with structured metadata and categorized recent work on driving world models.
+- **2026-10-21:** Reorganized the collection around all-scenario world models and expanded it to medicine, robotics, interactive games, social simulation, science and general model evaluation.
+- **2026-10-21:** Updated the metadata and README generator together, preserving the original driving literature within one application.
+- **2026-10-19:** Previously expanded autonomous-driving JEPA, VLA, latent prediction and benchmarks.
 
----
+# Definitions & Evaluation
 
-# Concepts
+**Latent models** predict learned future states. **Generative world models** output predicted video, geometry, medical images, or physical fields. **Action-conditioned models** approximate state changes caused by an agent or intervention. **Interactive world models** support repeated action–state feedback. Predictive video SSL is an enabling technology, but not automatically a complete environment simulator.
 
-### Generative / Explicit-State World Model
-
-Predicts or generates future observations or explicit scene representations, such as **RGB video, LiDAR, point clouds, BEV states, or occupancy**.
-
-### Latent World Model
-
-Models future evolution in a **learned representation space** rather than reconstructing every detail of the raw observation.
-
-### Planning-Oriented World Model
-
-Learns future representations specifically to support **trajectory generation, evaluation, policy learning, or closed-loop decision making**.
-
-### World-Action Model
-
-Models **future world states and agent actions together**, or transfers a learned world-dynamics prior directly into an action policy.
-
-### JEPA
-
-**Joint-Embedding Predictive Architecture** learns by predicting target representations in embedding space rather than reconstructing raw observations.
-
-For driving, JEPA-style learning now spans:
-
-- LiDAR / BEV representation pre-training,
-- video representation learning,
-- future latent prediction,
-- continuous intent prediction,
-- planning-relevant world modeling,
-- world-action modeling,
-- and action-conditioned world-model rollout for planning.
-
-### Vision-Language-Action (VLA)
-
-A **Vision-Language-Action** model combines visual observations and language-level semantic reasoning with direct action or trajectory prediction.
-
-### World-Model-Enhanced VLA
-
-A VLA in which future-world prediction or world-state representations are used as a central component of reasoning or planning, for example through:
-
-- future image generation,
-- latent future prediction,
-- dynamics tokens,
-- world/cognitive expert tokens,
-- imagined future-frame reasoning,
-- or explicit world-model uncertainty.
-
-### E2E Driving
-
-**End-to-End autonomous driving** maps sensory observations and optional context directly to planning or control outputs with a learned model.
-
----
+Evaluate temporal consistency, physical and action fidelity, long-horizon reliability, meaningful counterfactuals, and downstream policy value. Medical use requires independent clinical validation; social simulations are not established descriptions of real people's behavior.
 
 # Contributing
 
-Contributions are welcome.
-
-Paper metadata is maintained in:
-
-```text
-data/papers.yaml
-```
-
-All paper tables and the paper-count / last-updated badges are generated from that file. Each paper belongs to exactly one primary category.
-
-To add or update a paper:
-
-1. Edit the corresponding entry in `data/papers.yaml`.
-2. Regenerate the README:
+The source of truth is `data/papers.yaml`. Paper tables and badges are generated by `scripts/generate_readme.py`. Edits inside the paper block will be overwritten during regeneration.
 
 ```bash
 pip install -r requirements.txt
@@ -426,114 +409,20 @@ python scripts/generate_readme.py
 python scripts/generate_readme.py --check
 ```
 
-3. Check the generated tables and links.
-4. Open a pull request.
+Valid categories: `survey`, `foundations`, `interactive`, `robotics`, `medical`, `social`, `physics`, `video-spatial`, `bench-general`, and driving-specific `generative`, `latent`, `world-action`, `jepa`, `vla-world`, `vla-general`, `benchmark`.
 
-The generator replaces the paper-table block bounded by the inline markers `<!-- PAPERS_START -->` and `<!-- PAPERS_END -->`, and synchronizes the two metadata badges. Other sections can be edited manually.
-
-### Suggested metadata for each paper
-
-```yaml
-schema_version: 2
-updated_date: "2026-10-19"
-papers:
-  - model: ExampleModel
-    title: Full paper title
-    paper_url: https://arxiv.org/abs/2601.12345
-    arxiv_id: "2601.12345"
-    year: 2026
-    venue: arXiv
-    category: latent
-    focus: One-line description of the predictive mechanism and its use
-    publication_status: preprint
-    published_date: "2026-01-18"
-    code_url: ""
-    project_url: ""
-```
-
-Optional `publication_url` links to an official publication or acceptance source. `publication_status` is `preprint`, `accepted`, or `published`. `published_date` records the first public posting; `verified_date` records the latest metadata check. Keep `year` aligned with the listed venue, even when the arXiv preprint appeared earlier.
-
-For a repository link, `code_status` can be `released` (default), `partial`, `unreleased`, `repository-only`, or `data-only`. Mark a placeholder repository honestly; an announced code release is not the same as an available implementation. Additional resources such as a blog or reading list can be stored as `resources: [{label: Blog, url: https://example.com}]`.
-
-Recommended `category` values:
-
-```text
-survey
-generative
-latent
-world-action
-jepa
-vla-world
-vla-general
-benchmark
-related-embodied
-related-video
-```
-
-Please provide as much of the following information as possible:
-
-- model / method name,
-- paper title,
-- paper URL,
-- publication year,
-- venue,
-- category,
-- one-line description of the key idea,
-- code repository,
-- project page.
-
----
+Supply a paper, publication status, specific predictive mechanism and verified code links. Code states include `released`, `partial`, `repository-only`, `unreleased` and `data-only`.
 
 # Repository Structure
 
 ```text
 .
 ├── README.md
-├── data/
-│   └── papers.yaml
-├── scripts/
-│   └── generate_readme.py
+├── data/papers.yaml
+├── scripts/generate_readme.py
 └── requirements.txt
 ```
 
----
-
-# Inclusion Criteria
-
-A paper is generally included in the **core world-model sections** when it makes a clear contribution to at least one of the following:
-
-- future environment or scene prediction for autonomous driving,
-- learned world dynamics,
-- RGB / video / LiDAR / occupancy / BEV future generation,
-- latent future-state prediction,
-- self-supervised predictive world representation learning,
-- model-based imitation or reinforcement learning for driving,
-- future-conditioned trajectory planning,
-- action-conditioned world prediction,
-- joint world-action modeling,
-- world-model-aligned action or trajectory representations.
-
-The **JEPA** section intentionally includes driving-related JEPA methods across perception, representation learning, world modeling, and planning so that the full development line can be viewed in one place.
-
-The **World-Model-Enhanced VLA** section includes VLA/VLM methods where future prediction or learned world representations materially participate in reasoning or action generation.
-
-The **Selected General Driving VLA** section is intentionally selective. It provides architectural and dataset context without turning this repository into a complete VLA bibliography.
-
-The repository does **not** aim to cover every paper in:
-
-- autonomous-driving perception,
-- generic trajectory prediction,
-- all VLM / VLA driving,
-- generic video generation,
-- or conventional planning.
-
----
-
 # Acknowledgements
 
-This repository is intended as a continuously updated research index for the rapidly evolving area of **driving world models** and their convergence with **JEPA**, **world-action models**, and **driving VLA**.
-
-If you find a missing paper, incorrect metadata, broken link, or a better way to categorize a method, issues and pull requests are welcome.
-
-⭐ If you find this repository useful, consider giving it a star.
-
+Preserving the original autonomous-driving bibliography, this project expands to a broader research landscape spanning dynamic environments, interactive agents and scientific predictions.

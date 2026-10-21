@@ -1,5 +1,5 @@
 schema_version: 2
-updated_date: '2026-10-19'
+updated_date: '2026-10-21'
 papers:
 - model: Latent WM Survey
   title: 'Latent World Models for Automated Driving: A Unified Taxonomy, Evaluation Framework, and Open Challenges'
@@ -1338,7 +1338,7 @@ papers:
   code_url: ''
   project_url: https://xpeng-robotics.github.io/xpace/
   scope: BACKGROUND
-  category: related-embodied
+  category: robotics
   focus: Shared video backbone jointly predicts robot actions and future video
   tags:
   - World-Action Model
@@ -1365,7 +1365,7 @@ papers:
   code_url: https://github.com/XiangchenYin/Holo-World
   project_url: https://xiangchenyin.github.io/Holo-World/
   scope: BACKGROUND
-  category: related-video
+  category: video-spatial
   focus: Unified camera, object, and weather control from a single source image
   tags:
   - Video World Model
@@ -2029,7 +2029,7 @@ papers:
   - https://github.com/TabGuigui/WorldDrive
 - arxiv_id: '2610.12412'
   model: WorldCast
-  category: related-video
+  category: video-spatial
   focus: Distributed clients exchange player and scene states for consistent multiplayer worlds; evaluated in Counter-Strike
     2
   venue: arXiv
@@ -2144,3 +2144,909 @@ papers:
   - https://yiyiliao.github.io/
   - https://github.com/hyzhou404/HUGSIM
   - https://xdimlab.github.io/HUGSIM/
+- model: 'Medical World Models Survey'
+  title: 'Medical world models: representing medical states, modelling clinical dynamics and guiding intervention policies'
+  paper_url: 'https://arxiv.org/abs/2606.16721'
+  arxiv_id: '2606.16721'
+  year: 2026
+  venue: 'arXiv'
+  category: 'survey'
+  focus: 'Patient dynamics and intervention planning'
+  code_url: 'https://github.com/1999kevin/awesome_medical_world_models'
+  project_url: ''
+  code_status: repository-only
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2606.16721
+  - https://github.com/1999kevin/awesome_medical_world_models
+
+- model: 'Robotics World Model Survey'
+  title: 'World Model for Robot Learning: A Comprehensive Survey'
+  paper_url: 'https://arxiv.org/abs/2605.00080'
+  arxiv_id: '2605.00080'
+  year: 2026
+  venue: 'arXiv'
+  category: 'survey'
+  focus: 'Robot dynamics and policy learning'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2605.00080
+
+- model: 'Embodied World Model Survey'
+  title: 'A Comprehensive Survey on World Models for Embodied AI'
+  paper_url: 'https://arxiv.org/abs/2510.16732'
+  arxiv_id: '2510.16732'
+  year: 2025
+  venue: 'arXiv'
+  category: 'survey'
+  focus: 'World-model taxonomy across embodied applications'
+  code_url: 'https://github.com/Li-Zn-H/AwesomeWorldModels'
+  project_url: ''
+  code_status: repository-only
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2510.16732
+  - https://github.com/Li-Zn-H/AwesomeWorldModels
+
+- model: 'World Models (Ha and Schmidhuber)'
+  title: 'World Models'
+  paper_url: 'https://arxiv.org/abs/1803.10122'
+  arxiv_id: '1803.10122'
+  year: 2018
+  venue: 'arXiv'
+  category: 'foundations'
+  focus: 'Latent world dynamics for imagined agent policies'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/1803.10122
+
+- model: 'PlaNet'
+  title: 'Learning Latent Dynamics for Planning from Pixels'
+  paper_url: 'https://arxiv.org/abs/1811.04551'
+  arxiv_id: '1811.04551'
+  year: 2019
+  venue: 'ICML'
+  category: 'foundations'
+  focus: 'Pixel-to-latent dynamics for model-based planning'
+  code_url: 'https://github.com/google-research/planet'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/1811.04551
+  - https://github.com/google-research/planet
+
+- model: 'Dreamer'
+  title: 'Dream to Control: Learning Behaviors by Latent Imagination'
+  paper_url: 'https://arxiv.org/abs/1912.01603'
+  arxiv_id: '1912.01603'
+  year: 2020
+  venue: 'ICLR'
+  category: 'foundations'
+  focus: 'Imagined latent trajectories train control policies'
+  code_url: 'https://github.com/danijar/dreamer'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/1912.01603
+  - https://github.com/danijar/dreamer
+
+- model: 'DreamerV2'
+  title: 'Mastering Atari with Discrete World Models'
+  paper_url: 'https://arxiv.org/abs/2010.02193'
+  arxiv_id: '2010.02193'
+  year: 2021
+  venue: 'ICLR'
+  category: 'foundations'
+  focus: 'Discrete learned dynamics for Atari control'
+  code_url: 'https://github.com/danijar/dreamerv2'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2010.02193
+  - https://github.com/danijar/dreamerv2
+
+- model: 'TD-MPC2'
+  title: 'TD-MPC2: Scalable, Robust World Models for Continuous Control'
+  paper_url: 'https://arxiv.org/abs/2310.16828'
+  arxiv_id: '2310.16828'
+  year: 2024
+  venue: 'ICLR'
+  category: 'foundations'
+  focus: 'Latent dynamics and trajectory optimization'
+  code_url: 'https://github.com/nicklashansen/tdmpc2'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2310.16828
+  - https://github.com/nicklashansen/tdmpc2
+
+- model: 'DreamerV3'
+  title: 'Mastering Diverse Control Tasks Through World Models'
+  paper_url: 'https://www.nature.com/articles/s41586-025-08744-2'
+  arxiv_id: ''
+  year: 2025
+  venue: 'Nature'
+  category: 'foundations'
+  focus: 'General imagination-based model-based reinforcement learning'
+  code_url: 'https://github.com/danijar/dreamerv3'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://www.nature.com/articles/s41586-025-08744-2
+  - https://github.com/danijar/dreamerv3
+
+- model: 'V-JEPA 2'
+  title: 'V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning'
+  paper_url: 'https://arxiv.org/abs/2506.09985'
+  arxiv_id: '2506.09985'
+  year: 2025
+  venue: 'arXiv'
+  category: 'foundations'
+  focus: 'Predictive video features and action-conditioned robot planning'
+  code_url: 'https://github.com/facebookresearch/vjepa2'
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2506.09985
+  - https://github.com/facebookresearch/vjepa2
+
+- model: 'Genie'
+  title: 'Genie: Generative Interactive Environments'
+  paper_url: 'https://arxiv.org/abs/2402.15391'
+  arxiv_id: '2402.15391'
+  year: 2024
+  venue: 'arXiv'
+  category: 'interactive'
+  focus: 'Learned latent actions for playable generated worlds'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2402.15391
+
+- model: 'DIAMOND'
+  title: 'Diffusion for World Modeling: Visual Details Matter in Atari'
+  paper_url: 'https://arxiv.org/abs/2405.12399'
+  arxiv_id: '2405.12399'
+  year: 2024
+  venue: 'NeurIPS'
+  category: 'interactive'
+  focus: 'Diffusion dynamics for Atari control and game rollouts'
+  code_url: 'https://github.com/eloialonso/diamond'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2405.12399
+  - https://github.com/eloialonso/diamond
+
+- model: 'GameNGen'
+  title: 'Diffusion Models Are Real-Time Game Engines'
+  paper_url: 'https://arxiv.org/abs/2408.14837'
+  arxiv_id: '2408.14837'
+  year: 2025
+  venue: 'ICLR'
+  category: 'interactive'
+  focus: 'Action-conditioned diffusion game engine'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2408.14837
+
+- model: 'GameFactory'
+  title: 'GameFactory: Creating New Games with Generative Interactive Videos'
+  paper_url: 'https://arxiv.org/abs/2501.08325'
+  arxiv_id: '2501.08325'
+  year: 2025
+  venue: 'ICCV'
+  category: 'interactive'
+  focus: 'Action-controlled video games with scene generalization'
+  code_url: 'https://github.com/KlingAIResearch/GameFactory'
+  project_url: ''
+  code_status: partial
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2501.08325
+  - https://github.com/KlingAIResearch/GameFactory
+
+- model: 'Matrix-Game 2.0'
+  title: 'Matrix-Game 2.0: An Open-Source, Real-Time, and Streaming Interactive World Model'
+  paper_url: 'https://arxiv.org/abs/2508.13009'
+  arxiv_id: '2508.13009'
+  year: 2025
+  venue: 'arXiv'
+  category: 'interactive'
+  focus: 'Real-time neural games steered by player actions'
+  code_url: 'https://github.com/SkyworkAI/Matrix-Game'
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2508.13009
+  - https://github.com/SkyworkAI/Matrix-Game
+
+- model: 'UniPi'
+  title: 'Learning Universal Policies via Text-Guided Video Generation'
+  paper_url: 'https://arxiv.org/abs/2302.00111'
+  arxiv_id: '2302.00111'
+  year: 2023
+  venue: 'NeurIPS'
+  category: 'robotics'
+  focus: 'Text-guided imagined plans translated into actions'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2302.00111
+
+- model: 'RoboDreamer'
+  title: 'RoboDreamer: Learning Compositional World Models for Robot Imagination'
+  paper_url: 'https://arxiv.org/abs/2404.12377'
+  arxiv_id: '2404.12377'
+  year: 2024
+  venue: 'ICML'
+  category: 'robotics'
+  focus: 'Compositional robot world prediction'
+  code_url: 'https://github.com/UMass-Embodied-AGI/robodreamer'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2404.12377
+  - https://github.com/UMass-Embodied-AGI/robodreamer
+
+- model: 'IRASim'
+  title: 'IRASim: Learning Interactive Real-Robot Action Simulators'
+  paper_url: 'https://arxiv.org/abs/2406.14540'
+  arxiv_id: '2406.14540'
+  year: 2024
+  venue: 'arXiv'
+  category: 'robotics'
+  focus: 'Action-conditioned robot video simulation'
+  code_url: 'https://github.com/bytedance/IRASim'
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2406.14540
+  - https://github.com/bytedance/IRASim
+
+- model: 'GR-2'
+  title: 'GR-2: A Generative Video-Language-Action Model with Web-Scale Knowledge for Robot Manipulation'
+  paper_url: 'https://arxiv.org/abs/2410.06158'
+  arxiv_id: '2410.06158'
+  year: 2024
+  venue: 'arXiv'
+  category: 'robotics'
+  focus: 'Joint robot action and future video modeling'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2410.06158
+
+- model: 'DreamGen'
+  title: 'DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories'
+  paper_url: 'https://arxiv.org/abs/2505.12705'
+  arxiv_id: '2505.12705'
+  year: 2025
+  venue: 'arXiv'
+  category: 'robotics'
+  focus: 'Synthetic world trajectories for robot policies'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2505.12705
+
+- model: 'WorldVLA'
+  title: 'WorldVLA: Towards Autoregressive Action World Model'
+  paper_url: 'https://arxiv.org/abs/2506.21539'
+  arxiv_id: '2506.21539'
+  year: 2025
+  venue: 'arXiv'
+  category: 'robotics'
+  focus: 'Shared autoregressive world and action model'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2506.21539
+
+- model: 'DreamDojo'
+  title: 'DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos'
+  paper_url: 'https://proceedings.mlr.press/v306/gao26q.html'
+  arxiv_id: ''
+  year: 2026
+  venue: 'ICML'
+  category: 'robotics'
+  focus: 'Action-conditioned robot dynamics learned from human video'
+  code_url: 'https://github.com/NVIDIA/DreamDojo'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://proceedings.mlr.press/v306/gao26q.html
+  - https://github.com/NVIDIA/DreamDojo
+
+- model: 'SurgWorld'
+  title: 'SurgWorld: Learning Surgical Robot Policies from Videos via World Modeling'
+  paper_url: 'https://arxiv.org/abs/2512.23162'
+  arxiv_id: '2512.23162'
+  year: 2025
+  venue: 'arXiv'
+  category: 'robotics'
+  focus: 'Surgical world dynamics for robot imitation'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2512.23162
+
+- model: 'MeWM'
+  title: 'Medical World Model: Generative Simulation of Tumor Evolution for Treatment Planning'
+  paper_url: 'https://arxiv.org/abs/2506.02327'
+  arxiv_id: '2506.02327'
+  year: 2025
+  venue: 'ICCV'
+  category: 'medical'
+  focus: 'Treatment-conditioned tumor simulation and clinical planning'
+  code_url: 'https://github.com/scott-yjyang/MeWM'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2506.02327
+  - https://github.com/scott-yjyang/MeWM
+
+- model: 'CheXWorld'
+  title: 'CheXWorld: Exploring Image World Modeling for Radiograph Representation Learning'
+  paper_url: 'https://arxiv.org/abs/2504.13820'
+  arxiv_id: '2504.13820'
+  year: 2025
+  venue: 'CVPR'
+  category: 'medical'
+  focus: 'Predictive radiograph representations; related foundation model'
+  code_url: 'https://github.com/LeapLabTHU/CheXWorld'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: BACKGROUND
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2504.13820
+  - https://github.com/LeapLabTHU/CheXWorld
+
+- model: 'Brain-JEPA'
+  title: 'Brain-JEPA: Brain Dynamics Foundation Model with Gradient Positioning and Spatiotemporal Masking'
+  paper_url: 'https://arxiv.org/abs/2409.19407'
+  arxiv_id: '2409.19407'
+  year: 2024
+  venue: 'NeurIPS'
+  category: 'medical'
+  focus: 'Spatiotemporal fMRI predictive representation model'
+  code_url: 'https://github.com/Eric-LRL/Brain-JEPA'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2409.19407
+  - https://github.com/Eric-LRL/Brain-JEPA
+
+- model: 'MedDreamer'
+  title: 'MedDreamer: Model-Based Reinforcement Learning with Latent Imagination on Complex EHRs for Clinical Decision Support'
+  paper_url: 'https://arxiv.org/abs/2505.19785'
+  arxiv_id: '2505.19785'
+  year: 2026
+  venue: 'KDD'
+  category: 'medical'
+  focus: 'Clinical decisions from imagined patient trajectories'
+  code_url: 'https://github.com/xuqianyi/medDreamer'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2505.19785
+  - https://github.com/xuqianyi/medDreamer
+
+- model: 'EHRWorld'
+  title: 'EHRWorld: A Patient-Centric Medical World Model for Long-Horizon Clinical Trajectories'
+  paper_url: 'https://arxiv.org/abs/2602.03569'
+  arxiv_id: '2602.03569'
+  year: 2026
+  venue: 'arXiv'
+  category: 'medical'
+  focus: 'Predicts longitudinal patient states and outcomes'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2602.03569
+
+- model: 'Brain-WM'
+  title: 'Brain-WM: Brain Glioblastoma World Model'
+  paper_url: 'https://arxiv.org/abs/2603.07562'
+  arxiv_id: '2603.07562'
+  year: 2026
+  venue: 'arXiv'
+  category: 'medical'
+  focus: 'Brain tumor evolution and disease progression'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2603.07562
+
+- model: 'EchoJEPA'
+  title: 'EchoJEPA: A Latent Predictive Foundation Model for Echocardiography'
+  paper_url: 'https://arxiv.org/abs/2602.02603'
+  arxiv_id: '2602.02603'
+  year: 2026
+  venue: 'arXiv'
+  category: 'medical'
+  focus: 'Ultrasound predictive features, not clinical intervention simulator'
+  code_url: 'https://github.com/bowang-lab/EchoJEPA'
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: BACKGROUND
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2602.02603
+  - https://github.com/bowang-lab/EchoJEPA
+
+- model: 'X-WIN'
+  title: 'X-WIN: Building Chest Radiograph World Model via Predictive Sensing'
+  paper_url: 'https://arxiv.org/abs/2511.14918'
+  arxiv_id: '2511.14918'
+  year: 2026
+  venue: 'CVPR'
+  category: 'medical'
+  focus: 'Predictive chest X-ray volumetric representations'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2511.14918
+
+- model: 'HounsWorld'
+  title: 'HounsWorld: A Multimodal World Model for Hidden Patient-State Readout, Reconstruction, and Simulation'
+  paper_url: 'https://arxiv.org/abs/2608.12904'
+  arxiv_id: '2608.12904'
+  year: 2026
+  venue: 'arXiv'
+  category: 'medical'
+  focus: 'CT and clinical text hidden patient-state simulation'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2608.12904
+
+- model: 'UltraWorld'
+  title: 'UltraWorld: Learning Interactive Ultrasound World Models from Untracked Clinical Videos with Acoustic Sampling Map'
+  paper_url: 'https://arxiv.org/abs/2610.09785'
+  arxiv_id: '2610.09785'
+  year: 2026
+  venue: 'arXiv'
+  category: 'medical'
+  focus: 'Interactive ultrasound image dynamics under probe actions'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2610.09785
+
+- model: 'Lingshu-Cell'
+  title: 'Lingshu-Cell: A Generative Cellular World Model for Transcriptome Modeling toward Virtual Cells'
+  paper_url: 'https://arxiv.org/abs/2603.25240'
+  arxiv_id: '2603.25240'
+  year: 2026
+  venue: 'arXiv'
+  category: 'medical'
+  focus: 'Cellular transcriptome responses to interventions'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2603.25240
+
+- model: 'Generative Agents'
+  title: 'Generative Agents: Interactive Simulacra of Human Behavior'
+  paper_url: 'https://arxiv.org/abs/2304.03442'
+  arxiv_id: '2304.03442'
+  year: 2023
+  venue: 'UIST'
+  category: 'social'
+  focus: 'Memory-based multi-agent social simulator'
+  code_url: 'https://github.com/joonspk-research/generative_agents'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: BACKGROUND
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2304.03442
+  - https://github.com/joonspk-research/generative_agents
+
+- model: 'Concordia'
+  title: 'Generative agent-based modeling with actions grounded in physical, social, or digital space using Concordia'
+  paper_url: 'https://arxiv.org/abs/2312.03664'
+  arxiv_id: '2312.03664'
+  year: 2023
+  venue: 'arXiv'
+  category: 'social'
+  focus: 'Environment-grounded generative social agents'
+  code_url: 'https://github.com/google-deepmind/concordia'
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: BACKGROUND
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2312.03664
+  - https://github.com/google-deepmind/concordia
+
+- model: 'SOTOPIA'
+  title: 'SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents'
+  paper_url: 'https://proceedings.iclr.cc/paper_files/paper/2024/hash/b3075b88e583a0e98d8b24338a613060-Abstract-Conference.html'
+  arxiv_id: ''
+  year: 2024
+  venue: 'ICLR'
+  category: 'social'
+  focus: 'Interactive agent social evaluation environment'
+  code_url: 'https://github.com/sotopia-lab/sotopia'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: BACKGROUND
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://proceedings.iclr.cc/paper_files/paper/2024/hash/b3075b88e583a0e98d8b24338a613060-Abstract-Conference.html
+  - https://github.com/sotopia-lab/sotopia
+
+- model: 'OASIS'
+  title: 'OASIS: Open Agent Social Interaction Simulations with One Million Agents'
+  paper_url: 'https://arxiv.org/abs/2411.11581'
+  arxiv_id: '2411.11581'
+  year: 2024
+  venue: 'arXiv'
+  category: 'social'
+  focus: 'Evolving social-network multi-agent simulations'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: BACKGROUND
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2411.11581
+
+- model: 'Social World Models'
+  title: 'Social World Models'
+  paper_url: 'https://arxiv.org/abs/2509.00559'
+  arxiv_id: '2509.00559'
+  year: 2025
+  venue: 'arXiv'
+  category: 'social'
+  focus: 'Predicts interpersonal actions and hidden social states'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2509.00559
+
+- model: 'Graph Physics Simulator'
+  title: 'Learning to Simulate Complex Physics with Graph Networks'
+  paper_url: 'https://arxiv.org/abs/2002.09405'
+  arxiv_id: '2002.09405'
+  year: 2020
+  venue: 'ICML'
+  category: 'physics'
+  focus: 'Graph-based dynamics for interacting particles'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2002.09405
+
+- model: 'MeshGraphNets'
+  title: 'Learning Mesh-Based Simulation with Graph Networks'
+  paper_url: 'https://arxiv.org/abs/2010.03409'
+  arxiv_id: '2010.03409'
+  year: 2021
+  venue: 'ICLR'
+  category: 'physics'
+  focus: 'Fluid and mesh state transitions'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2010.03409
+
+- model: 'FourCastNet'
+  title: 'FourCastNet: A Global Data-driven High-resolution Weather Model using Adaptive Fourier Neural Operators'
+  paper_url: 'https://arxiv.org/abs/2202.11214'
+  arxiv_id: '2202.11214'
+  year: 2022
+  venue: 'arXiv'
+  category: 'physics'
+  focus: 'Global atmospheric forecasting with Fourier operators'
+  code_url: 'https://github.com/NVlabs/FourCastNet'
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2202.11214
+  - https://github.com/NVlabs/FourCastNet
+
+- model: 'GraphCast'
+  title: 'Learning skillful medium-range global weather forecasting'
+  paper_url: 'https://www.science.org/doi/10.1126/science.adi2336'
+  arxiv_id: ''
+  year: 2023
+  venue: 'Science'
+  category: 'physics'
+  focus: 'Graph neural forecasting of weather dynamics'
+  code_url: 'https://github.com/google-deepmind/graphcast'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://www.science.org/doi/10.1126/science.adi2336
+  - https://github.com/google-deepmind/graphcast
+
+- model: 'NeuralGCM'
+  title: 'Neural general circulation models for weather and climate'
+  paper_url: 'https://www.nature.com/articles/s41586-024-07744-y'
+  arxiv_id: ''
+  year: 2024
+  venue: 'Nature'
+  category: 'physics'
+  focus: 'Differentiable climate and atmosphere dynamic simulation'
+  code_url: 'https://github.com/google-research/neuralgcm'
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://www.nature.com/articles/s41586-024-07744-y
+  - https://github.com/google-research/neuralgcm
+
+- model: 'GenCast'
+  title: 'Probabilistic weather forecasting with machine learning'
+  paper_url: 'https://www.nature.com/articles/s41586-024-08252-9'
+  arxiv_id: ''
+  year: 2024
+  venue: 'Nature'
+  category: 'physics'
+  focus: 'Probabilistic atmospheric forecasts'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://www.nature.com/articles/s41586-024-08252-9
+
+- model: 'WorldSimBench'
+  title: 'WorldSimBench: Towards Video Generation Models as World Simulators'
+  paper_url: 'https://proceedings.mlr.press/v267/qin25f.html'
+  arxiv_id: ''
+  year: 2025
+  venue: 'ICML'
+  category: 'bench-general'
+  focus: 'Evaluates interactive fidelity of generative world simulators'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://proceedings.mlr.press/v267/qin25f.html
+
+- model: 'PhysBench'
+  title: 'PhysBench: Benchmarking and Enhancing Vision-Language Models for Physical World Understanding'
+  paper_url: 'https://arxiv.org/abs/2501.16411'
+  arxiv_id: '2501.16411'
+  year: 2025
+  venue: 'ICLR'
+  category: 'bench-general'
+  focus: 'Tests physical understanding, related benchmark'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: BACKGROUND
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2501.16411
+
+- model: '4DWorldBench'
+  title: '4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models'
+  paper_url: 'https://openaccess.thecvf.com/content/CVPR2026/html/Lu_4DWorldBench_A_Comprehensive_Evaluation_Framework_for_3D4D_World_Generation_Models_CVPR_2026_paper.html'
+  arxiv_id: ''
+  year: 2026
+  venue: 'CVPR'
+  category: 'bench-general'
+  focus: 'Evaluates geometric and temporal world generation'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: published
+  scope: CORE
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://openaccess.thecvf.com/content/CVPR2026/html/Lu_4DWorldBench_A_Comprehensive_Evaluation_Framework_for_3D4D_World_Generation_Models_CVPR_2026_paper.html
+
+- model: 'V-JEPA'
+  title: 'Revisiting Feature Prediction for Learning Visual Representations from Video'
+  paper_url: 'https://arxiv.org/abs/2404.08471'
+  arxiv_id: '2404.08471'
+  year: 2024
+  venue: 'arXiv'
+  category: 'video-spatial'
+  focus: 'Predictive visual representations related to world modeling'
+  code_url: ''
+  project_url: ''
+  code_status: released
+  publication_status: preprint
+  scope: BACKGROUND
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2404.08471
