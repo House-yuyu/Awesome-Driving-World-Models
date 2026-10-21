@@ -2029,9 +2029,8 @@ papers:
   - https://github.com/TabGuigui/WorldDrive
 - arxiv_id: '2610.12412'
   model: WorldCast
-  category: video-spatial
-  focus: Distributed clients exchange player and scene states for consistent multiplayer worlds; evaluated in Counter-Strike
-    2
+  category: interactive
+  focus: Independent players exchange shared player and scene states for consistent multiplayer game-world views
   venue: arXiv
   year: 2026
   code_url: https://github.com/Ziyang-Ye/WorldCast
@@ -2042,7 +2041,7 @@ papers:
   published_date: '2026-10-08'
   verified_date: '2026-10-19'
   added_date: '2026-10-19'
-  scope: BACKGROUND
+  scope: CORE
   sources:
   - https://arxiv.org/abs/2610.12412
   - https://github.com/Ziyang-Ye/WorldCast
@@ -3050,3 +3049,189 @@ papers:
   verified_date: '2026-10-21'
   sources:
   - https://arxiv.org/abs/2404.08471
+- model: 'LIVE'
+  title: 'LIVE: Long-horizon Interactive Video World Modeling'
+  paper_url: https://arxiv.org/abs/2602.03747
+  arxiv_id: '2602.03747'
+  year: 2026
+  venue: 'ICML'
+  category: 'interactive'
+  focus: 'Forward/reverse cycle-consistency curbs error accumulation in long interactive video rollouts'
+  code_url: 'https://github.com/Junchao-cs/LIVE'
+  project_url: 'https://junchao-cs.github.io/LIVE-demo/'
+  publication_status: published
+  code_status: partial
+  scope: CORE
+  published_date: '2026-02-03'
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2602.03747
+  - https://github.com/Junchao-cs/LIVE
+  - https://junchao-cs.github.io/LIVE-demo/
+- model: 'Memory Forcing'
+  title: 'Memory Forcing: Spatio-Temporal Memory for Consistent Scene Generation on Minecraft'
+  paper_url: https://arxiv.org/abs/2510.03198
+  arxiv_id: '2510.03198'
+  year: 2026
+  venue: 'NeurIPS'
+  category: 'interactive'
+  focus: 'Spatiotemporal scene memory improves coherence when an interactive Minecraft camera revisits places'
+  code_url: 'https://github.com/Junchao-cs/Memory-Forcing'
+  project_url: 'https://junchao-cs.github.io/MemoryForcing/'
+  publication_status: published
+  code_status: unreleased
+  scope: CORE
+  published_date: '2025-10-04'
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2510.03198
+  - https://github.com/Junchao-cs/Memory-Forcing
+  - https://junchao-cs.github.io/MemoryForcing/
+- model: 'SolarWM'
+  title: 'SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models'
+  paper_url: https://arxiv.org/abs/2609.02886
+  arxiv_id: '2609.02886'
+  year: 2026
+  venue: 'arXiv'
+  category: 'interactive'
+  focus: 'Open training pipeline for real-time interactive world models using 1.43M video clips'
+  code_url: 'https://github.com/Junchao-cs/SolarWM'
+  project_url: 'https://junchao-cs.github.io/SolarWM-Web/'
+  publication_status: preprint
+  code_status: released
+  scope: CORE
+  published_date: '2026-09-02'
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  resources:
+  - label: 'Data'
+    url: https://huggingface.co/datasets/junchaoh-cs/SolarWM-Data
+  sources:
+  - https://arxiv.org/abs/2609.02886
+  - https://github.com/Junchao-cs/SolarWM
+  - https://junchao-cs.github.io/SolarWM-Web/
+- model: 'Spatial Memory Intelligence'
+  title: 'Spatial Memory Intelligence: Endowing World Models with Understanding-Driven Long-Term Memory'
+  paper_url: https://arxiv.org/abs/2610.02521
+  arxiv_id: '2610.02521'
+  year: 2026
+  venue: 'arXiv'
+  category: 'interactive'
+  focus: 'Understanding-guided spatial memory clustering, sparsification, and action-conditioned retrieval'
+  code_url: 'https://github.com/xbyym/Spatial-Memory-Intelligence'
+  project_url: 'https://spatial-memory-intelligence.github.io/'
+  publication_status: preprint
+  code_status: unreleased
+  scope: CORE
+  published_date: '2026-10-01'
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2610.02521
+  - https://github.com/xbyym/Spatial-Memory-Intelligence
+  - https://spatial-memory-intelligence.github.io/
+- model: 'VideoRAE'
+  title: 'VideoRAE: Taming Video Foundation Models for Generative Modeling via Representation Autoencoders'
+  paper_url: https://arxiv.org/abs/2607.14088
+  arxiv_id: '2607.14088'
+  year: 2026
+  venue: 'arXiv'
+  category: 'video-spatial'
+  focus: 'Converts foundation-video features into compact continuous and discrete latents for generative modeling'
+  code_url: 'https://github.com/zhxie0117/VideoRAE'
+  project_url: 'https://zhxie0117.github.io/VideoRAE/'
+  publication_status: preprint
+  code_status: released
+  scope: BACKGROUND
+  published_date: '2026-07-14'
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2607.14088
+  - https://github.com/zhxie0117/VideoRAE
+  - https://zhxie0117.github.io/VideoRAE/
+- model: 'SymphoMotion'
+  title: 'SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation'
+  paper_url: https://arxiv.org/abs/2604.03723
+  arxiv_id: '2604.03723'
+  year: 2026
+  venue: 'CVPR'
+  category: 'video-spatial'
+  focus: 'Joint camera trajectories and object dynamics for controllable coherent video generation'
+  code_url: 'https://github.com/grenoble-zhang/SymphoMotion'
+  project_url: 'https://grenoble-zhang.github.io/SymphoMotion/'
+  publication_status: published
+  code_status: released
+  scope: BACKGROUND
+  published_date: '2026-04-04'
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2604.03723
+  - https://github.com/grenoble-zhang/SymphoMotion
+  - https://grenoble-zhang.github.io/SymphoMotion/
+- model: 'Mask Forcing'
+  title: 'Mask Forcing: Improving Autoregressive Video Diffusion Distillation via Dual-Noise Masking Rollout'
+  paper_url: https://arxiv.org/abs/2609.09123
+  arxiv_id: '2609.09123'
+  year: 2026
+  venue: 'arXiv'
+  category: 'video-spatial'
+  focus: 'Dual-noise masking reduces collapse and error propagation during autoregressive video distillation'
+  code_url: 'https://github.com/delaprada/Mask-Forcing'
+  project_url: 'https://alicezrzhao.github.io/mask_forcing/'
+  publication_status: preprint
+  code_status: released
+  scope: BACKGROUND
+  published_date: '2026-09-09'
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2609.09123
+  - https://github.com/delaprada/Mask-Forcing
+  - https://alicezrzhao.github.io/mask_forcing/
+- model: 'Orbia'
+  title: 'Orbia: Do Generated Videos Form a Consistent 3D World?'
+  paper_url: https://arxiv.org/abs/2610.20693
+  arxiv_id: '2610.20693'
+  year: 2026
+  venue: 'arXiv'
+  category: 'bench-general'
+  focus: 'Revisit tests assess input preservation, generated content persistence and 3D scene consistency'
+  code_url: 'https://github.com/worldbench/Orbia'
+  project_url: 'https://orbia-bench.github.io/'
+  publication_status: preprint
+  code_status: released
+  scope: CORE
+  published_date: '2026-10-14'
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  resources:
+  - label: 'Data'
+    url: https://huggingface.co/datasets/Orbia/Orbia
+  sources:
+  - https://arxiv.org/abs/2610.20693
+  - https://github.com/worldbench/Orbia
+  - https://orbia-bench.github.io/
+- model: 'EVO-WAM'
+  title: 'EVO-WAM: Evolving World Action Models through Video-Action Verification'
+  paper_url: https://arxiv.org/abs/2609.38057
+  arxiv_id: '2609.38057'
+  year: 2026
+  venue: 'arXiv'
+  category: 'robotics'
+  focus: 'Self-improving embodied world-action policies from verified imagined video/action rollouts'
+  code_url: 'https://github.com/Clausy9/EVO-WAM'
+  project_url: 'https://evo-wam.github.io/'
+  publication_status: preprint
+  code_status: repository-only
+  scope: CORE
+  published_date: '2026-09-29'
+  added_date: '2026-10-21'
+  verified_date: '2026-10-21'
+  sources:
+  - https://arxiv.org/abs/2609.38057
+  - https://github.com/Clausy9/EVO-WAM
+  - https://evo-wam.github.io/

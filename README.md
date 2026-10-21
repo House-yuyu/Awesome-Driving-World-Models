@@ -1,7 +1,7 @@
 # Awesome World Models 🌍
 
 <p align="center">
-  <img src="https://img.shields.io/badge/papers-161-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/papers-170-blue" alt="Papers">
   <img src="https://img.shields.io/badge/last%20updated-2026--10--21-brightgreen" alt="Last Updated">
   <img src="https://img.shields.io/badge/PRs-welcome-orange" alt="PRs Welcome">
 </p>
@@ -89,6 +89,11 @@ Controllable generated interactive environments and playable simulations.
 
 | Model | Paper | Key Idea | Venue | Resources |
 | --- | --- | --- | --- | --- |
+| **WorldCast** | [WorldCast: Distributed Multiplayer World Models](https://arxiv.org/abs/2610.12412) | Independent players exchange shared player and scene states for consistent multiplayer game-world views | arXiv 2026 | [Code](https://github.com/Ziyang-Ye/WorldCast) · [Project](https://ziyang-ye.github.io/WorldCast-Page/) |
+| **Spatial Memory Intelligence** | [Spatial Memory Intelligence: Endowing World Models with Understanding-Driven Long-Term Memory](https://arxiv.org/abs/2610.02521) | Understanding-guided spatial memory clustering, sparsification, and action-conditioned retrieval | arXiv 2026 | [Repository](https://github.com/xbyym/Spatial-Memory-Intelligence) (code pending) · [Project](https://spatial-memory-intelligence.github.io/) |
+| **SolarWM** | [SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models](https://arxiv.org/abs/2609.02886) | Open training pipeline for real-time interactive world models using 1.43M video clips | arXiv 2026 | [Code](https://github.com/Junchao-cs/SolarWM) · [Project](https://junchao-cs.github.io/SolarWM-Web/) · [Data](https://huggingface.co/datasets/junchaoh-cs/SolarWM-Data) |
+| **LIVE** | [LIVE: Long-horizon Interactive Video World Modeling](https://arxiv.org/abs/2602.03747) | Forward/reverse cycle-consistency curbs error accumulation in long interactive video rollouts | ICML 2026 | [Code](https://github.com/Junchao-cs/LIVE) (partial) · [Project](https://junchao-cs.github.io/LIVE-demo/) |
+| **Memory Forcing** | [Memory Forcing: Spatio-Temporal Memory for Consistent Scene Generation on Minecraft](https://arxiv.org/abs/2510.03198) | Spatiotemporal scene memory improves coherence when an interactive Minecraft camera revisits places | NeurIPS 2026 | [Repository](https://github.com/Junchao-cs/Memory-Forcing) (code pending) · [Project](https://junchao-cs.github.io/MemoryForcing/) |
 | **GameNGen** | [Diffusion Models Are Real-Time Game Engines](https://arxiv.org/abs/2408.14837) | Action-conditioned diffusion game engine | ICLR 2025 | — |
 | **GameFactory** | [GameFactory: Creating New Games with Generative Interactive Videos](https://arxiv.org/abs/2501.08325) | Action-controlled video games with scene generalization | ICCV 2025 | [Code](https://github.com/KlingAIResearch/GameFactory) (partial) |
 | **Matrix-Game 2.0** | [Matrix-Game 2.0: An Open-Source, Real-Time, and Streaming Interactive World Model](https://arxiv.org/abs/2508.13009) | Real-time neural games steered by player actions | arXiv 2025 | [Code](https://github.com/SkyworkAI/Matrix-Game) |
@@ -103,6 +108,7 @@ Robot-action-conditioned video, imagined state and model-based policies.
 
 | Model | Paper | Key Idea | Venue | Resources |
 | --- | --- | --- | --- | --- |
+| **EVO-WAM** | [EVO-WAM: Evolving World Action Models through Video-Action Verification](https://arxiv.org/abs/2609.38057) | Self-improving embodied world-action policies from verified imagined video/action rollouts | arXiv 2026 | [Repository](https://github.com/Clausy9/EVO-WAM) · [Project](https://evo-wam.github.io/) |
 | **XPACE** | [XPACE: Joint World and Action Modeling from Heterogeneous Experience](https://arxiv.org/abs/2609.17372) | Shared video backbone jointly predicts robot actions and future video | arXiv 2026 | [Project](https://xpeng-robotics.github.io/xpace/) |
 | **DreamDojo** | [DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos](https://proceedings.mlr.press/v306/gao26q.html) | Action-conditioned robot dynamics learned from human video | ICML 2026 | [Code](https://github.com/NVIDIA/DreamDojo) |
 | **DreamGen** | [DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories](https://arxiv.org/abs/2505.12705) | Synthetic world trajectories for robot policies | arXiv 2025 | — |
@@ -170,8 +176,10 @@ Predictive and controllable representations of visual worlds.
 
 | Model | Paper | Key Idea | Venue | Resources |
 | --- | --- | --- | --- | --- |
-| **WorldCast** | [WorldCast: Distributed Multiplayer World Models](https://arxiv.org/abs/2610.12412) | Distributed clients exchange player and scene states for consistent multiplayer worlds; evaluated in Counter-Strike 2 | arXiv 2026 | [Code](https://github.com/Ziyang-Ye/WorldCast) · [Project](https://ziyang-ye.github.io/WorldCast-Page/) |
+| **Mask Forcing** | [Mask Forcing: Improving Autoregressive Video Diffusion Distillation via Dual-Noise Masking Rollout](https://arxiv.org/abs/2609.09123) | Dual-noise masking reduces collapse and error propagation during autoregressive video distillation | arXiv 2026 | [Code](https://github.com/delaprada/Mask-Forcing) · [Project](https://alicezrzhao.github.io/mask_forcing/) |
+| **VideoRAE** | [VideoRAE: Taming Video Foundation Models for Generative Modeling via Representation Autoencoders](https://arxiv.org/abs/2607.14088) | Converts foundation-video features into compact continuous and discrete latents for generative modeling | arXiv 2026 | [Code](https://github.com/zhxie0117/VideoRAE) · [Project](https://zhxie0117.github.io/VideoRAE/) |
 | **Holo-World** | [Holo-World: Unified Camera, Object and Weather Control for Video World Model](https://arxiv.org/abs/2606.20083) | Unified camera, object, and weather control from a single source image | arXiv 2026 | [Repository](https://github.com/XiangchenYin/Holo-World) · [Project](https://xiangchenyin.github.io/Holo-World/) |
+| **SymphoMotion** | [SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](https://arxiv.org/abs/2604.03723) | Joint camera trajectories and object dynamics for controllable coherent video generation | CVPR 2026 | [Code](https://github.com/grenoble-zhang/SymphoMotion) · [Project](https://grenoble-zhang.github.io/SymphoMotion/) |
 | **V-JEPA** | [Revisiting Feature Prediction for Learning Visual Representations from Video](https://arxiv.org/abs/2404.08471) | Predictive visual representations related to world modeling | arXiv 2024 | — |
 
 ---
@@ -182,6 +190,7 @@ Evaluation across action fidelity, physical consistency and geometry.
 
 | Benchmark | Paper | Evaluation Focus | Venue | Resources |
 | --- | --- | --- | --- | --- |
+| **Orbia** | [Orbia: Do Generated Videos Form a Consistent 3D World?](https://arxiv.org/abs/2610.20693) | Revisit tests assess input preservation, generated content persistence and 3D scene consistency | arXiv 2026 | [Code](https://github.com/worldbench/Orbia) · [Project](https://orbia-bench.github.io/) · [Data](https://huggingface.co/datasets/Orbia/Orbia) |
 | **4DWorldBench** | [4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models](https://openaccess.thecvf.com/content/CVPR2026/html/Lu_4DWorldBench_A_Comprehensive_Evaluation_Framework_for_3D4D_World_Generation_Models_CVPR_2026_paper.html) | Evaluates geometric and temporal world generation | CVPR 2026 | — |
 | **WorldSimBench** | [WorldSimBench: Towards Video Generation Models as World Simulators](https://proceedings.mlr.press/v267/qin25f.html) | Evaluates interactive fidelity of generative world simulators | ICML 2025 | — |
 | **PhysBench** | [PhysBench: Benchmarking and Enhancing Vision-Language Models for Physical World Understanding](https://arxiv.org/abs/2501.16411) | Tests physical understanding, related benchmark | ICLR 2025 | — |
@@ -389,6 +398,7 @@ Official project/industry releases here are not counted as scholarly publication
 
 # Recent Updates
 
+- **2026-10-21:** Expanded interactive world models from Junchao Huang and the CUHK-Shenzhen Li Jiang research group (WorldCast, LIVE, Memory Forcing, SolarWM, Spatial Memory Intelligence), plus video, evaluation, and embodied work.
 - **2026-10-21:** Reorganized the collection around all-scenario world models and expanded it to medicine, robotics, interactive games, social simulation, science and general model evaluation.
 - **2026-10-21:** Updated the metadata and README generator together, preserving the original driving literature within one application.
 - **2026-10-19:** Previously expanded autonomous-driving JEPA, VLA, latent prediction and benchmarks.
